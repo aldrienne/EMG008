@@ -2,152 +2,240 @@
  * @NApiVersion 2.1
  * @NScriptType Suitelet
  */
-define(['N/ui/serverWidget', 'N/log', 'N/search', 'N/record', 'N/redirect'],
+define(['N/ui/serverWidget', 'N/log', 'N/search', 'N/record', 'N/redirect', './tsc_cm_constants'],
 
-    (serverWidget, log, search, record, redirect) => {
+    (serverWidget, log, search, record, redirect, TSCCONST) => {
+        const { FORM_CONST } = TSCCONST;
 
         const FORM_OBJECT = {
             TITLE: 'Approval Configuration',
             TABS: {
                 COMPANY_ROLES: {
-                    ID: 'custpage_company_roles_tab',
+                    ID: FORM_CONST.TAB.COMPANY_ROLES.ID,
                     LABEL: 'Company Roles',
                     FIELDGROUPS: {
                     },
                     SUBLISTS: {
                         COMPANY_ROLES_LIST: {
-                            ID: 'custpage_company_roles_sublist',
+                            ID: FORM_CONST.TAB.COMPANY_ROLES.SUBLISTS.COMPANY_ROLES_LIST.ID,
                             TYPE: serverWidget.SublistType.EDITOR,
                             LABEL: 'Existing Role Configurations',
                             FIELDS: [
                                 {
-                                    ID: 'custpage_company_approver_config_id',
+                                    ID: FORM_CONST.TAB.COMPANY_ROLES.SUBLISTS.COMPANY_ROLES_LIST.FIELDS.COMPANY_APPROVER_CONFIG_ID,
                                     TYPE: serverWidget.FieldType.TEXT,
                                     LABEL: 'ID',
                                     DISPLAY_TYPE: serverWidget.FieldDisplayType.HIDDEN
                                 },
                                 {
-                                    ID: 'custpage_company_role_type_display',
+                                    ID: FORM_CONST.TAB.COMPANY_ROLES.SUBLISTS.COMPANY_ROLES_LIST.FIELDS.COMPANY_ROLE_TYPE_DISPLAY,
                                     TYPE: serverWidget.FieldType.SELECT,
                                     SOURCE: 'customlist_tsc_role_types',
                                     LABEL: 'Role Type'
                                 },
                                 {
-                                    ID: 'custpage_company_role_primary_approver_display',
+                                    ID: FORM_CONST.TAB.COMPANY_ROLES.SUBLISTS.COMPANY_ROLES_LIST.FIELDS.COMPANY_ROLE_PRIMARY_APPROVER_DISPLAY,
                                     TYPE: serverWidget.FieldType.SELECT,
                                     SOURCE: 'employee',
                                     LABEL: 'Primary Approver'
+                                },
+                                {
+                                    ID: FORM_CONST.TAB.COMPANY_ROLES.SUBLISTS.COMPANY_ROLES_LIST.FIELDS.COMPANY_EFFECTIVE_START_DATE,
+                                    TYPE: serverWidget.FieldType.DATE,
+                                    LABEL: 'Delegate Effective Start Date'
+                                },
+                                {
+                                    ID: FORM_CONST.TAB.COMPANY_ROLES.SUBLISTS.COMPANY_ROLES_LIST.FIELDS.COMPANY_EFFECTIVE_END_DATE,
+                                    TYPE: serverWidget.FieldType.DATE,
+                                    LABEL: 'Delegate Effective End Date'
                                 }
                             ]
                         }
                     }
                 },
                 DEPARTMENTS: {
-                    ID: 'custpage_departments_tab',
+                    ID: FORM_CONST.TAB.DEPARTMENTS.ID,
                     LABEL: 'Departments',
                     FIELDGROUPS: {
                     },
                     SUBLISTS: {
                         DEPARTMENTS_LIST: {
-                            ID: 'custpage_departments_sublist',
+                            ID: FORM_CONST.TAB.DEPARTMENTS.SUBLISTS.DEPARTMENTS_LIST.ID,
                             TYPE: serverWidget.SublistType.EDITOR,
                             LABEL: 'Existing Department Configurations',
                             FIELDS: [
                                 {
-                                    ID: 'custpage_department_approver_config_id',
+                                    ID: FORM_CONST.TAB.DEPARTMENTS.SUBLISTS.DEPARTMENTS_LIST.FIELDS.DEPARTMENT_APPROVER_CONFIG_ID,
                                     TYPE: serverWidget.FieldType.TEXT,
                                     LABEL: 'ID',
                                     DISPLAY_TYPE: serverWidget.FieldDisplayType.HIDDEN
                                 },
                                 {
-                                    ID: 'custpage_department_display',
+                                    ID: FORM_CONST.TAB.DEPARTMENTS.SUBLISTS.DEPARTMENTS_LIST.FIELDS.DEPARTMENT_DISPLAY,
                                     TYPE: serverWidget.FieldType.SELECT,
                                     SOURCE: 'department',
                                     LABEL: 'Department'
                                 },
                                 {
-                                    ID: 'custpage_department_tier1_approver',
+                                    ID: FORM_CONST.TAB.DEPARTMENTS.SUBLISTS.DEPARTMENTS_LIST.FIELDS.DEPARTMENT_TIER1_APPROVER,
                                     TYPE: serverWidget.FieldType.SELECT,
                                     SOURCE: 'employee',
                                     LABEL: 'Tier 1 Approver'
                                 },
                                 {
-                                    ID: 'custpage_department_tier2_approver',
+                                    ID: FORM_CONST.TAB.DEPARTMENTS.SUBLISTS.DEPARTMENTS_LIST.FIELDS.DEPARTMENT_TIER2_APPROVER,
                                     TYPE: serverWidget.FieldType.SELECT,
                                     SOURCE: 'employee',
                                     LABEL: 'Tier 2 Approver'
                                 },
                                 {
-                                    ID: 'custpage_department_tier3_approver',
+                                    ID: FORM_CONST.TAB.DEPARTMENTS.SUBLISTS.DEPARTMENTS_LIST.FIELDS.DEPARTMENT_TIER3_APPROVER,
                                     TYPE: serverWidget.FieldType.SELECT,
                                     SOURCE: 'employee',
                                     LABEL: 'Tier 3 Approver'
                                 },
                                 {
-                                    ID: 'custpage_department_effective_start_date',
+                                    ID: FORM_CONST.TAB.DEPARTMENTS.SUBLISTS.DEPARTMENTS_LIST.FIELDS.DEPARTMENT_EFFECTIVE_START_DATE,
                                     TYPE: serverWidget.FieldType.DATE,
-                                    LABEL: 'Effective Start Date'
+                                    LABEL: 'Delegate Effective Start Date'
                                 },
                                 {
-                                    ID: 'custpage_department_effective_end_date',
+                                    ID: FORM_CONST.TAB.DEPARTMENTS.SUBLISTS.DEPARTMENTS_LIST.FIELDS.DEPARTMENT_EFFECTIVE_END_DATE,
                                     TYPE: serverWidget.FieldType.DATE,
-                                    LABEL: 'Effective End Date'
+                                    LABEL: 'Delegate Effective End Date'
                                 }
                             ]
                         }
                     }
                 },
                 DELEGATES: {
-                    ID: 'custpage_delegates_tab',
+                    ID: FORM_CONST.TAB.DELEGATES.ID,
                     LABEL: 'Delegates',
                     FIELDGROUPS: {
                     },
                     SUBLISTS: {
                         DELEGATES_LIST: {
-                            ID: 'custpage_delegates_sublist',
+                            ID: FORM_CONST.TAB.DELEGATES.SUBLISTS.DELEGATES_LIST.ID,
                             TYPE: serverWidget.SublistType.EDITOR,
                             LABEL: 'Existing Delegate Configurations',
                             FIELDS: [
                                 {
-                                    ID: 'custpage_delegate_id',
+                                    ID: FORM_CONST.TAB.DELEGATES.SUBLISTS.DELEGATES_LIST.FIELDS.DELEGATE_ID,
                                     TYPE: serverWidget.FieldType.TEXT,
                                     LABEL: 'ID',
                                     DISPLAY_TYPE: serverWidget.FieldDisplayType.HIDDEN
                                 },
                                 {
-                                    ID: 'custpage_delegate_primary_approver',
+                                    ID: FORM_CONST.TAB.DELEGATES.SUBLISTS.DELEGATES_LIST.FIELDS.DELEGATE_PRIMARY_APPROVER,
                                     TYPE: serverWidget.FieldType.SELECT,
                                     SOURCE: 'employee',
                                     LABEL: 'Primary Approver'
                                 },
                                 {
-                                    ID: 'custpage_delegate_approver',
+                                    ID: FORM_CONST.TAB.DELEGATES.SUBLISTS.DELEGATES_LIST.FIELDS.DELEGATE_APPROVER,
                                     TYPE: serverWidget.FieldType.SELECT,
                                     SOURCE: 'employee',
                                     LABEL: 'Delegate Approver'
                                 },
                                 {
-                                    ID: 'custpage_delegate_start_date',
+                                    ID: FORM_CONST.TAB.DELEGATES.SUBLISTS.DELEGATES_LIST.FIELDS.DELEGATE_START_DATE,
                                     TYPE: serverWidget.FieldType.DATE,
                                     LABEL: 'Start Date'
                                 },
                                 {
-                                    ID: 'custpage_delegate_end_date',
+                                    ID: FORM_CONST.TAB.DELEGATES.SUBLISTS.DELEGATES_LIST.FIELDS.DELEGATE_END_DATE,
                                     TYPE: serverWidget.FieldType.DATE,
                                     LABEL: 'End Date'
                                 }
                             ]
                         }
                     }
-                }
+                },
+                // APPROVAL_THRESHOLD: {
+                //     ID: 'custpage_approval_threshold_tab',
+                //     LABEL: 'Approval Threshold',
+                //     FIELDGROUPS: {
+                //     },
+                //     SUBLISTS: {
+                //         DEPARTMENT: {
+                //             ID: 'custpage_dept_threshold_sublist',
+                //             TYPE: serverWidget.SublistType.INLINEEDITOR,
+                //             LABEL: 'Department Approval Threshold (Applies to Vendor Bills)',
+                //             FIELDS: [
+                //                 {
+                //                     ID: 'custpage_dept_tsc_approval_thresholds',
+                //                     TYPE: serverWidget.FieldType.TEXT,
+                //                     LABEL: 'ID',
+                //                     DISPLAY_TYPE: serverWidget.FieldDisplayType.HIDDEN
+                //                 },
+                //                 {
+                //                     ID: 'custpage_dept_auto_approval_limit',
+                //                     TYPE: serverWidget.FieldType.CURRENCY,
+                //                     LABEL: 'Auto Approval Limit',
+                //                 },
+                //                 {
+                //                     ID: 'custpage_dept_tier1_approval_limit',
+                //                     TYPE: serverWidget.FieldType.CURRENCY,
+                //                     LABEL: 'Tier 1 Approval Limit',
+                //                 },
+                //                 {
+                //                     ID: 'custpage_dept_tier2_approval_limit',
+                //                     TYPE: serverWidget.FieldType.CURRENCY,
+                //                     LABEL: 'Tier 2 Approval Limit',
+                //                 },
+                //                 {
+                //                     ID: 'custpage_dept_tier3_approval_limit',
+                //                     TYPE: serverWidget.FieldType.CURRENCY,
+                //                     LABEL: 'Tier 3 Approval Limit',
+                //                     DISPLAY_TYPE: serverWidget.FieldDisplayType.DISABLED
+                //                 }
+                //             ]
+                //         },
+                //         COMPANY_ROLE: {
+                //             ID: 'custpage_company_role_threshold_sublist',
+                //             TYPE: serverWidget.SublistType.INLINEEDITOR,
+                //             LABEL: 'Company Role Approval Threshold (Applies to Vendor Bills)',
+                //             FIELDS: [
+                //                 {
+                //                     ID: 'custpage_company_role_tsc_approval_thresholds',
+                //                     TYPE: serverWidget.FieldType.TEXT,
+                //                     LABEL: 'ID',
+                //                     DISPLAY_TYPE: serverWidget.FieldDisplayType.HIDDEN
+                //                 },
+                //                 {
+                //                     ID: 'custpage_company_role_auto_approval_limit',
+                //                     TYPE: serverWidget.FieldType.CURRENCY,
+                //                     LABEL: 'Auto Approval Limit',
+                //                 },
+                //                 {
+                //                     ID: 'custpage_company_role_tier1_approval_limit',
+                //                     TYPE: serverWidget.FieldType.CURRENCY,
+                //                     LABEL: 'Tier 1 Approval Limit',
+                //                 },
+                //                 {
+                //                     ID: 'custpage_company_role_tier2_approval_limit',
+                //                     TYPE: serverWidget.FieldType.CURRENCY,
+                //                     LABEL: 'Tier 2 Approval Limit',
+                //                 },
+                //                 {
+                //                     ID: 'custpage_company_role_tier3_approval_limit',
+                //                     TYPE: serverWidget.FieldType.CURRENCY,
+                //                     LABEL: 'Tier 3 Approval Limit',
+                //                     DISPLAY_TYPE: serverWidget.FieldDisplayType.DISABLED
+                //                 }
+                //             ]
+                //         }
+
+                //     }
+                // }
             },
             BUTTONS: {
                 SUBMIT: {
-                    ID: 'custpage_submit',
+                    ID: FORM_CONST.BUTTON.SUBMIT,
                     LABEL: 'Save Configuration'
                 },
                 SEARCH: {
-                    ID: 'custpage_search',
+                    ID: FORM_CONST.BUTTON.SEARCH,
                     LABEL: 'Search',
                     FUNCTION_NAME: 'searchRecords()'
                 }
@@ -211,35 +299,35 @@ define(['N/ui/serverWidget', 'N/log', 'N/search', 'N/record', 'N/redirect'],
         const SUBLIST_MAPPINGS = {
             COMPANY_ROLE: {
                 searchType: 'COMPANY_ROLE',
-                sublistId: 'custpage_company_roles_sublist',
+                sublistId: FORM_CONST.TAB.COMPANY_ROLES.SUBLISTS.COMPANY_ROLES_LIST.ID,
                 fieldMappings: [
-                    { dataField: 'internalid', sublistFieldId: 'custpage_company_approver_config_id' },
-                    { dataField: 'custrecord_tsc_role_type', sublistFieldId: 'custpage_company_role_type_display' },
-                    { dataField: 'custrecord_tsc_primary_approver', sublistFieldId: 'custpage_company_role_primary_approver_display' }
+                    { dataField: 'internalid', sublistFieldId: FORM_CONST.TAB.COMPANY_ROLES.SUBLISTS.COMPANY_ROLES_LIST.FIELDS.COMPANY_APPROVER_CONFIG_ID },
+                    { dataField: 'custrecord_tsc_role_type', sublistFieldId: FORM_CONST.TAB.COMPANY_ROLES.SUBLISTS.COMPANY_ROLES_LIST.FIELDS.COMPANY_ROLE_TYPE_DISPLAY },
+                    { dataField: 'custrecord_tsc_primary_approver', sublistFieldId: FORM_CONST.TAB.COMPANY_ROLES.SUBLISTS.COMPANY_ROLES_LIST.FIELDS.COMPANY_ROLE_PRIMARY_APPROVER_DISPLAY }
                 ]
             },
             DEPARTMENT: {
                 searchType: 'DEPARTMENT',
-                sublistId: 'custpage_departments_sublist',
+                sublistId: FORM_CONST.TAB.DEPARTMENTS.SUBLISTS.DEPARTMENTS_LIST.ID,
                 fieldMappings: [
-                    { dataField: 'internalid', sublistFieldId: 'custpage_department_approver_config_id' },
-                    { dataField: 'custrecord_tsc_department', sublistFieldId: 'custpage_department_display' },
-                    { dataField: 'custrecord_tsc_primary_approver', sublistFieldId: 'custpage_department_tier1_approver' },
-                    { dataField: 'custrecord_tsc_secondary_approver', sublistFieldId: 'custpage_department_tier2_approver' },
-                    { dataField: 'custrecord_tsc_tertiary_approver', sublistFieldId: 'custpage_department_tier3_approver' },
-                    { dataField: 'custrecord_tsc_effective_date', sublistFieldId: 'custpage_department_effective_start_date' },
-                    { dataField: 'custrecord_tsc_end_date', sublistFieldId: 'custpage_department_effective_end_date' }
+                    { dataField: 'internalid', sublistFieldId: FORM_CONST.TAB.DEPARTMENTS.SUBLISTS.DEPARTMENTS_LIST.FIELDS.DEPARTMENT_APPROVER_CONFIG_ID },
+                    { dataField: 'custrecord_tsc_department', sublistFieldId: FORM_CONST.TAB.DEPARTMENTS.SUBLISTS.DEPARTMENTS_LIST.FIELDS.DEPARTMENT_DISPLAY },
+                    { dataField: 'custrecord_tsc_primary_approver', sublistFieldId: FORM_CONST.TAB.DEPARTMENTS.SUBLISTS.DEPARTMENTS_LIST.FIELDS.DEPARTMENT_TIER1_APPROVER },
+                    { dataField: 'custrecord_tsc_secondary_approver', sublistFieldId: FORM_CONST.TAB.DEPARTMENTS.SUBLISTS.DEPARTMENTS_LIST.FIELDS.DEPARTMENT_TIER2_APPROVER },
+                    { dataField: 'custrecord_tsc_tertiary_approver', sublistFieldId: FORM_CONST.TAB.DEPARTMENTS.SUBLISTS.DEPARTMENTS_LIST.FIELDS.DEPARTMENT_TIER3_APPROVER },
+                    { dataField: 'custrecord_tsc_effective_date', sublistFieldId: FORM_CONST.TAB.DEPARTMENTS.SUBLISTS.DEPARTMENTS_LIST.FIELDS.DEPARTMENT_EFFECTIVE_START_DATE },
+                    { dataField: 'custrecord_tsc_end_date', sublistFieldId: FORM_CONST.TAB.DEPARTMENTS.SUBLISTS.DEPARTMENTS_LIST.FIELDS.DEPARTMENT_EFFECTIVE_END_DATE }
                 ]
             },
             DELEGATE: {
                 searchType: 'DELEGATE',
-                sublistId: 'custpage_delegates_sublist',
+                sublistId: FORM_CONST.TAB.DELEGATES.SUBLISTS.DELEGATES_LIST.ID,
                 fieldMappings: [
-                    { dataField: 'internalid', sublistFieldId: 'custpage_delegate_id' },
-                    { dataField: 'custrecord_tsc_delegate_primary_approver', sublistFieldId: 'custpage_delegate_primary_approver' },
-                    { dataField: 'custrecord_tsc_delegate_approver', sublistFieldId: 'custpage_delegate_approver' },
-                    { dataField: 'custrecord_delegate_start_date', sublistFieldId: 'custpage_delegate_start_date' },
-                    { dataField: 'custrecord_tsc_delegate_end_date', sublistFieldId: 'custpage_delegate_end_date' }
+                    { dataField: 'internalid', sublistFieldId: FORM_CONST.TAB.DELEGATES.SUBLISTS.DELEGATES_LIST.FIELDS.DELEGATE_ID },
+                    { dataField: 'custrecord_tsc_delegate_primary_approver', sublistFieldId: FORM_CONST.TAB.DELEGATES.SUBLISTS.DELEGATES_LIST.FIELDS.DELEGATE_PRIMARY_APPROVER },
+                    { dataField: 'custrecord_tsc_delegate_approver', sublistFieldId: FORM_CONST.TAB.DELEGATES.SUBLISTS.DELEGATES_LIST.FIELDS.DELEGATE_APPROVER },
+                    { dataField: 'custrecord_delegate_start_date', sublistFieldId: FORM_CONST.TAB.DELEGATES.SUBLISTS.DELEGATES_LIST.FIELDS.DELEGATE_START_DATE },
+                    { dataField: 'custrecord_tsc_delegate_end_date', sublistFieldId: FORM_CONST.TAB.DELEGATES.SUBLISTS.DELEGATES_LIST.FIELDS.DELEGATE_END_DATE }
                 ]
             }
         };
@@ -671,19 +759,19 @@ define(['N/ui/serverWidget', 'N/log', 'N/search', 'N/record', 'N/redirect'],
                         // Get values from the line
                         const configId = request.getSublistValue({
                             group: FORM_OBJECT.TABS.COMPANY_ROLES.SUBLISTS.COMPANY_ROLES_LIST.ID,
-                            name: 'custpage_company_approver_config_id',
+                            name: FORM_CONST.TAB.COMPANY_ROLES.SUBLISTS.COMPANY_ROLES_LIST.FIELDS.COMPANY_APPROVER_CONFIG_ID,
                             line: i
                         });
 
                         const roleType = request.getSublistValue({
                             group: FORM_OBJECT.TABS.COMPANY_ROLES.SUBLISTS.COMPANY_ROLES_LIST.ID,
-                            name: 'custpage_company_role_type_display',
+                            name: FORM_CONST.TAB.COMPANY_ROLES.SUBLISTS.COMPANY_ROLES_LIST.FIELDS.COMPANY_ROLE_TYPE_DISPLAY,
                             line: i
                         });
 
                         const primaryApprover = request.getSublistValue({
                             group: FORM_OBJECT.TABS.COMPANY_ROLES.SUBLISTS.COMPANY_ROLES_LIST.ID,
-                            name: 'custpage_company_role_primary_approver_display',
+                            name: FORM_CONST.TAB.COMPANY_ROLES.SUBLISTS.COMPANY_ROLES_LIST.FIELDS.COMPANY_ROLE_PRIMARY_APPROVER_DISPLAY,
                             line: i
                         });
 
@@ -760,7 +848,7 @@ define(['N/ui/serverWidget', 'N/log', 'N/search', 'N/record', 'N/redirect'],
                 for (let i = 0; i < lineCount; i++) {
                     const configId = request.getSublistValue({
                         group: FORM_OBJECT.TABS.COMPANY_ROLES.SUBLISTS.COMPANY_ROLES_LIST.ID,
-                        name: 'custpage_company_approver_config_id',
+                        name: FORM_CONST.TAB.COMPANY_ROLES.SUBLISTS.COMPANY_ROLES_LIST.FIELDS.COMPANY_APPROVER_CONFIG_ID,
                         line: i
                     });
                     log.debug(title, `Submitted ID for line ${i}: ${configId}`);
@@ -836,43 +924,43 @@ define(['N/ui/serverWidget', 'N/log', 'N/search', 'N/record', 'N/redirect'],
                         // Get values from the line
                         const configId = request.getSublistValue({
                             group: FORM_OBJECT.TABS.DEPARTMENTS.SUBLISTS.DEPARTMENTS_LIST.ID,
-                            name: 'custpage_department_approver_config_id',
+                            name: FORM_CONST.TAB.DEPARTMENTS.SUBLISTS.DEPARTMENTS_LIST.FIELDS.DEPARTMENT_APPROVER_CONFIG_ID,
                             line: i
                         });
 
                         const department = request.getSublistValue({
                             group: FORM_OBJECT.TABS.DEPARTMENTS.SUBLISTS.DEPARTMENTS_LIST.ID,
-                            name: 'custpage_department_display',
+                            name: FORM_CONST.TAB.DEPARTMENTS.SUBLISTS.DEPARTMENTS_LIST.FIELDS.DEPARTMENT_DISPLAY,
                             line: i
                         });
 
                         const tier1Approver = request.getSublistValue({
                             group: FORM_OBJECT.TABS.DEPARTMENTS.SUBLISTS.DEPARTMENTS_LIST.ID,
-                            name: 'custpage_department_tier1_approver',
+                            name: FORM_CONST.TAB.DEPARTMENTS.SUBLISTS.DEPARTMENTS_LIST.FIELDS.DEPARTMENT_TIER1_APPROVER,
                             line: i
                         });
 
                         const tier2Approver = request.getSublistValue({
                             group: FORM_OBJECT.TABS.DEPARTMENTS.SUBLISTS.DEPARTMENTS_LIST.ID,
-                            name: 'custpage_department_tier2_approver',
+                            name: FORM_CONST.TAB.DEPARTMENTS.SUBLISTS.DEPARTMENTS_LIST.FIELDS.DEPARTMENT_TIER2_APPROVER,
                             line: i
                         });
 
                         const tier3Approver = request.getSublistValue({
                             group: FORM_OBJECT.TABS.DEPARTMENTS.SUBLISTS.DEPARTMENTS_LIST.ID,
-                            name: 'custpage_department_tier3_approver',
+                            name: FORM_CONST.TAB.DEPARTMENTS.SUBLISTS.DEPARTMENTS_LIST.FIELDS.DEPARTMENT_TIER3_APPROVER,
                             line: i
                         });
 
                         const startDate = request.getSublistValue({
                             group: FORM_OBJECT.TABS.DEPARTMENTS.SUBLISTS.DEPARTMENTS_LIST.ID,
-                            name: 'custpage_department_effective_start_date',
+                            name: FORM_CONST.TAB.DEPARTMENTS.SUBLISTS.DEPARTMENTS_LIST.FIELDS.DEPARTMENT_EFFECTIVE_START_DATE,
                             line: i
                         });
 
                         const endDate = request.getSublistValue({
                             group: FORM_OBJECT.TABS.DEPARTMENTS.SUBLISTS.DEPARTMENTS_LIST.ID,
-                            name: 'custpage_department_effective_end_date',
+                            name: FORM_CONST.TAB.DEPARTMENTS.SUBLISTS.DEPARTMENTS_LIST.FIELDS.DEPARTMENT_EFFECTIVE_END_DATE,
                             line: i
                         });
 
@@ -1066,31 +1154,31 @@ define(['N/ui/serverWidget', 'N/log', 'N/search', 'N/record', 'N/redirect'],
                         // Get values from the line
                         const delegateId = request.getSublistValue({
                             group: FORM_OBJECT.TABS.DELEGATES.SUBLISTS.DELEGATES_LIST.ID,
-                            name: 'custpage_delegate_id',
+                            name: FORM_CONST.TAB.DELEGATES.SUBLISTS.DELEGATES_LIST.FIELDS.DELEGATE_ID,
                             line: i
                         });
 
                         const primaryApprover = request.getSublistValue({
                             group: FORM_OBJECT.TABS.DELEGATES.SUBLISTS.DELEGATES_LIST.ID,
-                            name: 'custpage_delegate_primary_approver',
+                            name: FORM_CONST.TAB.DELEGATES.SUBLISTS.DELEGATES_LIST.FIELDS.DELEGATE_PRIMARY_APPROVER,
                             line: i
                         });
 
                         const delegateApprover = request.getSublistValue({
                             group: FORM_OBJECT.TABS.DELEGATES.SUBLISTS.DELEGATES_LIST.ID,
-                            name: 'custpage_delegate_approver',
+                            name: FORM_CONST.TAB.DELEGATES.SUBLISTS.DELEGATES_LIST.FIELDS.DELEGATE_APPROVER,
                             line: i
                         });
 
                         const startDate = request.getSublistValue({
                             group: FORM_OBJECT.TABS.DELEGATES.SUBLISTS.DELEGATES_LIST.ID,
-                            name: 'custpage_delegate_start_date',
+                            name: FORM_CONST.TAB.DELEGATES.SUBLISTS.DELEGATES_LIST.FIELDS.DELEGATE_START_DATE,
                             line: i
                         });
 
                         const endDate = request.getSublistValue({
                             group: FORM_OBJECT.TABS.DELEGATES.SUBLISTS.DELEGATES_LIST.ID,
-                            name: 'custpage_delegate_end_date',
+                            name: FORM_CONST.TAB.DELEGATES.SUBLISTS.DELEGATES_LIST.FIELDS.DELEGATE_END_DATE,
                             line: i
                         });
 
