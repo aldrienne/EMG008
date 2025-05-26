@@ -151,83 +151,66 @@ define(['N/ui/serverWidget', 'N/log', 'N/search', 'N/record', 'N/redirect', './t
                         }
                     }
                 },
-                // APPROVAL_THRESHOLD: {
-                //     ID: 'custpage_approval_threshold_tab',
-                //     LABEL: 'Approval Threshold',
-                //     FIELDGROUPS: {
-                //     },
-                //     SUBLISTS: {
-                //         DEPARTMENT: {
-                //             ID: 'custpage_dept_threshold_sublist',
-                //             TYPE: serverWidget.SublistType.INLINEEDITOR,
-                //             LABEL: 'Department Approval Threshold (Applies to Vendor Bills)',
-                //             FIELDS: [
-                //                 {
-                //                     ID: 'custpage_dept_tsc_approval_thresholds',
-                //                     TYPE: serverWidget.FieldType.TEXT,
-                //                     LABEL: 'ID',
-                //                     DISPLAY_TYPE: serverWidget.FieldDisplayType.HIDDEN
-                //                 },
-                //                 {
-                //                     ID: 'custpage_dept_auto_approval_limit',
-                //                     TYPE: serverWidget.FieldType.CURRENCY,
-                //                     LABEL: 'Auto Approval Limit',
-                //                 },
-                //                 {
-                //                     ID: 'custpage_dept_tier1_approval_limit',
-                //                     TYPE: serverWidget.FieldType.CURRENCY,
-                //                     LABEL: 'Tier 1 Approval Limit',
-                //                 },
-                //                 {
-                //                     ID: 'custpage_dept_tier2_approval_limit',
-                //                     TYPE: serverWidget.FieldType.CURRENCY,
-                //                     LABEL: 'Tier 2 Approval Limit',
-                //                 },
-                //                 {
-                //                     ID: 'custpage_dept_tier3_approval_limit',
-                //                     TYPE: serverWidget.FieldType.CURRENCY,
-                //                     LABEL: 'Tier 3 Approval Limit',
-                //                     DISPLAY_TYPE: serverWidget.FieldDisplayType.DISABLED
-                //                 }
-                //             ]
-                //         },
-                //         COMPANY_ROLE: {
-                //             ID: 'custpage_company_role_threshold_sublist',
-                //             TYPE: serverWidget.SublistType.INLINEEDITOR,
-                //             LABEL: 'Company Role Approval Threshold (Applies to Vendor Bills)',
-                //             FIELDS: [
-                //                 {
-                //                     ID: 'custpage_company_role_tsc_approval_thresholds',
-                //                     TYPE: serverWidget.FieldType.TEXT,
-                //                     LABEL: 'ID',
-                //                     DISPLAY_TYPE: serverWidget.FieldDisplayType.HIDDEN
-                //                 },
-                //                 {
-                //                     ID: 'custpage_company_role_auto_approval_limit',
-                //                     TYPE: serverWidget.FieldType.CURRENCY,
-                //                     LABEL: 'Auto Approval Limit',
-                //                 },
-                //                 {
-                //                     ID: 'custpage_company_role_tier1_approval_limit',
-                //                     TYPE: serverWidget.FieldType.CURRENCY,
-                //                     LABEL: 'Tier 1 Approval Limit',
-                //                 },
-                //                 {
-                //                     ID: 'custpage_company_role_tier2_approval_limit',
-                //                     TYPE: serverWidget.FieldType.CURRENCY,
-                //                     LABEL: 'Tier 2 Approval Limit',
-                //                 },
-                //                 {
-                //                     ID: 'custpage_company_role_tier3_approval_limit',
-                //                     TYPE: serverWidget.FieldType.CURRENCY,
-                //                     LABEL: 'Tier 3 Approval Limit',
-                //                     DISPLAY_TYPE: serverWidget.FieldDisplayType.DISABLED
-                //                 }
-                //             ]
-                //         }
-
-                //     }
-                // }
+                THRESHOLDS: {
+                    ID: FORM_CONST.THRESHOLDS.ID,
+                    LABEL: 'Approval Thresholds',
+                    FIELDGROUPS: {
+                        COMPANY_THRESHOLDS: {
+                            ID: 'custpage_company_thresholds_group',
+                            LABEL: 'Company Approval Limits',
+                            FIELDS: [
+                                {
+                                    ID: FORM_CONST.THRESHOLDS.FIELDS.COMPANY_AUTO_APPROVAL_LIMIT,
+                                    TYPE: serverWidget.FieldType.CURRENCY,
+                                    LABEL: 'Company Auto Approval Limit'
+                                },
+                                {
+                                    ID: FORM_CONST.THRESHOLDS.FIELDS.COO_APPROVAL_LIMIT,
+                                    TYPE: serverWidget.FieldType.CURRENCY,
+                                    LABEL: 'COO Approval Limit'
+                                },
+                                {
+                                    ID: FORM_CONST.THRESHOLDS.FIELDS.CFO_APPROVAL_LIMIT,
+                                    TYPE: serverWidget.FieldType.CURRENCY,
+                                    LABEL: 'CFO Approval Limit'
+                                },
+                                {
+                                    ID: FORM_CONST.THRESHOLDS.FIELDS.CEO_APPROVAL_LIMIT,
+                                    TYPE: serverWidget.FieldType.CURRENCY,
+                                    LABEL: 'CEO Approval Limit'
+                                }
+                            ]
+                        },
+                        DEPARTMENT_THRESHOLDS: {
+                            ID: 'custpage_department_thresholds_group',
+                            LABEL: 'Department Approval Limits',
+                            FIELDS: [
+                                {
+                                    ID: FORM_CONST.THRESHOLDS.FIELDS.DEPARTMENT_AUTO_APPROVAL_LIMIT,
+                                    TYPE: serverWidget.FieldType.CURRENCY,
+                                    LABEL: 'Department Auto Approval Limit'
+                                },
+                                {
+                                    ID: FORM_CONST.THRESHOLDS.FIELDS.DEPARTMENT_TIER1_APPROVAL_LIMIT,
+                                    TYPE: serverWidget.FieldType.CURRENCY,
+                                    LABEL: 'Department Tier 1 Approval Limit'
+                                },
+                                {
+                                    ID: FORM_CONST.THRESHOLDS.FIELDS.DEPARTMENT_TIER2_APPROVAL_LIMIT,
+                                    TYPE: serverWidget.FieldType.CURRENCY,
+                                    LABEL: 'Department Tier 2 Approval Limit'
+                                },
+                                {
+                                    ID: FORM_CONST.THRESHOLDS.FIELDS.DEPARTMENT_TIER3_APPROVAL_LIMIT,
+                                    TYPE: serverWidget.FieldType.CURRENCY,
+                                    LABEL: 'Department Tier 3 Approval Limit'
+                                }
+                            ]
+                        }
+                    },
+                    SUBLISTS: {
+                    }
+                }
             },
             BUTTONS: {
                 SUBMIT: {
@@ -250,7 +233,8 @@ define(['N/ui/serverWidget', 'N/log', 'N/search', 'N/record', 'N/redirect', './t
 
         const RECORD_TYPES = {
             APPROVER_CONFIG: 'customrecord_tsc_approver_config',
-            DELEGATE_APPROVERS: 'customrecord_tsc_delegate_approvers'
+            DELEGATE_APPROVERS: 'customrecord_tsc_delegate_approvers',
+            THRESHOLDS: 'customrecord_tsc_approval_thresholds'
         };
 
         const SEARCH_DEFINITIONS = {
@@ -263,7 +247,9 @@ define(['N/ui/serverWidget', 'N/log', 'N/search', 'N/record', 'N/redirect', './t
                 ],
                 columns: [
                     search.createColumn({ name: 'custrecord_tsc_role_type' }),
-                    search.createColumn({ name: 'custrecord_tsc_primary_approver' })
+                    search.createColumn({ name: 'custrecord_tsc_primary_approver' }),
+                    search.createColumn({ name: 'custrecord_tsc_effective_date' }),
+                    search.createColumn({ name: 'custrecord_tsc_end_date' }),
                 ]
             },
             DEPARTMENT: {
@@ -293,6 +279,22 @@ define(['N/ui/serverWidget', 'N/log', 'N/search', 'N/record', 'N/redirect', './t
                     search.createColumn({ name: 'custrecord_delegate_start_date' }),
                     search.createColumn({ name: 'custrecord_tsc_delegate_end_date' })
                 ]
+            },
+            THRESHOLDS: {
+                recordType: RECORD_TYPES.THRESHOLDS,
+                filters: [
+                    ['isinactive', 'is', 'F']
+                ],
+                columns: [
+                    search.createColumn({name: 'custrecord_tsc_comp_auto_approval_limit'}),
+                    search.createColumn({name: 'custrecord_tsc_coo_approval_limit'}),
+                    search.createColumn({name: 'custrecord_tsc_cfo_approval_limit'}),
+                    search.createColumn({name: 'custrecord_tsc_ceo_approval_limit'}),
+                    search.createColumn({name: 'custrecord_tsc_dept_auto_approval_limit'}),
+                    search.createColumn({name: 'custrecord_tsc_tier_1_approval_limit'}),
+                    search.createColumn({name: 'custrecord_tsc_tier_2_approver_limit'}),
+                    search.createColumn({name: 'custrecord_tsc_tier_3_approver_limit'})                    
+                ]
             }
         }
 
@@ -303,7 +305,9 @@ define(['N/ui/serverWidget', 'N/log', 'N/search', 'N/record', 'N/redirect', './t
                 fieldMappings: [
                     { dataField: 'internalid', sublistFieldId: FORM_CONST.TAB.COMPANY_ROLES.SUBLISTS.COMPANY_ROLES_LIST.FIELDS.COMPANY_APPROVER_CONFIG_ID },
                     { dataField: 'custrecord_tsc_role_type', sublistFieldId: FORM_CONST.TAB.COMPANY_ROLES.SUBLISTS.COMPANY_ROLES_LIST.FIELDS.COMPANY_ROLE_TYPE_DISPLAY },
-                    { dataField: 'custrecord_tsc_primary_approver', sublistFieldId: FORM_CONST.TAB.COMPANY_ROLES.SUBLISTS.COMPANY_ROLES_LIST.FIELDS.COMPANY_ROLE_PRIMARY_APPROVER_DISPLAY }
+                    { dataField: 'custrecord_tsc_primary_approver', sublistFieldId: FORM_CONST.TAB.COMPANY_ROLES.SUBLISTS.COMPANY_ROLES_LIST.FIELDS.COMPANY_ROLE_PRIMARY_APPROVER_DISPLAY },
+                    { dataField: 'custrecord_tsc_effective_date', sublistFieldId: FORM_CONST.TAB.COMPANY_ROLES.SUBLISTS.COMPANY_ROLES_LIST.FIELDS.COMPANY_EFFECTIVE_START_DATE },
+                    { dataField: 'custrecord_tsc_end_date', sublistFieldId: FORM_CONST.TAB.COMPANY_ROLES.SUBLISTS.COMPANY_ROLES_LIST.FIELDS.COMPANY_EFFECTIVE_END_DATE }
                 ]
             },
             DEPARTMENT: {
@@ -330,6 +334,22 @@ define(['N/ui/serverWidget', 'N/log', 'N/search', 'N/record', 'N/redirect', './t
                     { dataField: 'custrecord_tsc_delegate_end_date', sublistFieldId: FORM_CONST.TAB.DELEGATES.SUBLISTS.DELEGATES_LIST.FIELDS.DELEGATE_END_DATE }
                 ]
             }
+        };
+
+        const FIELD_MAPPINGS = {
+            THRESHOLDS: {
+                searchType: 'THRESHOLDS',                
+                fieldMappings: [
+                    { dataField: 'custrecord_tsc_comp_auto_approval_limit', fieldId: FORM_CONST.THRESHOLDS.FIELDS.COMPANY_AUTO_APPROVAL_LIMIT },
+                    { dataField: 'custrecord_tsc_coo_approval_limit', fieldId: FORM_CONST.THRESHOLDS.FIELDS.COO_APPROVAL_LIMIT },
+                    { dataField: 'custrecord_tsc_cfo_approval_limit', fieldId: FORM_CONST.THRESHOLDS.FIELDS.CFO_APPROVAL_LIMIT },
+                    { dataField: 'custrecord_tsc_ceo_approval_limit', fieldId: FORM_CONST.THRESHOLDS.FIELDS.CEO_APPROVAL_LIMIT },
+                    { dataField: 'custrecord_tsc_dept_auto_approval_limit', fieldId: FORM_CONST.THRESHOLDS.FIELDS.DEPARTMENT_AUTO_APPROVAL_LIMIT },
+                    { dataField: 'custrecord_tsc_tier_1_approval_limit', fieldId: FORM_CONST.THRESHOLDS.FIELDS.DEPARTMENT_TIER1_APPROVAL_LIMIT },
+                    { dataField: 'custrecord_tsc_tier_2_approver_limit', fieldId: FORM_CONST.THRESHOLDS.FIELDS.DEPARTMENT_TIER2_APPROVAL_LIMIT },
+                    { dataField: 'custrecord_tsc_tier_3_approver_limit', fieldId: FORM_CONST.THRESHOLDS.FIELDS.DEPARTMENT_TIER3_APPROVAL_LIMIT }                    
+                ]
+            },
         };
 
         /**
@@ -408,35 +428,9 @@ define(['N/ui/serverWidget', 'N/log', 'N/search', 'N/record', 'N/redirect', './t
                             tab: tabConfig.ID
                         });
 
-                        // Create fields in the group
+                        // Create fields in the group using helper function
                         if (groupConfig.FIELDS) {
-                            for (let field of groupConfig.FIELDS) {
-                                const fieldObj = form.addField({
-                                    id: field.ID,
-                                    type: field.TYPE,
-                                    label: field.LABEL,
-                                    source: field.SOURCE,
-                                    container: groupConfig.ID
-                                });
-
-                                // Add options if specified
-                                if (field.OPTIONS) {
-                                    for (let option of field.OPTIONS) {
-                                        fieldObj.addSelectOption({
-                                            value: option.VALUE,
-                                            text: option.TEXT,
-                                            isSelected: option.IS_SELECTED || false
-                                        });
-                                    }
-                                }
-
-                                // Set display type if specified
-                                if (field.DISPLAY_TYPE) {
-                                    fieldObj.updateDisplayType({
-                                        displayType: field.DISPLAY_TYPE
-                                    });
-                                }
-                            }
+                            addFieldsToForm(form, groupConfig.FIELDS, groupConfig.ID);
                         }
                     }
                 }
@@ -478,103 +472,12 @@ define(['N/ui/serverWidget', 'N/log', 'N/search', 'N/record', 'N/redirect', './t
 
             }
 
-            //Retrieve for Company Roles sublist
-            // let approverConfig = searchApproverConfig('1');
-            // log.debug('approverConfig: ', approverConfig);
-            // //Populate Company Roles Sublist
-            // if (approverConfig.length > 0) {
-            //     const companyRolesSublist = form.getSublist({
-            //         id: FORM_OBJECT.TABS.COMPANY_ROLES.SUBLISTS.COMPANY_ROLES_LIST.ID
-            //     });
-
-            //     for (let i = 0; i < approverConfig.length; i++) {
-            //         const approver = approverConfig[i];
-            //         companyRolesSublist.setSublistValue({
-            //             id: FORM_OBJECT.TABS.COMPANY_ROLES.SUBLISTS.COMPANY_ROLES_LIST.FIELDS[0].ID,
-            //             line: i,
-            //             value: approver.roleType
-            //         });
-            //         companyRolesSublist.setSublistValue({
-            //             id: FORM_OBJECT.TABS.COMPANY_ROLES.SUBLISTS.COMPANY_ROLES_LIST.FIELDS[1].ID,
-            //             line: i,
-            //             value: approver.primaryApprover
-            //         });
-            //         companyRolesSublist.setSublistValue({
-            //             id: FORM_OBJECT.TABS.COMPANY_ROLES.SUBLISTS.COMPANY_ROLES_LIST.FIELDS[2].ID,
-            //             line: i,
-            //             value: approver.id
-            //         });
-            //     }
-            // }
-
-            // let departmentConfig = searchApproverConfig('2');
-            // log.debug('departmentConfig: ', departmentConfig);
-            // //Populate Departments Sublist
-            // if (departmentConfig.length > 0) {
-            //     const departmentsSublist = form.getSublist({
-            //         id: FORM_OBJECT.TABS.DEPARTMENTS.SUBLISTS.DEPARTMENTS_LIST.ID
-            //     });
-
-            //     for (let i = 0; i < departmentConfig.length; i++) {
-            //         const approver = departmentConfig[i];
-            //         departmentsSublist.setSublistValue({
-            //             id: FORM_OBJECT.TABS.DEPARTMENTS.SUBLISTS.DEPARTMENTS_LIST.FIELDS[0].ID,
-            //             line: i,
-            //             value: approver.department
-            //         });
-            //         departmentsSublist.setSublistValue({
-            //             id: FORM_OBJECT.TABS.DEPARTMENTS.SUBLISTS.DEPARTMENTS_LIST.FIELDS[1].ID,
-            //             line: i,
-            //             value: approver.primaryApprover
-            //         });
-            //         departmentsSublist.setSublistValue({
-            //             id: FORM_OBJECT.TABS.DEPARTMENTS.SUBLISTS.DEPARTMENTS_LIST.FIELDS[2].ID,
-            //             line: i,
-            //             value: approver.secondaryApprover
-            //         });
-            //         departmentsSublist.setSublistValue({
-            //             id: FORM_OBJECT.TABS.DEPARTMENTS.SUBLISTS.DEPARTMENTS_LIST.FIELDS[3].ID,
-            //             line: i,
-            //             value: approver.tertiaryApprover
-            //         });
-            //     }
-            // }
-
-            //Retrieve for Delegate Approvers sublist
-            // let delegateConfig = searchDelegateApproverConfig();
-            // log.debug('delegateConfig: ', delegateConfig);
-            // //Populate Delegate Approvers Sublist
-            // if (delegateConfig.length > 0) {
-            //     const delegatesSublist = form.getSublist({
-            //         id: FORM_OBJECT.TABS.DELEGATES.SUBLISTS.DELEGATES_LIST.ID
-            //     });
-            //     for (let i = 0; i < delegateConfig.length; i++) {
-            //         const approver = delegateConfig[i];
-            //         delegatesSublist.setSublistValue({
-            //             id: FORM_OBJECT.TABS.DELEGATES.SUBLISTS.DELEGATES_LIST.FIELDS[0].ID,
-            //             line: i,
-            //             value: approver.primaryApprover
-            //         });
-            //         delegatesSublist.setSublistValue({
-            //             id: FORM_OBJECT.TABS.DELEGATES.SUBLISTS.DELEGATES_LIST.FIELDS[1].ID,
-            //             line: i,
-            //             value: approver.delegateApprover
-            //         });
-            //         delegatesSublist.setSublistValue({
-            //             id: FORM_OBJECT.TABS.DELEGATES.SUBLISTS.DELEGATES_LIST.FIELDS[2].ID,
-            //             line: i,
-            //             value: approver.startDate
-            //         });
-            //         delegatesSublist.setSublistValue({
-            //             id: FORM_OBJECT.TABS.DELEGATES.SUBLISTS.DELEGATES_LIST.FIELDS[3].ID,
-            //             line: i,
-            //             value: approver.endDate
-            //         });
-            //     }
-            // }
             populateSublist(form, 'COMPANY_ROLE');
             populateSublist(form, 'DEPARTMENT');
             populateSublist(form, 'DELEGATE');
+            
+            // Populate threshold fields
+            populateFields(form, 'THRESHOLDS');
 
             // Add buttons
             if (FORM_OBJECT.BUTTONS) {
@@ -596,9 +499,102 @@ define(['N/ui/serverWidget', 'N/log', 'N/search', 'N/record', 'N/redirect', './t
                     }
                 }
             }
+            form.clientScriptModulePath = './tsc_cs_emg008_approver_config.js';
 
             // Write the form to the response
             scriptContext.response.writePage(form);
+        }
+
+        /**
+         * Helper function to add fields to form based on configuration
+         * @param {Object} form - The form object
+         * @param {Object} fieldConfig - Field configuration object
+         * @param {string} containerId - Container ID for the field (fieldgroup or tab)
+         * @returns {Object} The created field object
+         */
+        function addFieldToForm(form, fieldConfig, containerId) {
+            const title = "addFieldToForm";
+            log.debug(title, `Adding field: ${fieldConfig.ID} to container: ${containerId}`);
+
+            try {
+                // Create the field
+                const fieldObj = form.addField({
+                    id: fieldConfig.ID,
+                    type: fieldConfig.TYPE,
+                    label: fieldConfig.LABEL,
+                    source: fieldConfig.SOURCE,
+                    container: containerId
+                });
+
+                // Add options if specified (for select fields)
+                if (fieldConfig.OPTIONS) {
+                    for (let option of fieldConfig.OPTIONS) {
+                        fieldObj.addSelectOption({
+                            value: option.VALUE,
+                            text: option.TEXT,
+                            isSelected: option.IS_SELECTED || false
+                        });
+                    }
+                }
+
+                // Set display type if specified
+                if (fieldConfig.DISPLAY_TYPE) {
+                    fieldObj.updateDisplayType({
+                        displayType: fieldConfig.DISPLAY_TYPE
+                    });
+                }
+
+                // Set default value if specified
+                if (fieldConfig.DEFAULT_VALUE !== undefined) {
+                    fieldObj.defaultValue = fieldConfig.DEFAULT_VALUE;
+                }
+
+                // Set mandatory if specified
+                if (fieldConfig.MANDATORY) {
+                    fieldObj.isMandatory = fieldConfig.MANDATORY;
+                }
+
+                // Set help text if specified
+                if (fieldConfig.HELP_TEXT) {
+                    fieldObj.setHelpText({
+                        help: fieldConfig.HELP_TEXT
+                    });
+                }
+
+                log.debug(title, `Successfully added field: ${fieldConfig.ID}`);
+                return fieldObj;
+
+            } catch (e) {
+                log.error(title, `Error adding field ${fieldConfig.ID}: ${e.message}`);
+                throw e;
+            }
+        }
+
+        /**
+         * Helper function to add multiple fields to a form or field group
+         * @param {Object} form - The form object
+         * @param {Array} fieldsConfig - Array of field configuration objects
+         * @param {string} containerId - Container ID for the fields (fieldgroup or tab)
+         */
+        function addFieldsToForm(form, fieldsConfig, containerId) {
+            const title = "addFieldsToForm";
+            log.debug(title, `Adding ${fieldsConfig.length} fields to container: ${containerId}`);
+
+            const createdFields = [];
+
+            try {
+                for (let fieldConfig of fieldsConfig) {
+                    const fieldObj = addFieldToForm(form, fieldConfig, containerId);
+                    createdFields.push(fieldObj);
+                }
+
+                log.debug(title, `Successfully added ${createdFields.length} fields to container: ${containerId}`);
+                return createdFields;
+
+            } catch (e) {
+                log.error(title, `Error adding fields to container ${containerId}: ${e.message}`);
+                throw e;
+            }
         }
 
         const searchRecords = (searchType) => {
@@ -653,11 +649,19 @@ define(['N/ui/serverWidget', 'N/log', 'N/search', 'N/record', 'N/redirect', './t
          */
         function handleFormSubmission(scriptContext) {
             let title = "handleFormSubmission";
-            log.debug(title + ' params: ', { scriptContext });
+            log.audit(title + ' params: ', { scriptContext });
             const activeTab = scriptContext.request.parameters.selectedtab || FORM_OBJECT.TABS.COMPANY_ROLES.ID;
-            processCompanyRoleRecords(scriptContext.request);
-            processDepartmentRecords(scriptContext.request);
-            processDelegateRecords(scriptContext.request);
+            log.audit(title + ' activeTab: ', { activeTab });
+
+            if (activeTab === FORM_OBJECT.TABS.COMPANY_ROLES.ID) {
+                processCompanyRoleRecords(scriptContext.request);
+            } else if (activeTab === FORM_OBJECT.TABS.DEPARTMENTS.ID) {
+                processDepartmentRecords(scriptContext.request);
+            } else if (activeTab === FORM_OBJECT.TABS.DELEGATES.ID) {
+                processDelegateRecords(scriptContext.request);
+            } else if (activeTab === FORM_OBJECT.TABS.THRESHOLDS.ID) {
+                processThresholdRecords(scriptContext.request);
+            }
 
             //Redirect to the same suitelet after processing
             redirect.toSuitelet({
@@ -671,10 +675,11 @@ define(['N/ui/serverWidget', 'N/log', 'N/search', 'N/record', 'N/redirect', './t
         }
 
         function populateSublist(form, tabKey) {
-            const title = "populateSublist";
+            const title = "populateSublist:";
             log.debug(title + ' params: ', { tabKey });
 
             const mapping = SUBLIST_MAPPINGS[tabKey];
+            log.debug(title + ' mapping: ', mapping);
             if (!mapping) {
                 log.error(title, 'Mapping not found for tab key: ' + tabKey);
                 return;
@@ -700,22 +705,23 @@ define(['N/ui/serverWidget', 'N/log', 'N/search', 'N/record', 'N/redirect', './t
                 // Populate sublist based on field mappings
                 for (let i = 0; i < data.length; i++) {
                     const record = data[i];
-
                     for (let fieldMapping of mapping.fieldMappings) {
                         const value = record[fieldMapping.dataField] || '';
-                        log.emergency(title + fieldMapping.dataField + ' value', value);
+                        log.debug(title + tabKey + fieldMapping.dataField + ' value', value);
 
-                        sublist.setSublistValue({
-                            id: fieldMapping.sublistFieldId,
-                            line: i,
-                            value: value
-                        });
+                        if (value) {
+                            sublist.setSublistValue({
+                                id: fieldMapping.sublistFieldId,
+                                line: i,
+                                value: value
+                            });
 
-                        log.debug(title + ' setting value', {
-                            line: i,
-                            field: fieldMapping.sublistFieldId,
-                            value: value
-                        });
+                            log.audit(title + ' setting value', {
+                                line: i,
+                                field: fieldMapping.sublistFieldId,
+                                value: value
+                            });
+                        }
                     }
                 }
 
@@ -724,6 +730,62 @@ define(['N/ui/serverWidget', 'N/log', 'N/search', 'N/record', 'N/redirect', './t
                 log.error(title + ' error', e);
             }
         }
+
+        /**
+         * Populates form fields based on field mappings
+         * @param {Object} form - The form object
+         * @param {string} tabKey - The key identifying which field mapping to use
+         */
+        function populateFields(form, tabKey) {
+            const title = "populateFields:";
+            log.debug(title + ' params: ', { tabKey });
+
+            const mapping = FIELD_MAPPINGS[tabKey];
+            log.debug(title + ' mapping: ', mapping);
+            if (!mapping) {
+                log.error(title, 'Field mapping not found for tab key: ' + tabKey);
+                return;
+            }
+
+            const data = searchRecords(mapping.searchType);
+            if (!data || data.length === 0) {
+                log.debug(title, 'No data found for search type: ' + mapping.searchType);
+                return;
+            }
+
+            try {
+                // For thresholds, we expect only one record typically, so use the first record
+                const record = data[0];
+                log.debug(title + ' record data: ', record);
+
+                for (let fieldMapping of mapping.fieldMappings) {
+                    const value = record[fieldMapping.dataField] || '';
+                    log.debug(title + tabKey + ' ' + fieldMapping.dataField + ' value: ', value);
+
+                    if (value) {
+                        // Get the field and set its default value
+                        const field = form.getField({
+                            id: fieldMapping.fieldId
+                        });
+
+                        if (field) {
+                            field.defaultValue = value;
+                            log.audit(title + ' setting field value', {
+                                field: fieldMapping.fieldId,
+                                value: value
+                            });
+                        } else {
+                            log.error(title, 'Field not found with ID: ' + fieldMapping.fieldId);
+                        }
+                    }
+                }
+
+                log.debug(title, 'Successfully populated fields for tab: ' + tabKey);
+            } catch (e) {
+                log.error(title + ' error', e);
+            }
+        }
+
         /**
          * Process company role records for CRUD operations
          * @param {Object} request - The request object from scriptContext
@@ -775,6 +837,18 @@ define(['N/ui/serverWidget', 'N/log', 'N/search', 'N/record', 'N/redirect', './t
                             line: i
                         });
 
+                        const startDate = request.getSublistValue({
+                            group: FORM_OBJECT.TABS.COMPANY_ROLES.SUBLISTS.COMPANY_ROLES_LIST.ID,
+                            name: FORM_CONST.TAB.COMPANY_ROLES.SUBLISTS.COMPANY_ROLES_LIST.FIELDS.COMPANY_EFFECTIVE_START_DATE,
+                            line: i
+                        });
+
+                        const endDate = request.getSublistValue({
+                            group: FORM_OBJECT.TABS.COMPANY_ROLES.SUBLISTS.COMPANY_ROLES_LIST.ID,
+                            name: FORM_CONST.TAB.COMPANY_ROLES.SUBLISTS.COMPANY_ROLES_LIST.FIELDS.COMPANY_EFFECTIVE_END_DATE,
+                            line: i
+                        });
+
                         // Validate required fields
                         if (!roleType || !primaryApprover) {
                             results.errors.push(`Line ${i + 1}: Role Type and Primary Approver are required fields`);
@@ -798,7 +872,9 @@ define(['N/ui/serverWidget', 'N/log', 'N/search', 'N/record', 'N/redirect', './t
                                 id: configId,
                                 values: {
                                     'custrecord_tsc_role_type': roleType,
-                                    'custrecord_tsc_primary_approver': primaryApprover
+                                    'custrecord_tsc_primary_approver': primaryApprover,
+                                    'custrecord_tsc_effective_date': startDate || '',
+                                    'custrecord_tsc_end_date': endDate || ''
                                 }
                             });
 
@@ -826,6 +902,19 @@ define(['N/ui/serverWidget', 'N/log', 'N/search', 'N/record', 'N/redirect', './t
                                 fieldId: 'custrecord_tsc_primary_approver',
                                 value: primaryApprover
                             });
+
+                            if (startDate) {
+                                newRecord.setText({
+                                    fieldId: 'custrecord_tsc_effective_date',
+                                    value: startDate
+                                });
+                            }
+                            if (endDate) {
+                                newRecord.setText({
+                                    fieldId: 'custrecord_tsc_end_date',
+                                    value: endDate
+                                });
+                            }
 
                             // Save the record
                             const recordId = newRecord.save();
@@ -889,10 +978,10 @@ define(['N/ui/serverWidget', 'N/log', 'N/search', 'N/record', 'N/redirect', './t
             return results;
         }
         /**
- * Process department records for CRUD operations
- * @param {Object} request - The request object from scriptContext
- * @returns {Object} Result object with operation details
- */
+         * Process department records for CRUD operations
+         * @param {Object} request - The request object from scriptContext
+         * @returns {Object} Result object with operation details
+         */
         function processDepartmentRecords(request) {
             const title = "processDepartmentRecords";
             log.debug(title, 'Processing department records');
@@ -1239,7 +1328,7 @@ define(['N/ui/serverWidget', 'N/log', 'N/search', 'N/record', 'N/redirect', './t
                             submittedIds.add(String(delegateId));
                             results.updated++;
                         } else {
-                            log.emergency(title, `Creating new record: primaryApprover=${primaryApprover}, delegateApprover=${delegateApprover}, startDate=${startDate}, endDate=${endDate}`);
+                            log.debug(title, `Creating new record: primaryApprover=${primaryApprover}, delegateApprover=${delegateApprover}, startDate=${startDate}, endDate=${endDate}`);
                             // Create new record
                             const newRecord = record.create({
                                 type: RECORD_TYPES.DELEGATE_APPROVERS,
@@ -1310,6 +1399,112 @@ define(['N/ui/serverWidget', 'N/log', 'N/search', 'N/record', 'N/redirect', './t
 
             } catch (e) {
                 log.error(title, `Error in processDelegateRecords: ${e}`);
+                results.success = false;
+                results.errors.push(`General error: ${e.message}`);
+            }
+
+            // Return results
+            log.debug(title, `Results: ${JSON.stringify(results)}`);
+            return results;
+        }
+
+        /**
+         * Process threshold records for CRUD operations
+         * @param {Object} request - The request object from scriptContext
+         * @returns {Object} Result object with operation details
+         */
+        function processThresholdRecords(request) {
+            const title = "processThresholdRecords";
+            log.debug(title, 'Processing threshold records');
+            log.emergency(title + 'parameters', JSON.stringify(request.parameters));
+
+            // Results tracking
+            const results = {
+                success: true,
+                created: 0,
+                updated: 0,
+                deleted: 0,
+                errors: []
+            };
+
+            try {
+                // Get the field mappings for thresholds
+                const mapping = FIELD_MAPPINGS.THRESHOLDS;
+                if (!mapping || !mapping.fieldMappings) {
+                    log.error(title, 'No field mappings found for thresholds');
+                    results.success = false;
+                    results.errors.push('No field mappings configured for thresholds');
+                    return results;
+                }
+
+                // Check if threshold record already exists
+                const existingRecords = searchRecords('THRESHOLDS');
+                log.debug(title, `Found ${existingRecords.length} existing threshold records`);
+                let thresholdRecord;
+                
+                if (existingRecords && existingRecords.length > 0) {
+                    // Update existing record
+                    const existingRecordId = existingRecords[0].internalid;
+                    log.debug(title, `Updating existing threshold record ID: ${existingRecordId}`);
+                    
+                    // Collect all field values to update
+                    const valuesToUpdate = {};
+                    for (let fieldMapping of mapping.fieldMappings) {
+                        log.debug(title + ' fieldMapping', fieldMapping.fieldId);
+                        const fieldValue = request.parameters[fieldMapping.fieldId];
+                        log.debug(title, `Field ${fieldMapping.fieldId} value: ${fieldValue}`);
+                        
+                        if (fieldValue !== null && fieldValue !== undefined && fieldValue !== '') {
+                            valuesToUpdate[fieldMapping.dataField] = fieldValue;
+                            log.debug(title, `Setting ${fieldMapping.dataField} = ${fieldValue}`);
+                        }
+                    }
+                    
+                    // Submit the updates
+                    if (Object.keys(valuesToUpdate).length > 0) {
+                        const recordId = record.submitFields({
+                            type: RECORD_TYPES.THRESHOLDS,
+                            id: existingRecordId,
+                            values: valuesToUpdate
+                        });
+                        
+                        log.debug(title, `Updated record ID: ${recordId}`);
+                        results.updated++;
+                    } else {
+                        log.debug(title, 'No threshold values to update');
+                    }
+                    
+                } else {
+                    // Create new record
+                    log.debug(title, 'Creating new threshold record');
+                    
+                    const newRecord = record.create({
+                        type: RECORD_TYPES.THRESHOLDS,
+                        isDynamic: true
+                    });
+                    
+                    // Set field values from form
+                    for (let fieldMapping of mapping.fieldMappings) {
+                        const fieldValue = request.parameters[fieldMapping.fieldId];
+                        log.debug(title, `Field ${fieldMapping.fieldId} value: ${fieldValue}`);
+                        
+                        if (fieldValue !== null && fieldValue !== undefined && fieldValue !== '') {
+                            newRecord.setValue({
+                                fieldId: fieldMapping.dataField,
+                                value: fieldValue
+                            });
+                            log.debug(title, `Setting ${fieldMapping.dataField} = ${fieldValue}`);
+                        }
+                    }
+                    
+                    // Save the record
+                    const recordId = newRecord.save();
+                    log.debug(title, `Created new threshold record ID: ${recordId}`);
+                    results.created++;
+                }
+
+            } catch (e) {
+                log.error(title, `Error in processThresholdRecords: ${e}`);
                 results.success = false;
                 results.errors.push(`General error: ${e.message}`);
             }

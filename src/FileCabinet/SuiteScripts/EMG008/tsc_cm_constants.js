@@ -53,6 +53,19 @@ define([], () => {
                 }
             }
         },
+        THRESHOLDS: {
+            ID: 'custpage_thresholds_tab',
+            FIELDS: {
+                COMPANY_AUTO_APPROVAL_LIMIT: 'custpage_tsc_comp_auto_approval_limit',
+                COO_APPROVAL_LIMIT: 'custpage_tsc_coo_approval_limit',
+                CFO_APPROVAL_LIMIT: 'custpage_tsc_cfo_approval_limit',
+                CEO_APPROVAL_LIMIT: 'custpage_tsc_ceo_approval_limit',
+                DEPARTMENT_AUTO_APPROVAL_LIMIT: 'custpage_tsc_dep_auto_approval_limit',
+                DEPARTMENT_TIER1_APPROVAL_LIMIT: 'custpage_tsc_dep_tier1_approval_limit',
+                DEPARTMENT_TIER2_APPROVAL_LIMIT: 'custpage_tsc_dep_tier2_approval_limit',
+                DEPARTMENT_TIER3_APPROVAL_LIMIT: 'custpage_tsc_dep_tier3_approval_limit'
+            }
+        },
         BUTTON: {
             SUBMIT: 'custpage_submit',
             SEARCH: 'custpage_search'
