@@ -5,7 +5,7 @@
 define(['N/ui/serverWidget', 'N/log', 'N/search', 'N/record', 'N/redirect', './tsc_cm_constants'],
 
     (serverWidget, log, search, record, redirect, TSCCONST) => {
-        const { FORM_CONST } = TSCCONST;
+        const { FORM_CONST, RECORDS, TRANSACTION_BODY_FIELDS, LISTS } = TSCCONST;
 
         const FORM_OBJECT = {
             TITLE: 'Approval Configuration',
@@ -30,7 +30,7 @@ define(['N/ui/serverWidget', 'N/log', 'N/search', 'N/record', 'N/redirect', './t
                                 {
                                     ID: FORM_CONST.TAB.COMPANY_ROLES.SUBLISTS.COMPANY_ROLES_LIST.FIELDS.COMPANY_ROLE_TYPE_DISPLAY,
                                     TYPE: serverWidget.FieldType.SELECT,
-                                    SOURCE: 'customlist_tsc_role_types',
+                                    SOURCE: LISTS.ROLE_TYPES,
                                     LABEL: 'Role Type'
                                 },
                                 {
@@ -232,9 +232,9 @@ define(['N/ui/serverWidget', 'N/log', 'N/search', 'N/record', 'N/redirect', './t
         };
 
         const RECORD_TYPES = {
-            APPROVER_CONFIG: 'customrecord_tsc_approver_config',
-            DELEGATE_APPROVERS: 'customrecord_tsc_delegate_approvers',
-            THRESHOLDS: 'customrecord_tsc_approval_thresholds'
+            APPROVER_CONFIG: RECORDS.APPROVER_CONFIG.ID,
+            DELEGATE_APPROVERS: RECORDS.DELEGATE_APPROVERS.ID,
+            THRESHOLDS: RECORDS.APPROVAL_THRESHOLDS.ID
         };
 
         const SEARCH_DEFINITIONS = {
@@ -243,13 +243,13 @@ define(['N/ui/serverWidget', 'N/log', 'N/search', 'N/record', 'N/redirect', './t
                 filters: [
                     ['isinactive', 'is', 'F'],
                     'AND',
-                    ['custrecordtsc_config_type', 'anyof', CONFIG_TYPES.COMPANY_ROLE]
+                    [RECORDS.APPROVER_CONFIG.FIELDS.CONFIG_TYPE, 'anyof', CONFIG_TYPES.COMPANY_ROLE]
                 ],
                 columns: [
-                    search.createColumn({ name: 'custrecord_tsc_role_type' }),
-                    search.createColumn({ name: 'custrecord_tsc_primary_approver' }),
-                    search.createColumn({ name: 'custrecord_tsc_effective_date' }),
-                    search.createColumn({ name: 'custrecord_tsc_end_date' }),
+                    search.createColumn({ name: RECORDS.APPROVER_CONFIG.FIELDS.ROLE_TYPE }),
+                    search.createColumn({ name: RECORDS.APPROVER_CONFIG.FIELDS.PRIMARY_APPROVER }),
+                    search.createColumn({ name: RECORDS.APPROVER_CONFIG.FIELDS.EFFECTIVE_DATE }),
+                    search.createColumn({ name: RECORDS.APPROVER_CONFIG.FIELDS.END_DATE }),
                 ]
             },
             DEPARTMENT: {
@@ -257,15 +257,15 @@ define(['N/ui/serverWidget', 'N/log', 'N/search', 'N/record', 'N/redirect', './t
                 filters: [
                     ['isinactive', 'is', 'F'],
                     'AND',
-                    ['custrecordtsc_config_type', 'anyof', CONFIG_TYPES.DEPARTMENT]
+                    [RECORDS.APPROVER_CONFIG.FIELDS.CONFIG_TYPE, 'anyof', CONFIG_TYPES.DEPARTMENT]
                 ],
                 columns: [
-                    search.createColumn({ name: 'custrecord_tsc_department' }),
-                    search.createColumn({ name: 'custrecord_tsc_primary_approver' }),
-                    search.createColumn({ name: 'custrecord_tsc_secondary_approver' }),
-                    search.createColumn({ name: 'custrecord_tsc_tertiary_approver' }),
-                    search.createColumn({ name: 'custrecord_tsc_effective_date' }),
-                    search.createColumn({ name: 'custrecord_tsc_end_date' })
+                    search.createColumn({ name: RECORDS.APPROVER_CONFIG.FIELDS.DEPARTMENT }),
+                    search.createColumn({ name: RECORDS.APPROVER_CONFIG.FIELDS.PRIMARY_APPROVER }),
+                    search.createColumn({ name: RECORDS.APPROVER_CONFIG.FIELDS.SECONDARY_APPROVER }),
+                    search.createColumn({ name: RECORDS.APPROVER_CONFIG.FIELDS.TERTIARY_APPROVER }),
+                    search.createColumn({ name: RECORDS.APPROVER_CONFIG.FIELDS.EFFECTIVE_DATE }),
+                    search.createColumn({ name: RECORDS.APPROVER_CONFIG.FIELDS.END_DATE })
                 ]
             },
             DELEGATE: {
@@ -274,10 +274,10 @@ define(['N/ui/serverWidget', 'N/log', 'N/search', 'N/record', 'N/redirect', './t
                     ['isinactive', 'is', 'F']
                 ],
                 columns: [
-                    search.createColumn({ name: 'custrecord_tsc_delegate_primary_approver' }),
-                    search.createColumn({ name: 'custrecord_tsc_delegate_approver' }),
-                    search.createColumn({ name: 'custrecord_delegate_start_date' }),
-                    search.createColumn({ name: 'custrecord_tsc_delegate_end_date' })
+                    search.createColumn({ name: RECORDS.DELEGATE_APPROVERS.FIELDS.PRIMARY_APPROVER }),
+                    search.createColumn({ name: RECORDS.DELEGATE_APPROVERS.FIELDS.DELEGATE_APPROVER }),
+                    search.createColumn({ name: RECORDS.DELEGATE_APPROVERS.FIELDS.START_DATE }),
+                    search.createColumn({ name: RECORDS.DELEGATE_APPROVERS.FIELDS.END_DATE })
                 ]
             },
             THRESHOLDS: {
@@ -286,14 +286,14 @@ define(['N/ui/serverWidget', 'N/log', 'N/search', 'N/record', 'N/redirect', './t
                     ['isinactive', 'is', 'F']
                 ],
                 columns: [
-                    search.createColumn({name: 'custrecord_tsc_comp_auto_approval_limit'}),
-                    search.createColumn({name: 'custrecord_tsc_coo_approval_limit'}),
-                    search.createColumn({name: 'custrecord_tsc_cfo_approval_limit'}),
-                    search.createColumn({name: 'custrecord_tsc_ceo_approval_limit'}),
-                    search.createColumn({name: 'custrecord_tsc_dept_auto_approval_limit'}),
-                    search.createColumn({name: 'custrecord_tsc_tier_1_approval_limit'}),
-                    search.createColumn({name: 'custrecord_tsc_tier_2_approver_limit'}),
-                    search.createColumn({name: 'custrecord_tsc_tier_3_approver_limit'})                    
+                    search.createColumn({name: RECORDS.APPROVAL_THRESHOLDS.FIELDS.COMP_AUTO_APPROVAL_LIMIT}),
+                    search.createColumn({name: RECORDS.APPROVAL_THRESHOLDS.FIELDS.COO_APPROVAL_LIMIT}),
+                    search.createColumn({name: RECORDS.APPROVAL_THRESHOLDS.FIELDS.CFO_APPROVAL_LIMIT}),
+                    search.createColumn({name: RECORDS.APPROVAL_THRESHOLDS.FIELDS.CEO_APPROVAL_LIMIT}),
+                    search.createColumn({name: RECORDS.APPROVAL_THRESHOLDS.FIELDS.DEPT_AUTO_APPROVAL_LIMIT}),
+                    search.createColumn({name: RECORDS.APPROVAL_THRESHOLDS.FIELDS.TIER_1_APPROVAL_LIMIT}),
+                    search.createColumn({name: RECORDS.APPROVAL_THRESHOLDS.FIELDS.TIER_2_APPROVAL_LIMIT}),
+                    search.createColumn({name: RECORDS.APPROVAL_THRESHOLDS.FIELDS.TIER_3_APPROVAL_LIMIT})                    
                 ]
             }
         }
@@ -304,10 +304,10 @@ define(['N/ui/serverWidget', 'N/log', 'N/search', 'N/record', 'N/redirect', './t
                 sublistId: FORM_CONST.TAB.COMPANY_ROLES.SUBLISTS.COMPANY_ROLES_LIST.ID,
                 fieldMappings: [
                     { dataField: 'internalid', sublistFieldId: FORM_CONST.TAB.COMPANY_ROLES.SUBLISTS.COMPANY_ROLES_LIST.FIELDS.COMPANY_APPROVER_CONFIG_ID },
-                    { dataField: 'custrecord_tsc_role_type', sublistFieldId: FORM_CONST.TAB.COMPANY_ROLES.SUBLISTS.COMPANY_ROLES_LIST.FIELDS.COMPANY_ROLE_TYPE_DISPLAY },
-                    { dataField: 'custrecord_tsc_primary_approver', sublistFieldId: FORM_CONST.TAB.COMPANY_ROLES.SUBLISTS.COMPANY_ROLES_LIST.FIELDS.COMPANY_ROLE_PRIMARY_APPROVER_DISPLAY },
-                    { dataField: 'custrecord_tsc_effective_date', sublistFieldId: FORM_CONST.TAB.COMPANY_ROLES.SUBLISTS.COMPANY_ROLES_LIST.FIELDS.COMPANY_EFFECTIVE_START_DATE },
-                    { dataField: 'custrecord_tsc_end_date', sublistFieldId: FORM_CONST.TAB.COMPANY_ROLES.SUBLISTS.COMPANY_ROLES_LIST.FIELDS.COMPANY_EFFECTIVE_END_DATE }
+                    { dataField: RECORDS.APPROVER_CONFIG.FIELDS.ROLE_TYPE, sublistFieldId: FORM_CONST.TAB.COMPANY_ROLES.SUBLISTS.COMPANY_ROLES_LIST.FIELDS.COMPANY_ROLE_TYPE_DISPLAY },
+                    { dataField: RECORDS.APPROVER_CONFIG.FIELDS.PRIMARY_APPROVER, sublistFieldId: FORM_CONST.TAB.COMPANY_ROLES.SUBLISTS.COMPANY_ROLES_LIST.FIELDS.COMPANY_ROLE_PRIMARY_APPROVER_DISPLAY },
+                    { dataField: RECORDS.APPROVER_CONFIG.FIELDS.EFFECTIVE_DATE, sublistFieldId: FORM_CONST.TAB.COMPANY_ROLES.SUBLISTS.COMPANY_ROLES_LIST.FIELDS.COMPANY_EFFECTIVE_START_DATE },
+                    { dataField: RECORDS.APPROVER_CONFIG.FIELDS.END_DATE, sublistFieldId: FORM_CONST.TAB.COMPANY_ROLES.SUBLISTS.COMPANY_ROLES_LIST.FIELDS.COMPANY_EFFECTIVE_END_DATE }
                 ]
             },
             DEPARTMENT: {
@@ -315,12 +315,12 @@ define(['N/ui/serverWidget', 'N/log', 'N/search', 'N/record', 'N/redirect', './t
                 sublistId: FORM_CONST.TAB.DEPARTMENTS.SUBLISTS.DEPARTMENTS_LIST.ID,
                 fieldMappings: [
                     { dataField: 'internalid', sublistFieldId: FORM_CONST.TAB.DEPARTMENTS.SUBLISTS.DEPARTMENTS_LIST.FIELDS.DEPARTMENT_APPROVER_CONFIG_ID },
-                    { dataField: 'custrecord_tsc_department', sublistFieldId: FORM_CONST.TAB.DEPARTMENTS.SUBLISTS.DEPARTMENTS_LIST.FIELDS.DEPARTMENT_DISPLAY },
-                    { dataField: 'custrecord_tsc_primary_approver', sublistFieldId: FORM_CONST.TAB.DEPARTMENTS.SUBLISTS.DEPARTMENTS_LIST.FIELDS.DEPARTMENT_TIER1_APPROVER },
-                    { dataField: 'custrecord_tsc_secondary_approver', sublistFieldId: FORM_CONST.TAB.DEPARTMENTS.SUBLISTS.DEPARTMENTS_LIST.FIELDS.DEPARTMENT_TIER2_APPROVER },
-                    { dataField: 'custrecord_tsc_tertiary_approver', sublistFieldId: FORM_CONST.TAB.DEPARTMENTS.SUBLISTS.DEPARTMENTS_LIST.FIELDS.DEPARTMENT_TIER3_APPROVER },
-                    { dataField: 'custrecord_tsc_effective_date', sublistFieldId: FORM_CONST.TAB.DEPARTMENTS.SUBLISTS.DEPARTMENTS_LIST.FIELDS.DEPARTMENT_EFFECTIVE_START_DATE },
-                    { dataField: 'custrecord_tsc_end_date', sublistFieldId: FORM_CONST.TAB.DEPARTMENTS.SUBLISTS.DEPARTMENTS_LIST.FIELDS.DEPARTMENT_EFFECTIVE_END_DATE }
+                    { dataField: RECORDS.APPROVER_CONFIG.FIELDS.DEPARTMENT, sublistFieldId: FORM_CONST.TAB.DEPARTMENTS.SUBLISTS.DEPARTMENTS_LIST.FIELDS.DEPARTMENT_DISPLAY },
+                    { dataField: RECORDS.APPROVER_CONFIG.FIELDS.PRIMARY_APPROVER, sublistFieldId: FORM_CONST.TAB.DEPARTMENTS.SUBLISTS.DEPARTMENTS_LIST.FIELDS.DEPARTMENT_TIER1_APPROVER },
+                    { dataField: RECORDS.APPROVER_CONFIG.FIELDS.SECONDARY_APPROVER, sublistFieldId: FORM_CONST.TAB.DEPARTMENTS.SUBLISTS.DEPARTMENTS_LIST.FIELDS.DEPARTMENT_TIER2_APPROVER },
+                    { dataField: RECORDS.APPROVER_CONFIG.FIELDS.TERTIARY_APPROVER, sublistFieldId: FORM_CONST.TAB.DEPARTMENTS.SUBLISTS.DEPARTMENTS_LIST.FIELDS.DEPARTMENT_TIER3_APPROVER },
+                    { dataField: RECORDS.APPROVER_CONFIG.FIELDS.EFFECTIVE_DATE, sublistFieldId: FORM_CONST.TAB.DEPARTMENTS.SUBLISTS.DEPARTMENTS_LIST.FIELDS.DEPARTMENT_EFFECTIVE_START_DATE },
+                    { dataField: RECORDS.APPROVER_CONFIG.FIELDS.END_DATE, sublistFieldId: FORM_CONST.TAB.DEPARTMENTS.SUBLISTS.DEPARTMENTS_LIST.FIELDS.DEPARTMENT_EFFECTIVE_END_DATE }
                 ]
             },
             DELEGATE: {
@@ -328,10 +328,10 @@ define(['N/ui/serverWidget', 'N/log', 'N/search', 'N/record', 'N/redirect', './t
                 sublistId: FORM_CONST.TAB.DELEGATES.SUBLISTS.DELEGATES_LIST.ID,
                 fieldMappings: [
                     { dataField: 'internalid', sublistFieldId: FORM_CONST.TAB.DELEGATES.SUBLISTS.DELEGATES_LIST.FIELDS.DELEGATE_ID },
-                    { dataField: 'custrecord_tsc_delegate_primary_approver', sublistFieldId: FORM_CONST.TAB.DELEGATES.SUBLISTS.DELEGATES_LIST.FIELDS.DELEGATE_PRIMARY_APPROVER },
-                    { dataField: 'custrecord_tsc_delegate_approver', sublistFieldId: FORM_CONST.TAB.DELEGATES.SUBLISTS.DELEGATES_LIST.FIELDS.DELEGATE_APPROVER },
-                    { dataField: 'custrecord_delegate_start_date', sublistFieldId: FORM_CONST.TAB.DELEGATES.SUBLISTS.DELEGATES_LIST.FIELDS.DELEGATE_START_DATE },
-                    { dataField: 'custrecord_tsc_delegate_end_date', sublistFieldId: FORM_CONST.TAB.DELEGATES.SUBLISTS.DELEGATES_LIST.FIELDS.DELEGATE_END_DATE }
+                    { dataField: RECORDS.DELEGATE_APPROVERS.FIELDS.PRIMARY_APPROVER, sublistFieldId: FORM_CONST.TAB.DELEGATES.SUBLISTS.DELEGATES_LIST.FIELDS.DELEGATE_PRIMARY_APPROVER },
+                    { dataField: RECORDS.DELEGATE_APPROVERS.FIELDS.DELEGATE_APPROVER, sublistFieldId: FORM_CONST.TAB.DELEGATES.SUBLISTS.DELEGATES_LIST.FIELDS.DELEGATE_APPROVER },
+                    { dataField: RECORDS.DELEGATE_APPROVERS.FIELDS.START_DATE, sublistFieldId: FORM_CONST.TAB.DELEGATES.SUBLISTS.DELEGATES_LIST.FIELDS.DELEGATE_START_DATE },
+                    { dataField: RECORDS.DELEGATE_APPROVERS.FIELDS.END_DATE, sublistFieldId: FORM_CONST.TAB.DELEGATES.SUBLISTS.DELEGATES_LIST.FIELDS.DELEGATE_END_DATE }
                 ]
             }
         };
@@ -340,14 +340,14 @@ define(['N/ui/serverWidget', 'N/log', 'N/search', 'N/record', 'N/redirect', './t
             THRESHOLDS: {
                 searchType: 'THRESHOLDS',                
                 fieldMappings: [
-                    { dataField: 'custrecord_tsc_comp_auto_approval_limit', fieldId: FORM_CONST.THRESHOLDS.FIELDS.COMPANY_AUTO_APPROVAL_LIMIT },
-                    { dataField: 'custrecord_tsc_coo_approval_limit', fieldId: FORM_CONST.THRESHOLDS.FIELDS.COO_APPROVAL_LIMIT },
-                    { dataField: 'custrecord_tsc_cfo_approval_limit', fieldId: FORM_CONST.THRESHOLDS.FIELDS.CFO_APPROVAL_LIMIT },
-                    { dataField: 'custrecord_tsc_ceo_approval_limit', fieldId: FORM_CONST.THRESHOLDS.FIELDS.CEO_APPROVAL_LIMIT },
-                    { dataField: 'custrecord_tsc_dept_auto_approval_limit', fieldId: FORM_CONST.THRESHOLDS.FIELDS.DEPARTMENT_AUTO_APPROVAL_LIMIT },
-                    { dataField: 'custrecord_tsc_tier_1_approval_limit', fieldId: FORM_CONST.THRESHOLDS.FIELDS.DEPARTMENT_TIER1_APPROVAL_LIMIT },
-                    { dataField: 'custrecord_tsc_tier_2_approver_limit', fieldId: FORM_CONST.THRESHOLDS.FIELDS.DEPARTMENT_TIER2_APPROVAL_LIMIT },
-                    { dataField: 'custrecord_tsc_tier_3_approver_limit', fieldId: FORM_CONST.THRESHOLDS.FIELDS.DEPARTMENT_TIER3_APPROVAL_LIMIT }                    
+                    { dataField: RECORDS.APPROVAL_THRESHOLDS.FIELDS.COMP_AUTO_APPROVAL_LIMIT, fieldId: FORM_CONST.THRESHOLDS.FIELDS.COMPANY_AUTO_APPROVAL_LIMIT },
+                    { dataField: RECORDS.APPROVAL_THRESHOLDS.FIELDS.COO_APPROVAL_LIMIT, fieldId: FORM_CONST.THRESHOLDS.FIELDS.COO_APPROVAL_LIMIT },
+                    { dataField: RECORDS.APPROVAL_THRESHOLDS.FIELDS.CFO_APPROVAL_LIMIT, fieldId: FORM_CONST.THRESHOLDS.FIELDS.CFO_APPROVAL_LIMIT },
+                    { dataField: RECORDS.APPROVAL_THRESHOLDS.FIELDS.CEO_APPROVAL_LIMIT, fieldId: FORM_CONST.THRESHOLDS.FIELDS.CEO_APPROVAL_LIMIT },
+                    { dataField: RECORDS.APPROVAL_THRESHOLDS.FIELDS.DEPT_AUTO_APPROVAL_LIMIT, fieldId: FORM_CONST.THRESHOLDS.FIELDS.DEPARTMENT_AUTO_APPROVAL_LIMIT },
+                    { dataField: RECORDS.APPROVAL_THRESHOLDS.FIELDS.TIER_1_APPROVAL_LIMIT, fieldId: FORM_CONST.THRESHOLDS.FIELDS.DEPARTMENT_TIER1_APPROVAL_LIMIT },
+                    { dataField: RECORDS.APPROVAL_THRESHOLDS.FIELDS.TIER_2_APPROVAL_LIMIT, fieldId: FORM_CONST.THRESHOLDS.FIELDS.DEPARTMENT_TIER2_APPROVAL_LIMIT },
+                    { dataField: RECORDS.APPROVAL_THRESHOLDS.FIELDS.TIER_3_APPROVAL_LIMIT, fieldId: FORM_CONST.THRESHOLDS.FIELDS.DEPARTMENT_TIER3_APPROVAL_LIMIT }                    
                 ]
             },
         };
@@ -871,10 +871,10 @@ define(['N/ui/serverWidget', 'N/log', 'N/search', 'N/record', 'N/redirect', './t
                                 type: RECORD_TYPES.APPROVER_CONFIG,
                                 id: configId,
                                 values: {
-                                    'custrecord_tsc_role_type': roleType,
-                                    'custrecord_tsc_primary_approver': primaryApprover,
-                                    'custrecord_tsc_effective_date': startDate || '',
-                                    'custrecord_tsc_end_date': endDate || ''
+                                    [RECORDS.APPROVER_CONFIG.FIELDS.ROLE_TYPE]: roleType,
+                                    [RECORDS.APPROVER_CONFIG.FIELDS.PRIMARY_APPROVER]: primaryApprover,
+                                    [RECORDS.APPROVER_CONFIG.FIELDS.EFFECTIVE_DATE]: startDate || '',
+                                    [RECORDS.APPROVER_CONFIG.FIELDS.END_DATE]: endDate || ''
                                 }
                             });
 
@@ -889,29 +889,29 @@ define(['N/ui/serverWidget', 'N/log', 'N/search', 'N/record', 'N/redirect', './t
 
                             // Set field values
                             newRecord.setValue({
-                                fieldId: 'custrecordtsc_config_type',
+                                fieldId: RECORDS.APPROVER_CONFIG.FIELDS.CONFIG_TYPE,
                                 value: CONFIG_TYPES.COMPANY_ROLE
                             });
 
                             newRecord.setValue({
-                                fieldId: 'custrecord_tsc_role_type',
+                                fieldId: RECORDS.APPROVER_CONFIG.FIELDS.ROLE_TYPE,
                                 value: roleType
                             });
 
                             newRecord.setValue({
-                                fieldId: 'custrecord_tsc_primary_approver',
+                                fieldId: RECORDS.APPROVER_CONFIG.FIELDS.PRIMARY_APPROVER,
                                 value: primaryApprover
                             });
 
                             if (startDate) {
                                 newRecord.setText({
-                                    fieldId: 'custrecord_tsc_effective_date',
+                                    fieldId: RECORDS.APPROVER_CONFIG.FIELDS.EFFECTIVE_DATE,
                                     value: startDate
                                 });
                             }
                             if (endDate) {
                                 newRecord.setText({
-                                    fieldId: 'custrecord_tsc_end_date',
+                                    fieldId: RECORDS.APPROVER_CONFIG.FIELDS.END_DATE,
                                     value: endDate
                                 });
                             }
@@ -1092,12 +1092,12 @@ define(['N/ui/serverWidget', 'N/log', 'N/search', 'N/record', 'N/redirect', './t
                                 type: RECORD_TYPES.APPROVER_CONFIG,
                                 id: configId,
                                 values: {
-                                    'custrecord_tsc_department': department,
-                                    'custrecord_tsc_primary_approver': tier1Approver || '',
-                                    'custrecord_tsc_secondary_approver': tier2Approver || '',
-                                    'custrecord_tsc_tertiary_approver': tier3Approver || '',
-                                    'custrecord_tsc_effective_date': startDate || '',
-                                    'custrecord_tsc_end_date': endDate || ''
+                                    [RECORDS.APPROVER_CONFIG.FIELDS.DEPARTMENT]: department,
+                                    [RECORDS.APPROVER_CONFIG.FIELDS.PRIMARY_APPROVER]: tier1Approver || '',
+                                    [RECORDS.APPROVER_CONFIG.FIELDS.SECONDARY_APPROVER]: tier2Approver || '',
+                                    [RECORDS.APPROVER_CONFIG.FIELDS.TERTIARY_APPROVER]: tier3Approver || '',
+                                    [RECORDS.APPROVER_CONFIG.FIELDS.EFFECTIVE_DATE]: startDate || '',
+                                    [RECORDS.APPROVER_CONFIG.FIELDS.END_DATE]: endDate || ''
                                 }
                             });
 
@@ -1113,46 +1113,46 @@ define(['N/ui/serverWidget', 'N/log', 'N/search', 'N/record', 'N/redirect', './t
 
                             // Set field values
                             newRecord.setValue({
-                                fieldId: 'custrecordtsc_config_type',
+                                fieldId: RECORDS.APPROVER_CONFIG.FIELDS.CONFIG_TYPE,
                                 value: CONFIG_TYPES.DEPARTMENT
                             });
 
                             newRecord.setValue({
-                                fieldId: 'custrecord_tsc_department',
+                                fieldId: RECORDS.APPROVER_CONFIG.FIELDS.DEPARTMENT,
                                 value: department
                             });
 
                             if (tier1Approver) {
                                 newRecord.setValue({
-                                    fieldId: 'custrecord_tsc_primary_approver',
+                                    fieldId: RECORDS.APPROVER_CONFIG.FIELDS.PRIMARY_APPROVER,
                                     value: tier1Approver
                                 });
                             }
 
                             if (tier2Approver) {
                                 newRecord.setValue({
-                                    fieldId: 'custrecord_tsc_secondary_approver',
+                                    fieldId: RECORDS.APPROVER_CONFIG.FIELDS.SECONDARY_APPROVER,
                                     value: tier2Approver
                                 });
                             }
 
                             if (tier3Approver) {
                                 newRecord.setValue({
-                                    fieldId: 'custrecord_tsc_tertiary_approver',
+                                    fieldId: RECORDS.APPROVER_CONFIG.FIELDS.TERTIARY_APPROVER,
                                     value: tier3Approver
                                 });
                             }
 
                             if (startDate) {
                                 newRecord.setValue({
-                                    fieldId: 'custrecord_tsc_effective_date',
+                                    fieldId: RECORDS.APPROVER_CONFIG.FIELDS.EFFECTIVE_DATE,
                                     value: startDate
                                 });
                             }
 
                             if (endDate) {
                                 newRecord.setValue({
-                                    fieldId: 'custrecord_tsc_end_date',
+                                    fieldId: RECORDS.APPROVER_CONFIG.FIELDS.END_DATE,
                                     value: endDate
                                 });
                             }
@@ -1317,10 +1317,10 @@ define(['N/ui/serverWidget', 'N/log', 'N/search', 'N/record', 'N/redirect', './t
                                 type: RECORD_TYPES.DELEGATE_APPROVERS,
                                 id: delegateId,
                                 values: {
-                                    'custrecord_tsc_delegate_primary_approver': primaryApprover,
-                                    'custrecord_tsc_delegate_approver': delegateApprover,
-                                    'custrecord_delegate_start_date': startDate,
-                                    'custrecord_tsc_delegate_end_date': endDate || ''
+                                    [RECORDS.DELEGATE_APPROVERS.FIELDS.PRIMARY_APPROVER]: primaryApprover,
+                                    [RECORDS.DELEGATE_APPROVERS.FIELDS.DELEGATE_APPROVER]: delegateApprover,
+                                    [RECORDS.DELEGATE_APPROVERS.FIELDS.START_DATE]: startDate,
+                                    [RECORDS.DELEGATE_APPROVERS.FIELDS.END_DATE]: endDate || ''
                                 }
                             });
 
@@ -1337,23 +1337,23 @@ define(['N/ui/serverWidget', 'N/log', 'N/search', 'N/record', 'N/redirect', './t
 
                             // Set field values
                             newRecord.setValue({
-                                fieldId: 'custrecord_tsc_delegate_primary_approver',
+                                fieldId: RECORDS.DELEGATE_APPROVERS.FIELDS.PRIMARY_APPROVER,
                                 value: primaryApprover
                             });
 
                             newRecord.setValue({
-                                fieldId: 'custrecord_tsc_delegate_approver',
+                                fieldId: RECORDS.DELEGATE_APPROVERS.FIELDS.DELEGATE_APPROVER,
                                 value: delegateApprover
                             });
 
                             newRecord.setText({
-                                fieldId: 'custrecord_delegate_start_date',
+                                fieldId: RECORDS.DELEGATE_APPROVERS.FIELDS.START_DATE,
                                 text: startDate
                             });
 
                             if (endDate) {
                                 newRecord.setText({
-                                    fieldId: 'custrecord_tsc_delegate_end_date',
+                                    fieldId: RECORDS.DELEGATE_APPROVERS.FIELDS.END_DATE,
                                     text: endDate
                                 });
                             }

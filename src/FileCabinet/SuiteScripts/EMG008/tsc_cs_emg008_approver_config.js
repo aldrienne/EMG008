@@ -6,7 +6,7 @@
 define(['N/ui/dialog', './tsc_cm_constants.js'],
 
 function(dialog, TSCCONST) {
-    const { FORM_CONST } = TSCCONST;
+    const { FORM_CONST, RECORDS, TRANSACTION_BODY_FIELDS, LISTS } = TSCCONST;
     
     /**
      * Function to be executed after page is initialized.

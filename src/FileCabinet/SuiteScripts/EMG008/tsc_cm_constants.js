@@ -72,7 +72,77 @@ define([], () => {
         }
     };
 
+    const RECORDS = {
+        APPROVER_CONFIG: {
+            ID: 'customrecord_tsc_approver_config',
+            FIELDS: {
+                CONFIG_TYPE: 'custrecordtsc_config_type',
+                ROLE_TYPE: 'custrecord_tsc_role_type',
+                DEPARTMENT: 'custrecord_tsc_department',
+                PRIMARY_APPROVER: 'custrecord_tsc_primary_approver',
+                SECONDARY_APPROVER: 'custrecord_tsc_secondary_approver',
+                TERTIARY_APPROVER: 'custrecord_tsc_tertiary_approver',
+                EFFECTIVE_DATE: 'custrecord_tsc_effective_date',
+                END_DATE: 'custrecord_tsc_end_date'
+            }
+        },
+        DELEGATE_APPROVERS: {
+            ID: 'customrecord_tsc_delegate_approvers',
+            FIELDS: {
+                PRIMARY_APPROVER: 'custrecord_tsc_delegate_primary_approver',
+                DELEGATE_APPROVER: 'custrecord_tsc_delegate_approver',
+                START_DATE: 'custrecord_delegate_start_date',
+                END_DATE: 'custrecord_tsc_delegate_end_date'
+            }
+        },
+        APPROVAL_THRESHOLDS: {
+            ID: 'customrecord_tsc_approval_thresholds',
+            FIELDS: {
+                THRESHOLD_TYPE: 'custrecord_tsc_threshold_type',
+                COMP_AUTO_APPROVAL_LIMIT: 'custrecord_tsc_comp_auto_approval_limit',
+                COO_APPROVAL_LIMIT: 'custrecord_tsc_coo_approval_limit',
+                CFO_APPROVAL_LIMIT: 'custrecord_tsc_cfo_approval_limit',
+                CEO_APPROVAL_LIMIT: 'custrecord_tsc_ceo_approval_limit',
+                DEPT_AUTO_APPROVAL_LIMIT: 'custrecord_tsc_dept_auto_approval_limit',
+                TIER_1_APPROVAL_LIMIT: 'custrecord_tsc_tier_1_approval_limit',
+                TIER_2_APPROVAL_LIMIT: 'custrecord_tsc_tier_2_approver_limit',
+                TIER_3_APPROVAL_LIMIT: 'custrecord_tsc_tier_3_approver_limit'
+            }
+        },
+        APPROVAL_HISTORY: {
+            ID: 'customrecord_tsc_approval_history',
+            FIELDS: {
+                TRANSACTION: 'custrecord_tsc_transaction',
+                TRANSACTION_TYPE: 'custrecord_tsc_transaction_type',
+                ORIGINAL_APPROVER: 'custrecord_tsc_original_approver',
+                ACTUAL_APPROVER: 'custrecord_tsc_actual_approver',
+                APPROVAL_ACTION: 'custrecord_tsc_approval_action',
+                APPROVAL_DATE: 'custrecord_tsc_approval_date',
+                APPROVAL_NOTES: 'custrecord_tsc_approval_notes',
+                IS_DELEGATE_ACTION: 'custrecord_tsc_is_delegate_action'
+            }
+        }
+    };
+
+    const TRANSACTION_BODY_FIELDS = {
+        APPROVAL_HISTORY: 'custbody_tsc_approval_history',
+        APPROVAL_STATUS: 'custbody_tsc_approval_status',
+        CURRENT_APPROVER: 'custbody_tsc_current_approver',
+        IS_REVISION: 'custbody_tsc_is_revision',
+        LAST_APPROVER: 'custbody_tsc_last_approver',
+        REJECTION_REASON: 'custbody_tsc_rejection_reason'
+    };
+
+    const LISTS = {
+        APPROVAL_ACTIONS: 'customlist_tsc_approval_actions',
+        CONFIG_TYPES: 'customlist_tsc_config_types',
+        ROLE_TYPES: 'customlist_tsc_role_types'
+    };
+
     return {
-        FORM_CONST
+        FORM_CONST,
+        RECORDS,
+        TRANSACTION_BODY_FIELDS,
+        LISTS
     };
 });
