@@ -10,6 +10,8 @@ define(['N/search', '../tsc_cm_constants', 'N/runtime'],
         const SCRIPT_PARAMETERS = {
             APPROVAL_TYPE: 'custscript_tsc_wa_emg008_approval_type',
             APPROVAL_ROLE: 'custscript_tsc_wa_emg008_approval_role',
+            DEPARTMENT: "custscript_tsc_wa_emg008_department",
+            DEPARTMENT_LEVEL: "custscriptt_tsc_wa_emg008_department_lvl",
         }
         /**
          * Defines the WorkflowAction script trigger point.
@@ -24,27 +26,36 @@ define(['N/search', '../tsc_cm_constants', 'N/runtime'],
         const onAction = (scriptContext) => {
             const approvalType = runtime.getCurrentScript().getParameter(SCRIPT_PARAMETERS.APPROVAL_TYPE);
             const approvalRole = runtime.getCurrentScript().getParameter(SCRIPT_PARAMETERS.APPROVAL_ROLE);
+            const department = runtime.getCurrentScript().getParameter(SCRIPT_PARAMETERS.DEPARTMENT);
 
-            if (!approvalType || !approvalRole) {
+            if (!approvalType) {
                 log.error('Missing Parameters', 'Approval Type or Approval Role is not set.');
                 return null;
             }
 
             try {
-                return retrieveApproverConfig(approvalType, approvalRole);
+                return retrieveApproverConfig(approvalType, approvalRole, department);
             } catch (error) {
                 log.error('Error Retrieving Approver Config', error.message);
             }
         }
 
-        const retrieveApproverConfig = (approvalType, approvalRole) => {
+        const retrieveApproverConfig = (approvalType, approvalRole, department) => {
             const title = 'retrieveApproverConfig():';
-            log.debug(title + 'parameters', {approvalType, approvalRole});
+            log.debug(title + 'parameters', { approvalType, approvalRole, department });
             const customrecordTscApproverConfigSearchFilters = [
-                ['custrecordtsc_config_type', 'anyof', approvalType],
-                'AND',
-                ['custrecord_tsc_role_type', 'anyof', approvalRole],
+                ['custrecordtsc_config_type', 'anyof', approvalType]
             ];
+
+            if (approvalRole) {
+                customrecordTscApproverConfigSearchFilters.push('AND');
+                customrecordTscApproverConfigSearchFilters.push(['custrecord_tsc_role_type', 'anyof', approvalRole]);
+            }
+            if (department) {
+                customrecordTscApproverConfigSearchFilters.push('AND');
+                customrecordTscApproverConfigSearchFilters.push(['custrecord_tsc_department', 'anyof', department]);
+            }
+
 
             const customrecordTscApproverConfigSearch = search.create({
                 type: TSCCONST.RECORDS.APPROVER_CONFIG.ID,
@@ -58,7 +69,7 @@ define(['N/search', '../tsc_cm_constants', 'N/runtime'],
             log.debug(title + 'searchResults', searchResults);
 
             if (searchResults.length > 0) {
-                return searchResults[0].id; 
+                return searchResults[0].id;
             }
             return null;
         }
