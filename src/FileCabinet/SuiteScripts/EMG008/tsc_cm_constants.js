@@ -127,7 +127,7 @@ define([], () => {
     const TRANSACTION_BODY_FIELDS = {
         APPROVAL_HISTORY: 'custbody_tsc_approval_history',
         APPROVAL_STATUS: 'custbody_tsc_approval_status',
-        CURRENT_APPROVER: 'custbody_tsc_current_approver',
+        CREATED_BY: 'custbody_tsc_created_by',
         IS_REVISION: 'custbody_tsc_is_revision',
         LAST_APPROVER: 'custbody_tsc_last_approver',
         REJECTION_REASON: 'custbody_tsc_rejection_reason'

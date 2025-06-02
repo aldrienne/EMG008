@@ -1,0 +1,25 @@
+<suitelet scriptid="customscript_tsc_sl_emg008_app_config">
+  <description></description>
+  <isinactive>F</isinactive>
+  <name>TSC|SL|EMG008 Approver Configuration</name>
+  <notifyadmins>F</notifyadmins>
+  <notifyemails></notifyemails>
+  <notifyowner>T</notifyowner>
+  <notifyuser>F</notifyuser>
+  <scriptfile>[/SuiteScripts/EMG008/tsc_sl_emg008_approver_config.js]</scriptfile>
+  <scriptdeployments>
+    <scriptdeployment scriptid="customdeploy_tsc_sl_emg008_app_config">
+      <allemployees>F</allemployees>
+      <allpartners>F</allpartners>
+      <allroles>T</allroles>
+      <audslctrole>[scriptid=customrole1630]|CUSTOMER_CENTER|[scriptid=customrole1631]|[scriptid=customrole1627]</audslctrole>
+      <eventtype></eventtype>
+      <isdeployed>T</isdeployed>
+      <isonline>T</isonline>
+      <loglevel>DEBUG</loglevel>
+      <runasrole>ADMINISTRATOR</runasrole>
+      <status>RELEASED</status>
+      <title>TSC|SL|EMG008 Approver Configuration</title>
+    </scriptdeployment>
+  </scriptdeployments>
+</suitelet>

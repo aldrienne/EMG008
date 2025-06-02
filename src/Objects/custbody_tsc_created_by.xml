@@ -1,4 +1,4 @@
-<transactionbodycustomfield scriptid="custbody_tsc_current_approver">
+<transactionbodycustomfield scriptid="custbody_tsc_created_by">
   <accesslevel>2</accesslevel>
   <applyformatting>F</applyformatting>
   <bodycustomerpayment>F</bodycustomerpayment>
@@ -18,7 +18,7 @@
   <bodyprintpackingslip>F</bodyprintpackingslip>
   <bodyprintstatement>F</bodyprintstatement>
   <bodypurchase>T</bodypurchase>
-  <bodysale>F</bodysale>
+  <bodysale>T</bodysale>
   <bodytransferorder>F</bodytransferorder>
   <bodyvendorpayment>F</bodyvendorpayment>
   <bodyvendorprepayment>F</bodyvendorprepayment>
@@ -40,7 +40,7 @@
   <isformula>F</isformula>
   <ismandatory>F</ismandatory>
   <isparent>F</isparent>
-  <label>Current Approver</label>
+  <label>Created By</label>
   <linktext></linktext>
   <maxlength></maxlength>
   <maxvalue></maxvalue>

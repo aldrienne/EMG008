@@ -1,4 +1,32 @@
 <manifest projecttype="ACCOUNTCUSTOMIZATION">
   <projectname>EMG008</projectname>
   <frameworkversion>1.0</frameworkversion>
+  <dependencies>
+    <features>
+      <feature required="false">MULTILANGUAGE</feature>
+      <feature required="false">EXPREPORTS</feature>
+      <feature required="false">ADVRECEIVING</feature>
+      <feature required="false">MULTILOCINVT</feature>
+      <feature required="true">WORKFLOW</feature>
+      <feature required="true">DEPARTMENTS</feature>
+      <feature required="false">INVENTORY</feature>
+      <feature required="false">EXTREMELIST</feature>
+      <feature required="false">RECEIVABLES</feature>
+      <feature required="false">MAILMERGE</feature>
+      <feature required="true">CUSTOMRECORDS</feature>
+      <feature required="false">PAYABLES</feature>
+      <feature required="false">OPPORTUNITIES</feature>
+      <feature required="false">CUSTOMSEGMENTS</feature>
+      <feature required="false">ACCOUNTING</feature>
+      <feature required="true">SERVERSIDESCRIPTING</feature>
+      <feature required="false">CRM</feature>
+      <feature required="false">CREATESUITEBUNDLES</feature>
+    </features>
+    <objects>
+      <object>customrole1631</object>
+      <object>customrole1630</object>
+      <object>customrole1627</object>
+      <object>customrecord_tsc_approval_thresholds.val_106701_8172786_sb1_994</object>
+    </objects>
+  </dependencies>
 </manifest>
