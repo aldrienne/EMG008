@@ -14,8 +14,6 @@ define([], () => {
                             COMPANY_APPROVER_CONFIG_ID: 'custpage_company_approver_config_id',
                             COMPANY_ROLE_TYPE_DISPLAY: 'custpage_company_role_type_display',
                             COMPANY_ROLE_PRIMARY_APPROVER_DISPLAY: 'custpage_company_role_primary_approver_display',
-                            COMPANY_EFFECTIVE_START_DATE: 'custpage_company_effective_start_date',
-                            COMPANY_EFFECTIVE_END_DATE: 'custpage_company_effective_end_date'
                         }
                     }
                 }
@@ -31,8 +29,6 @@ define([], () => {
                             DEPARTMENT_TIER1_APPROVER: 'custpage_department_tier1_approver',
                             DEPARTMENT_TIER2_APPROVER: 'custpage_department_tier2_approver',
                             DEPARTMENT_TIER3_APPROVER: 'custpage_department_tier3_approver',
-                            DEPARTMENT_EFFECTIVE_START_DATE: 'custpage_department_effective_start_date',
-                            DEPARTMENT_EFFECTIVE_END_DATE: 'custpage_department_effective_end_date'
                         }
                     }
                 }

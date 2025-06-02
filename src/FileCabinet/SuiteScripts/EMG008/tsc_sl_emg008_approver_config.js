@@ -39,16 +39,6 @@ define(['N/ui/serverWidget', 'N/log', 'N/search', 'N/record', 'N/redirect', './t
                                     SOURCE: 'employee',
                                     LABEL: 'Primary Approver'
                                 },
-                                {
-                                    ID: FORM_CONST.TAB.COMPANY_ROLES.SUBLISTS.COMPANY_ROLES_LIST.FIELDS.COMPANY_EFFECTIVE_START_DATE,
-                                    TYPE: serverWidget.FieldType.DATE,
-                                    LABEL: 'Delegate Effective Start Date'
-                                },
-                                {
-                                    ID: FORM_CONST.TAB.COMPANY_ROLES.SUBLISTS.COMPANY_ROLES_LIST.FIELDS.COMPANY_EFFECTIVE_END_DATE,
-                                    TYPE: serverWidget.FieldType.DATE,
-                                    LABEL: 'Delegate Effective End Date'
-                                }
                             ]
                         }
                     }
@@ -94,16 +84,6 @@ define(['N/ui/serverWidget', 'N/log', 'N/search', 'N/record', 'N/redirect', './t
                                     SOURCE: 'employee',
                                     LABEL: 'Tier 3 Approver'
                                 },
-                                {
-                                    ID: FORM_CONST.TAB.DEPARTMENTS.SUBLISTS.DEPARTMENTS_LIST.FIELDS.DEPARTMENT_EFFECTIVE_START_DATE,
-                                    TYPE: serverWidget.FieldType.DATE,
-                                    LABEL: 'Delegate Effective Start Date'
-                                },
-                                {
-                                    ID: FORM_CONST.TAB.DEPARTMENTS.SUBLISTS.DEPARTMENTS_LIST.FIELDS.DEPARTMENT_EFFECTIVE_END_DATE,
-                                    TYPE: serverWidget.FieldType.DATE,
-                                    LABEL: 'Delegate Effective End Date'
-                                }
                             ]
                         }
                     }
@@ -247,9 +227,7 @@ define(['N/ui/serverWidget', 'N/log', 'N/search', 'N/record', 'N/redirect', './t
                 ],
                 columns: [
                     search.createColumn({ name: RECORDS.APPROVER_CONFIG.FIELDS.ROLE_TYPE }),
-                    search.createColumn({ name: RECORDS.APPROVER_CONFIG.FIELDS.PRIMARY_APPROVER }),
-                    search.createColumn({ name: RECORDS.APPROVER_CONFIG.FIELDS.EFFECTIVE_DATE }),
-                    search.createColumn({ name: RECORDS.APPROVER_CONFIG.FIELDS.END_DATE }),
+                    search.createColumn({ name: RECORDS.APPROVER_CONFIG.FIELDS.PRIMARY_APPROVER })
                 ]
             },
             DEPARTMENT: {
@@ -263,9 +241,7 @@ define(['N/ui/serverWidget', 'N/log', 'N/search', 'N/record', 'N/redirect', './t
                     search.createColumn({ name: RECORDS.APPROVER_CONFIG.FIELDS.DEPARTMENT }),
                     search.createColumn({ name: RECORDS.APPROVER_CONFIG.FIELDS.PRIMARY_APPROVER }),
                     search.createColumn({ name: RECORDS.APPROVER_CONFIG.FIELDS.SECONDARY_APPROVER }),
-                    search.createColumn({ name: RECORDS.APPROVER_CONFIG.FIELDS.TERTIARY_APPROVER }),
-                    search.createColumn({ name: RECORDS.APPROVER_CONFIG.FIELDS.EFFECTIVE_DATE }),
-                    search.createColumn({ name: RECORDS.APPROVER_CONFIG.FIELDS.END_DATE })
+                    search.createColumn({ name: RECORDS.APPROVER_CONFIG.FIELDS.TERTIARY_APPROVER })
                 ]
             },
             DELEGATE: {
@@ -305,9 +281,7 @@ define(['N/ui/serverWidget', 'N/log', 'N/search', 'N/record', 'N/redirect', './t
                 fieldMappings: [
                     { dataField: 'internalid', sublistFieldId: FORM_CONST.TAB.COMPANY_ROLES.SUBLISTS.COMPANY_ROLES_LIST.FIELDS.COMPANY_APPROVER_CONFIG_ID },
                     { dataField: RECORDS.APPROVER_CONFIG.FIELDS.ROLE_TYPE, sublistFieldId: FORM_CONST.TAB.COMPANY_ROLES.SUBLISTS.COMPANY_ROLES_LIST.FIELDS.COMPANY_ROLE_TYPE_DISPLAY },
-                    { dataField: RECORDS.APPROVER_CONFIG.FIELDS.PRIMARY_APPROVER, sublistFieldId: FORM_CONST.TAB.COMPANY_ROLES.SUBLISTS.COMPANY_ROLES_LIST.FIELDS.COMPANY_ROLE_PRIMARY_APPROVER_DISPLAY },
-                    { dataField: RECORDS.APPROVER_CONFIG.FIELDS.EFFECTIVE_DATE, sublistFieldId: FORM_CONST.TAB.COMPANY_ROLES.SUBLISTS.COMPANY_ROLES_LIST.FIELDS.COMPANY_EFFECTIVE_START_DATE },
-                    { dataField: RECORDS.APPROVER_CONFIG.FIELDS.END_DATE, sublistFieldId: FORM_CONST.TAB.COMPANY_ROLES.SUBLISTS.COMPANY_ROLES_LIST.FIELDS.COMPANY_EFFECTIVE_END_DATE }
+                    { dataField: RECORDS.APPROVER_CONFIG.FIELDS.PRIMARY_APPROVER, sublistFieldId: FORM_CONST.TAB.COMPANY_ROLES.SUBLISTS.COMPANY_ROLES_LIST.FIELDS.COMPANY_ROLE_PRIMARY_APPROVER_DISPLAY }
                 ]
             },
             DEPARTMENT: {
@@ -318,9 +292,7 @@ define(['N/ui/serverWidget', 'N/log', 'N/search', 'N/record', 'N/redirect', './t
                     { dataField: RECORDS.APPROVER_CONFIG.FIELDS.DEPARTMENT, sublistFieldId: FORM_CONST.TAB.DEPARTMENTS.SUBLISTS.DEPARTMENTS_LIST.FIELDS.DEPARTMENT_DISPLAY },
                     { dataField: RECORDS.APPROVER_CONFIG.FIELDS.PRIMARY_APPROVER, sublistFieldId: FORM_CONST.TAB.DEPARTMENTS.SUBLISTS.DEPARTMENTS_LIST.FIELDS.DEPARTMENT_TIER1_APPROVER },
                     { dataField: RECORDS.APPROVER_CONFIG.FIELDS.SECONDARY_APPROVER, sublistFieldId: FORM_CONST.TAB.DEPARTMENTS.SUBLISTS.DEPARTMENTS_LIST.FIELDS.DEPARTMENT_TIER2_APPROVER },
-                    { dataField: RECORDS.APPROVER_CONFIG.FIELDS.TERTIARY_APPROVER, sublistFieldId: FORM_CONST.TAB.DEPARTMENTS.SUBLISTS.DEPARTMENTS_LIST.FIELDS.DEPARTMENT_TIER3_APPROVER },
-                    { dataField: RECORDS.APPROVER_CONFIG.FIELDS.EFFECTIVE_DATE, sublistFieldId: FORM_CONST.TAB.DEPARTMENTS.SUBLISTS.DEPARTMENTS_LIST.FIELDS.DEPARTMENT_EFFECTIVE_START_DATE },
-                    { dataField: RECORDS.APPROVER_CONFIG.FIELDS.END_DATE, sublistFieldId: FORM_CONST.TAB.DEPARTMENTS.SUBLISTS.DEPARTMENTS_LIST.FIELDS.DEPARTMENT_EFFECTIVE_END_DATE }
+                    { dataField: RECORDS.APPROVER_CONFIG.FIELDS.TERTIARY_APPROVER, sublistFieldId: FORM_CONST.TAB.DEPARTMENTS.SUBLISTS.DEPARTMENTS_LIST.FIELDS.DEPARTMENT_TIER3_APPROVER }
                 ]
             },
             DELEGATE: {
@@ -837,17 +809,6 @@ define(['N/ui/serverWidget', 'N/log', 'N/search', 'N/record', 'N/redirect', './t
                             line: i
                         });
 
-                        const startDate = request.getSublistValue({
-                            group: FORM_OBJECT.TABS.COMPANY_ROLES.SUBLISTS.COMPANY_ROLES_LIST.ID,
-                            name: FORM_CONST.TAB.COMPANY_ROLES.SUBLISTS.COMPANY_ROLES_LIST.FIELDS.COMPANY_EFFECTIVE_START_DATE,
-                            line: i
-                        });
-
-                        const endDate = request.getSublistValue({
-                            group: FORM_OBJECT.TABS.COMPANY_ROLES.SUBLISTS.COMPANY_ROLES_LIST.ID,
-                            name: FORM_CONST.TAB.COMPANY_ROLES.SUBLISTS.COMPANY_ROLES_LIST.FIELDS.COMPANY_EFFECTIVE_END_DATE,
-                            line: i
-                        });
 
                         // Validate required fields
                         if (!roleType || !primaryApprover) {
@@ -872,9 +833,7 @@ define(['N/ui/serverWidget', 'N/log', 'N/search', 'N/record', 'N/redirect', './t
                                 id: configId,
                                 values: {
                                     [RECORDS.APPROVER_CONFIG.FIELDS.ROLE_TYPE]: roleType,
-                                    [RECORDS.APPROVER_CONFIG.FIELDS.PRIMARY_APPROVER]: primaryApprover,
-                                    [RECORDS.APPROVER_CONFIG.FIELDS.EFFECTIVE_DATE]: startDate || '',
-                                    [RECORDS.APPROVER_CONFIG.FIELDS.END_DATE]: endDate || ''
+                                    [RECORDS.APPROVER_CONFIG.FIELDS.PRIMARY_APPROVER]: primaryApprover
                                 }
                             });
 
@@ -903,18 +862,6 @@ define(['N/ui/serverWidget', 'N/log', 'N/search', 'N/record', 'N/redirect', './t
                                 value: primaryApprover
                             });
 
-                            if (startDate) {
-                                newRecord.setText({
-                                    fieldId: RECORDS.APPROVER_CONFIG.FIELDS.EFFECTIVE_DATE,
-                                    value: startDate
-                                });
-                            }
-                            if (endDate) {
-                                newRecord.setText({
-                                    fieldId: RECORDS.APPROVER_CONFIG.FIELDS.END_DATE,
-                                    value: endDate
-                                });
-                            }
 
                             // Save the record
                             const recordId = newRecord.save();
@@ -1041,17 +988,6 @@ define(['N/ui/serverWidget', 'N/log', 'N/search', 'N/record', 'N/redirect', './t
                             line: i
                         });
 
-                        const startDate = request.getSublistValue({
-                            group: FORM_OBJECT.TABS.DEPARTMENTS.SUBLISTS.DEPARTMENTS_LIST.ID,
-                            name: FORM_CONST.TAB.DEPARTMENTS.SUBLISTS.DEPARTMENTS_LIST.FIELDS.DEPARTMENT_EFFECTIVE_START_DATE,
-                            line: i
-                        });
-
-                        const endDate = request.getSublistValue({
-                            group: FORM_OBJECT.TABS.DEPARTMENTS.SUBLISTS.DEPARTMENTS_LIST.ID,
-                            name: FORM_CONST.TAB.DEPARTMENTS.SUBLISTS.DEPARTMENTS_LIST.FIELDS.DEPARTMENT_EFFECTIVE_END_DATE,
-                            line: i
-                        });
 
                         // Validate required fields
                         if (!department) {
@@ -1072,17 +1008,6 @@ define(['N/ui/serverWidget', 'N/log', 'N/search', 'N/record', 'N/redirect', './t
 
                         departments.add(department);
 
-                        // Date validation
-                        if (startDate && endDate) {
-                            const startDateObj = new Date(startDate);
-                            const endDateObj = new Date(endDate);
-
-                            if (startDateObj > endDateObj) {
-                                results.errors.push(`Line ${i + 1}: End Date must be after Start Date`);
-                                continue;
-                            }
-                        }
-
                         log.debug(title, `Processing line ${i + 1}: configId=${configId}, department=${department}, approvers=${tier1Approver}/${tier2Approver}/${tier3Approver}`);
 
                         // Determine if this is a create or update operation
@@ -1095,9 +1020,7 @@ define(['N/ui/serverWidget', 'N/log', 'N/search', 'N/record', 'N/redirect', './t
                                     [RECORDS.APPROVER_CONFIG.FIELDS.DEPARTMENT]: department,
                                     [RECORDS.APPROVER_CONFIG.FIELDS.PRIMARY_APPROVER]: tier1Approver || '',
                                     [RECORDS.APPROVER_CONFIG.FIELDS.SECONDARY_APPROVER]: tier2Approver || '',
-                                    [RECORDS.APPROVER_CONFIG.FIELDS.TERTIARY_APPROVER]: tier3Approver || '',
-                                    [RECORDS.APPROVER_CONFIG.FIELDS.EFFECTIVE_DATE]: startDate || '',
-                                    [RECORDS.APPROVER_CONFIG.FIELDS.END_DATE]: endDate || ''
+                                    [RECORDS.APPROVER_CONFIG.FIELDS.TERTIARY_APPROVER]: tier3Approver || ''
                                 }
                             });
 
@@ -1143,19 +1066,6 @@ define(['N/ui/serverWidget', 'N/log', 'N/search', 'N/record', 'N/redirect', './t
                                 });
                             }
 
-                            if (startDate) {
-                                newRecord.setValue({
-                                    fieldId: RECORDS.APPROVER_CONFIG.FIELDS.EFFECTIVE_DATE,
-                                    value: startDate
-                                });
-                            }
-
-                            if (endDate) {
-                                newRecord.setValue({
-                                    fieldId: RECORDS.APPROVER_CONFIG.FIELDS.END_DATE,
-                                    value: endDate
-                                });
-                            }
 
                             // Save the record
                             const recordId = newRecord.save();
@@ -1440,7 +1350,6 @@ define(['N/ui/serverWidget', 'N/log', 'N/search', 'N/record', 'N/redirect', './t
                 // Check if threshold record already exists
                 const existingRecords = searchRecords('THRESHOLDS');
                 log.debug(title, `Found ${existingRecords.length} existing threshold records`);
-                let thresholdRecord;
                 
                 if (existingRecords && existingRecords.length > 0) {
                     // Update existing record

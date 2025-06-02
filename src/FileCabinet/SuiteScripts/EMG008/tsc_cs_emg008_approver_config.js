@@ -89,6 +89,31 @@ function(dialog, TSCCONST) {
                 fieldId: FORM_CONST.TAB.DELEGATES.SUBLISTS.DELEGATES_LIST.FIELDS.DELEGATE_APPROVER
             });
             
+            // Check for duplicate primary approvers if primary approver field was changed
+            if (fieldId === FORM_CONST.TAB.DELEGATES.SUBLISTS.DELEGATES_LIST.FIELDS.DELEGATE_PRIMARY_APPROVER && primaryApprover) {
+                const lineCount = currentRecord.getLineCount({ sublistId: sublistId });
+                const currentLine = currentRecord.getCurrentSublistIndex({ sublistId: sublistId });
+                
+                for (let i = 0; i < lineCount; i++) {
+                    // Skip current line
+                    if (i === currentLine) continue;
+                    
+                    const existingPrimaryApprover = currentRecord.getSublistValue({
+                        sublistId: sublistId,
+                        fieldId: FORM_CONST.TAB.DELEGATES.SUBLISTS.DELEGATES_LIST.FIELDS.DELEGATE_PRIMARY_APPROVER,
+                        line: i
+                    });
+                    
+                    if (primaryApprover === existingPrimaryApprover) {
+                        dialog.alert({
+                            title: 'Warning',
+                            message: 'This primary approver already exists in another delegation. Each primary approver can only appear once in the delegates list.'
+                        });
+                        break;
+                    }
+                }
+            }
+            
             // Can only check for duplicates if both fields have values
             if (primaryApprover && delegateApprover) {
                 
@@ -251,15 +276,6 @@ function(dialog, TSCCONST) {
                 fieldId: FORM_CONST.TAB.COMPANY_ROLES.SUBLISTS.COMPANY_ROLES_LIST.FIELDS.COMPANY_ROLE_PRIMARY_APPROVER_DISPLAY
             });
             
-            const effectiveDate = currentRecord.getCurrentSublistValue({
-                sublistId: sublistId,
-                fieldId: FORM_CONST.TAB.COMPANY_ROLES.SUBLISTS.COMPANY_ROLES_LIST.FIELDS.COMPANY_EFFECTIVE_START_DATE
-            });
-            
-            const endDate = currentRecord.getCurrentSublistValue({
-                sublistId: sublistId,
-                fieldId: FORM_CONST.TAB.COMPANY_ROLES.SUBLISTS.COMPANY_ROLES_LIST.FIELDS.COMPANY_EFFECTIVE_END_DATE
-            });
             
             // Required Field Validation
             if (!roleType) {
@@ -272,16 +288,6 @@ function(dialog, TSCCONST) {
                 return false;
             }            
             
-            // Date Validation
-            if (effectiveDate && endDate) {
-                const startDate = new Date(effectiveDate);
-                const end = new Date(endDate);
-                
-                if (startDate > end) {
-                    dialog.alert({ title: 'Validation Error', message: 'End Date must be after Effective Date' });
-                    return false;
-                }
-            }
             
             // Check for duplicate role types
             const lineCount = currentRecord.getLineCount({ sublistId: sublistId });
@@ -424,15 +430,6 @@ function(dialog, TSCCONST) {
                 fieldId: FORM_CONST.TAB.DEPARTMENTS.SUBLISTS.DEPARTMENTS_LIST.FIELDS.DEPARTMENT_TIER3_APPROVER
             });
             
-            const startDate = currentRecord.getCurrentSublistValue({
-                sublistId: sublistId,
-                fieldId: FORM_CONST.TAB.DEPARTMENTS.SUBLISTS.DEPARTMENTS_LIST.FIELDS.DEPARTMENT_EFFECTIVE_START_DATE
-            });
-            
-            const endDate = currentRecord.getCurrentSublistValue({
-                sublistId: sublistId,
-                fieldId: FORM_CONST.TAB.DEPARTMENTS.SUBLISTS.DEPARTMENTS_LIST.FIELDS.DEPARTMENT_EFFECTIVE_END_DATE
-            });
             
             // Required Field Validation
             if (!department) {
@@ -455,16 +452,6 @@ function(dialog, TSCCONST) {
                 return false;
             }
             
-            // Date Validation
-            if (startDate && endDate) {
-                const start = new Date(startDate);
-                const end = new Date(endDate);
-                
-                if (start > end) {
-                    dialog.alert({ title: 'Validation Error', message: 'End Date must be after Effective Date' });
-                    return false;
-                }
-            }
             
             // Check for duplicate departments
             const lineCount = currentRecord.getLineCount({ sublistId: sublistId });
