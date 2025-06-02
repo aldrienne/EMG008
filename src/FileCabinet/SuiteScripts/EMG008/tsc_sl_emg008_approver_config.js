@@ -1187,11 +1187,6 @@ define(['N/ui/serverWidget', 'N/log', 'N/search', 'N/record', 'N/redirect', './t
                             continue;
                         }
 
-                        if (!startDate) {
-                            results.errors.push(`Line ${i + 1}: Start Date is required`);
-                            continue;
-                        }
-
                         // Validate that primary and delegate approvers are different
                         if (primaryApprover === delegateApprover) {
                             results.errors.push(`Line ${i + 1}: Primary Approver and Delegate Approver cannot be the same person`);
@@ -1229,7 +1224,7 @@ define(['N/ui/serverWidget', 'N/log', 'N/search', 'N/record', 'N/redirect', './t
                                 values: {
                                     [RECORDS.DELEGATE_APPROVERS.FIELDS.PRIMARY_APPROVER]: primaryApprover,
                                     [RECORDS.DELEGATE_APPROVERS.FIELDS.DELEGATE_APPROVER]: delegateApprover,
-                                    [RECORDS.DELEGATE_APPROVERS.FIELDS.START_DATE]: startDate,
+                                    [RECORDS.DELEGATE_APPROVERS.FIELDS.START_DATE]: startDate || '',
                                     [RECORDS.DELEGATE_APPROVERS.FIELDS.END_DATE]: endDate || ''
                                 }
                             });
@@ -1256,10 +1251,12 @@ define(['N/ui/serverWidget', 'N/log', 'N/search', 'N/record', 'N/redirect', './t
                                 value: delegateApprover
                             });
 
-                            newRecord.setText({
-                                fieldId: RECORDS.DELEGATE_APPROVERS.FIELDS.START_DATE,
-                                text: startDate
-                            });
+                            if (startDate) {
+                                newRecord.setText({
+                                    fieldId: RECORDS.DELEGATE_APPROVERS.FIELDS.START_DATE,
+                                    text: startDate
+                                });
+                            }
 
                             if (endDate) {
                                 newRecord.setText({
