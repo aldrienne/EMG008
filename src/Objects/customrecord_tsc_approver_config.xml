@@ -362,4 +362,72 @@
       <subtab></subtab>
     </customrecordcustomfield>
   </customrecordcustomfields>
+  <instances>
+    <instance scriptid="val_106647_8172786_sb1_486">
+      <custrecord_tsc_department></custrecord_tsc_department>
+      <custrecord_tsc_effective_date></custrecord_tsc_effective_date>
+      <custrecord_tsc_end_date></custrecord_tsc_end_date>
+      <custrecord_tsc_primary_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_primary_approver>
+      <custrecord_tsc_role_type>[scriptid=customlist_tsc_role_types.val_106605_8172786_sb1_394]</custrecord_tsc_role_type>
+      <custrecord_tsc_secondary_approver></custrecord_tsc_secondary_approver>
+      <custrecord_tsc_tertiary_approver></custrecord_tsc_tertiary_approver>
+      <custrecordtsc_config_type>[scriptid=customlist_tsc_config_types.val_106601_8172786_sb1_316]</custrecordtsc_config_type>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_106648_8172786_sb1_364">
+      <custrecord_tsc_department>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_department>
+      <custrecord_tsc_effective_date></custrecord_tsc_effective_date>
+      <custrecord_tsc_end_date></custrecord_tsc_end_date>
+      <custrecord_tsc_primary_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_primary_approver>
+      <custrecord_tsc_role_type></custrecord_tsc_role_type>
+      <custrecord_tsc_secondary_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_secondary_approver>
+      <custrecord_tsc_tertiary_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_tertiary_approver>
+      <custrecordtsc_config_type>[scriptid=customlist_tsc_config_types.val_106602_8172786_sb1_885]</custrecordtsc_config_type>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_106671_8172786_sb1_890">
+      <custrecord_tsc_department></custrecord_tsc_department>
+      <custrecord_tsc_effective_date></custrecord_tsc_effective_date>
+      <custrecord_tsc_end_date></custrecord_tsc_end_date>
+      <custrecord_tsc_primary_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_primary_approver>
+      <custrecord_tsc_role_type>[scriptid=customlist_tsc_role_types.val_106606_8172786_sb1_593]</custrecord_tsc_role_type>
+      <custrecord_tsc_secondary_approver></custrecord_tsc_secondary_approver>
+      <custrecord_tsc_tertiary_approver></custrecord_tsc_tertiary_approver>
+      <custrecordtsc_config_type>[scriptid=customlist_tsc_config_types.val_106601_8172786_sb1_316]</custrecordtsc_config_type>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_106702_8172786_sb1_318">
+      <custrecord_tsc_department>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_department>
+      <custrecord_tsc_effective_date></custrecord_tsc_effective_date>
+      <custrecord_tsc_end_date></custrecord_tsc_end_date>
+      <custrecord_tsc_primary_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_primary_approver>
+      <custrecord_tsc_role_type></custrecord_tsc_role_type>
+      <custrecord_tsc_secondary_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_secondary_approver>
+      <custrecord_tsc_tertiary_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_tertiary_approver>
+      <custrecordtsc_config_type>[scriptid=customlist_tsc_config_types.val_106602_8172786_sb1_885]</custrecordtsc_config_type>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_106703_8172786_sb1_245">
+      <custrecord_tsc_department></custrecord_tsc_department>
+      <custrecord_tsc_effective_date></custrecord_tsc_effective_date>
+      <custrecord_tsc_end_date></custrecord_tsc_end_date>
+      <custrecord_tsc_primary_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_primary_approver>
+      <custrecord_tsc_role_type>[scriptid=customlist_tsc_role_types.val_106607_8172786_sb1_898]</custrecord_tsc_role_type>
+      <custrecord_tsc_secondary_approver></custrecord_tsc_secondary_approver>
+      <custrecord_tsc_tertiary_approver></custrecord_tsc_tertiary_approver>
+      <custrecordtsc_config_type>[scriptid=customlist_tsc_config_types.val_106601_8172786_sb1_316]</custrecordtsc_config_type>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_108409_8172786_sb1_460">
+      <custrecord_tsc_department>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_department>
+      <custrecord_tsc_effective_date></custrecord_tsc_effective_date>
+      <custrecord_tsc_end_date></custrecord_tsc_end_date>
+      <custrecord_tsc_primary_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_primary_approver>
+      <custrecord_tsc_role_type></custrecord_tsc_role_type>
+      <custrecord_tsc_secondary_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_secondary_approver>
+      <custrecord_tsc_tertiary_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_tertiary_approver>
+      <custrecordtsc_config_type>[scriptid=customlist_tsc_config_types.val_106602_8172786_sb1_885]</custrecordtsc_config_type>
+      <isinactive>F</isinactive>
+    </instance>
+  </instances>
 </customrecordtype>

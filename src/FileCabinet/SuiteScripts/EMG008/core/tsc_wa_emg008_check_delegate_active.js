@@ -43,11 +43,15 @@ define(['N/search', '../tsc_cm_constants', 'N/runtime', 'N/log'],
             const customrecordTscDelegateApproversSearchFilters = [
                 [RECORDS.DELEGATE_APPROVERS.FIELDS.PRIMARY_APPROVER, 'anyof', primaryApprover],
                 'AND',
-                [RECORDS.DELEGATE_APPROVERS.FIELDS.START_DATE, 'onorafter', 'today'],
+                [RECORDS.DELEGATE_APPROVERS.FIELDS.START_DATE, 'onorbefore', 'today'],
                 'AND',
-                [RECORDS.DELEGATE_APPROVERS.FIELDS.END_DATE, 'onorbefore', 'today'],
+                [
+                    [RECORDS.DELEGATE_APPROVERS.FIELDS.END_DATE, 'onorafter', 'today'],
+                    'OR',
+                    [RECORDS.DELEGATE_APPROVERS.FIELDS.END_DATE, 'isempty', '']
+                ],
                 'AND',
-                'isactive', 'is', 'T'
+                ['isinactive', 'is', 'F']
             ];
             log.debug(title + 'customrecordTscDelegateApproversSearchFilters', customrecordTscDelegateApproversSearchFilters);
 
@@ -61,12 +65,12 @@ define(['N/search', '../tsc_cm_constants', 'N/runtime', 'N/log'],
                 ]
             });
 
-            const searchResults = customrecordTscDelegateApproversSearch.run().getRange({ 
-                start: 0, 
-                end: 1 
+            const searchResults = customrecordTscDelegateApproversSearch.run().getRange({
+                start: 0,
+                end: 1
             });
             log.debug(title + 'searchResults', searchResults);
-            
+
             if (searchResults.length > 0) {
                 return searchResults[0].id;
             }

@@ -64,6 +64,33 @@
       <setting></setting>
       <storevalue>T</storevalue>
     </scriptcustomfield>
+    <scriptcustomfield scriptid="custscript_tsc_wa_emg008_department">
+      <accesslevel>2</accesslevel>
+      <applyformatting>F</applyformatting>
+      <checkspelling>F</checkspelling>
+      <defaultchecked>F</defaultchecked>
+      <defaultselection></defaultselection>
+      <defaultvalue></defaultvalue>
+      <description></description>
+      <displayheight></displayheight>
+      <displaytype>NORMAL</displaytype>
+      <displaywidth></displaywidth>
+      <dynamicdefault></dynamicdefault>
+      <fieldtype>SELECT</fieldtype>
+      <help></help>
+      <isformula>F</isformula>
+      <ismandatory>F</ismandatory>
+      <label>Department</label>
+      <linktext></linktext>
+      <maxlength></maxlength>
+      <maxvalue></maxvalue>
+      <minvalue></minvalue>
+      <onparentdelete>NO_ACTION</onparentdelete>
+      <searchlevel>2</searchlevel>
+      <selectrecordtype>-102</selectrecordtype>
+      <setting></setting>
+      <storevalue>T</storevalue>
+    </scriptcustomfield>
   </scriptcustomfields>
   <scriptdeployments>
     <scriptdeployment scriptid="customdeploy1">
@@ -73,9 +100,24 @@
       <audslctrole>[scriptid=customrole1630]|CUSTOMER_CENTER|[scriptid=customrole1631]|[scriptid=customrole1627]|[scriptid=customrole1628]|[scriptid=customrole1626]|[scriptid=customrole1624]|[scriptid=customrole1629]|[scriptid=customrole1625]|EMPLOYEE_CENTER|[scriptid=customrole_experientialme_employee]|[scriptid=customrole1619]|NETSUITE_SUPPORT_CENTER|NETSUITE_SUPPORT_CENTER__BASIC|PARTNER_CENTER|VENDOR_CENTER</audslctrole>
       <custscript_tsc_wa_emg008_approval_role></custscript_tsc_wa_emg008_approval_role>
       <custscript_tsc_wa_emg008_approval_type></custscript_tsc_wa_emg008_approval_type>
+      <custscript_tsc_wa_emg008_department></custscript_tsc_wa_emg008_department>
       <isdeployed>T</isdeployed>
       <loglevel>DEBUG</loglevel>
       <recordtype>PURCHASEORDER</recordtype>
+      <runasrole>ADMINISTRATOR</runasrole>
+      <status>RELEASED</status>
+    </scriptdeployment>
+    <scriptdeployment scriptid="customdeploy2">
+      <allemployees>F</allemployees>
+      <allpartners>F</allpartners>
+      <allroles>T</allroles>
+      <audslctrole>[scriptid=customrole1630]|CUSTOMER_CENTER|[scriptid=customrole1631]|[scriptid=customrole1627]|[scriptid=customrole1628]|[scriptid=customrole1626]|[scriptid=customrole1624]|[scriptid=customrole1629]|[scriptid=customrole1625]|EMPLOYEE_CENTER|[scriptid=customrole_experientialme_employee]|[scriptid=customrole1619]|NETSUITE_SUPPORT_CENTER|NETSUITE_SUPPORT_CENTER__BASIC|PARTNER_CENTER|VENDOR_CENTER</audslctrole>
+      <custscript_tsc_wa_emg008_approval_role></custscript_tsc_wa_emg008_approval_role>
+      <custscript_tsc_wa_emg008_approval_type></custscript_tsc_wa_emg008_approval_type>
+      <custscript_tsc_wa_emg008_department></custscript_tsc_wa_emg008_department>
+      <isdeployed>T</isdeployed>
+      <loglevel>DEBUG</loglevel>
+      <recordtype>VENDORBILL</recordtype>
       <runasrole>ADMINISTRATOR</runasrole>
       <status>RELEASED</status>
     </scriptdeployment>

@@ -68,7 +68,7 @@
       <maxvalue></maxvalue>
       <minvalue></minvalue>
       <onparentdelete>SET_NULL</onparentdelete>
-      <parentsubtab></parentsubtab>
+      <parentsubtab>[scriptid=custtab_tsc_ap_approval_history]</parentsubtab>
       <rolerestrict>F</rolerestrict>
       <searchcomparefield></searchcomparefield>
       <searchdefault></searchdefault>
@@ -154,7 +154,7 @@
       <searchdefault></searchdefault>
       <searchlevel>2</searchlevel>
       <selectrecordtype>-4</selectrecordtype>
-      <showinlist>F</showinlist>
+      <showinlist>T</showinlist>
       <sourcefilterby></sourcefilterby>
       <sourcefrom></sourcefrom>
       <sourcelist></sourcelist>
@@ -194,7 +194,7 @@
       <searchdefault></searchdefault>
       <searchlevel>2</searchlevel>
       <selectrecordtype>-4</selectrecordtype>
-      <showinlist>F</showinlist>
+      <showinlist>T</showinlist>
       <sourcefilterby></sourcefilterby>
       <sourcefrom></sourcefrom>
       <sourcelist></sourcelist>
@@ -234,7 +234,7 @@
       <searchdefault></searchdefault>
       <searchlevel>2</searchlevel>
       <selectrecordtype>[scriptid=customlist_tsc_approval_actions]</selectrecordtype>
-      <showinlist>F</showinlist>
+      <showinlist>T</showinlist>
       <sourcefilterby></sourcefilterby>
       <sourcefrom></sourcefrom>
       <sourcelist></sourcelist>
@@ -274,7 +274,7 @@
       <searchdefault></searchdefault>
       <searchlevel>2</searchlevel>
       <selectrecordtype></selectrecordtype>
-      <showinlist>F</showinlist>
+      <showinlist>T</showinlist>
       <sourcefilterby></sourcefilterby>
       <sourcefrom></sourcefrom>
       <sourcelist></sourcelist>
@@ -354,7 +354,7 @@
       <searchdefault></searchdefault>
       <searchlevel>2</searchlevel>
       <selectrecordtype></selectrecordtype>
-      <showinlist>F</showinlist>
+      <showinlist>T</showinlist>
       <sourcefilterby></sourcefilterby>
       <sourcefrom></sourcefrom>
       <sourcelist></sourcelist>
@@ -362,4 +362,710 @@
       <subtab></subtab>
     </customrecordcustomfield>
   </customrecordcustomfields>
+  <instances>
+    <instance scriptid="val_107600_8172786_sb1_699">
+      <custrecord_tsc_actual_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_actual_approver>
+      <custrecord_tsc_approval_action>[scriptid=customlist_tsc_approval_actions.val_106610_8172786_sb1_682]</custrecord_tsc_approval_action>
+      <custrecord_tsc_approval_date>2025-05-26</custrecord_tsc_approval_date>
+      <custrecord_tsc_approval_notes></custrecord_tsc_approval_notes>
+      <custrecord_tsc_is_delegate_action>F</custrecord_tsc_is_delegate_action>
+      <custrecord_tsc_original_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_original_approver>
+      <custrecord_tsc_transaction>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_transaction>
+      <custrecord_tsc_transaction_type></custrecord_tsc_transaction_type>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_107603_8172786_sb1_220">
+      <custrecord_tsc_actual_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_actual_approver>
+      <custrecord_tsc_approval_action>[scriptid=customlist_tsc_approval_actions.val_106610_8172786_sb1_682]</custrecord_tsc_approval_action>
+      <custrecord_tsc_approval_date>2025-05-29</custrecord_tsc_approval_date>
+      <custrecord_tsc_approval_notes></custrecord_tsc_approval_notes>
+      <custrecord_tsc_is_delegate_action>F</custrecord_tsc_is_delegate_action>
+      <custrecord_tsc_original_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_original_approver>
+      <custrecord_tsc_transaction>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_transaction>
+      <custrecord_tsc_transaction_type></custrecord_tsc_transaction_type>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_107604_8172786_sb1_405">
+      <custrecord_tsc_actual_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_actual_approver>
+      <custrecord_tsc_approval_action>[scriptid=customlist_tsc_approval_actions.val_106610_8172786_sb1_682]</custrecord_tsc_approval_action>
+      <custrecord_tsc_approval_date>2025-05-29</custrecord_tsc_approval_date>
+      <custrecord_tsc_approval_notes></custrecord_tsc_approval_notes>
+      <custrecord_tsc_is_delegate_action>F</custrecord_tsc_is_delegate_action>
+      <custrecord_tsc_original_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_original_approver>
+      <custrecord_tsc_transaction>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_transaction>
+      <custrecord_tsc_transaction_type></custrecord_tsc_transaction_type>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_107605_8172786_sb1_194">
+      <custrecord_tsc_actual_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_actual_approver>
+      <custrecord_tsc_approval_action>[scriptid=customlist_tsc_approval_actions.val_106610_8172786_sb1_682]</custrecord_tsc_approval_action>
+      <custrecord_tsc_approval_date>2025-05-29</custrecord_tsc_approval_date>
+      <custrecord_tsc_approval_notes></custrecord_tsc_approval_notes>
+      <custrecord_tsc_is_delegate_action>F</custrecord_tsc_is_delegate_action>
+      <custrecord_tsc_original_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_original_approver>
+      <custrecord_tsc_transaction>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_transaction>
+      <custrecord_tsc_transaction_type></custrecord_tsc_transaction_type>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_107606_8172786_sb1_985">
+      <custrecord_tsc_actual_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_actual_approver>
+      <custrecord_tsc_approval_action>[scriptid=customlist_tsc_approval_actions.val_106610_8172786_sb1_682]</custrecord_tsc_approval_action>
+      <custrecord_tsc_approval_date>2025-05-29</custrecord_tsc_approval_date>
+      <custrecord_tsc_approval_notes></custrecord_tsc_approval_notes>
+      <custrecord_tsc_is_delegate_action>F</custrecord_tsc_is_delegate_action>
+      <custrecord_tsc_original_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_original_approver>
+      <custrecord_tsc_transaction>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_transaction>
+      <custrecord_tsc_transaction_type></custrecord_tsc_transaction_type>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_107607_8172786_sb1_604">
+      <custrecord_tsc_actual_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_actual_approver>
+      <custrecord_tsc_approval_action>[scriptid=customlist_tsc_approval_actions.val_106610_8172786_sb1_682]</custrecord_tsc_approval_action>
+      <custrecord_tsc_approval_date>2025-05-29</custrecord_tsc_approval_date>
+      <custrecord_tsc_approval_notes></custrecord_tsc_approval_notes>
+      <custrecord_tsc_is_delegate_action>F</custrecord_tsc_is_delegate_action>
+      <custrecord_tsc_original_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_original_approver>
+      <custrecord_tsc_transaction>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_transaction>
+      <custrecord_tsc_transaction_type></custrecord_tsc_transaction_type>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_107608_8172786_sb1_154">
+      <custrecord_tsc_actual_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_actual_approver>
+      <custrecord_tsc_approval_action>[scriptid=customlist_tsc_approval_actions.val_106610_8172786_sb1_682]</custrecord_tsc_approval_action>
+      <custrecord_tsc_approval_date>2025-05-29</custrecord_tsc_approval_date>
+      <custrecord_tsc_approval_notes></custrecord_tsc_approval_notes>
+      <custrecord_tsc_is_delegate_action>F</custrecord_tsc_is_delegate_action>
+      <custrecord_tsc_original_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_original_approver>
+      <custrecord_tsc_transaction></custrecord_tsc_transaction>
+      <custrecord_tsc_transaction_type></custrecord_tsc_transaction_type>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_107609_8172786_sb1_463">
+      <custrecord_tsc_actual_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_actual_approver>
+      <custrecord_tsc_approval_action>[scriptid=customlist_tsc_approval_actions.val_106610_8172786_sb1_682]</custrecord_tsc_approval_action>
+      <custrecord_tsc_approval_date>2025-05-29</custrecord_tsc_approval_date>
+      <custrecord_tsc_approval_notes></custrecord_tsc_approval_notes>
+      <custrecord_tsc_is_delegate_action>F</custrecord_tsc_is_delegate_action>
+      <custrecord_tsc_original_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_original_approver>
+      <custrecord_tsc_transaction></custrecord_tsc_transaction>
+      <custrecord_tsc_transaction_type></custrecord_tsc_transaction_type>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_107610_8172786_sb1_370">
+      <custrecord_tsc_actual_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_actual_approver>
+      <custrecord_tsc_approval_action>[scriptid=customlist_tsc_approval_actions.val_106610_8172786_sb1_682]</custrecord_tsc_approval_action>
+      <custrecord_tsc_approval_date>2025-05-29</custrecord_tsc_approval_date>
+      <custrecord_tsc_approval_notes></custrecord_tsc_approval_notes>
+      <custrecord_tsc_is_delegate_action>F</custrecord_tsc_is_delegate_action>
+      <custrecord_tsc_original_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_original_approver>
+      <custrecord_tsc_transaction></custrecord_tsc_transaction>
+      <custrecord_tsc_transaction_type></custrecord_tsc_transaction_type>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_107611_8172786_sb1_186">
+      <custrecord_tsc_actual_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_actual_approver>
+      <custrecord_tsc_approval_action>[scriptid=customlist_tsc_approval_actions.val_106610_8172786_sb1_682]</custrecord_tsc_approval_action>
+      <custrecord_tsc_approval_date>2025-05-29</custrecord_tsc_approval_date>
+      <custrecord_tsc_approval_notes></custrecord_tsc_approval_notes>
+      <custrecord_tsc_is_delegate_action>F</custrecord_tsc_is_delegate_action>
+      <custrecord_tsc_original_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_original_approver>
+      <custrecord_tsc_transaction></custrecord_tsc_transaction>
+      <custrecord_tsc_transaction_type></custrecord_tsc_transaction_type>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_107612_8172786_sb1_679">
+      <custrecord_tsc_actual_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_actual_approver>
+      <custrecord_tsc_approval_action>[scriptid=customlist_tsc_approval_actions.val_106610_8172786_sb1_682]</custrecord_tsc_approval_action>
+      <custrecord_tsc_approval_date>2025-05-29</custrecord_tsc_approval_date>
+      <custrecord_tsc_approval_notes></custrecord_tsc_approval_notes>
+      <custrecord_tsc_is_delegate_action>F</custrecord_tsc_is_delegate_action>
+      <custrecord_tsc_original_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_original_approver>
+      <custrecord_tsc_transaction></custrecord_tsc_transaction>
+      <custrecord_tsc_transaction_type></custrecord_tsc_transaction_type>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_107613_8172786_sb1_964">
+      <custrecord_tsc_actual_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_actual_approver>
+      <custrecord_tsc_approval_action>[scriptid=customlist_tsc_approval_actions.val_106610_8172786_sb1_682]</custrecord_tsc_approval_action>
+      <custrecord_tsc_approval_date>2025-05-29</custrecord_tsc_approval_date>
+      <custrecord_tsc_approval_notes></custrecord_tsc_approval_notes>
+      <custrecord_tsc_is_delegate_action>F</custrecord_tsc_is_delegate_action>
+      <custrecord_tsc_original_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_original_approver>
+      <custrecord_tsc_transaction></custrecord_tsc_transaction>
+      <custrecord_tsc_transaction_type></custrecord_tsc_transaction_type>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_107614_8172786_sb1_370">
+      <custrecord_tsc_actual_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_actual_approver>
+      <custrecord_tsc_approval_action>[scriptid=customlist_tsc_approval_actions.val_106610_8172786_sb1_682]</custrecord_tsc_approval_action>
+      <custrecord_tsc_approval_date>2025-05-29</custrecord_tsc_approval_date>
+      <custrecord_tsc_approval_notes></custrecord_tsc_approval_notes>
+      <custrecord_tsc_is_delegate_action>F</custrecord_tsc_is_delegate_action>
+      <custrecord_tsc_original_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_original_approver>
+      <custrecord_tsc_transaction></custrecord_tsc_transaction>
+      <custrecord_tsc_transaction_type></custrecord_tsc_transaction_type>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_107615_8172786_sb1_643">
+      <custrecord_tsc_actual_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_actual_approver>
+      <custrecord_tsc_approval_action>[scriptid=customlist_tsc_approval_actions.val_106610_8172786_sb1_682]</custrecord_tsc_approval_action>
+      <custrecord_tsc_approval_date>2025-05-29</custrecord_tsc_approval_date>
+      <custrecord_tsc_approval_notes></custrecord_tsc_approval_notes>
+      <custrecord_tsc_is_delegate_action>F</custrecord_tsc_is_delegate_action>
+      <custrecord_tsc_original_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_original_approver>
+      <custrecord_tsc_transaction></custrecord_tsc_transaction>
+      <custrecord_tsc_transaction_type></custrecord_tsc_transaction_type>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_107616_8172786_sb1_800">
+      <custrecord_tsc_actual_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_actual_approver>
+      <custrecord_tsc_approval_action>[scriptid=customlist_tsc_approval_actions.val_106610_8172786_sb1_682]</custrecord_tsc_approval_action>
+      <custrecord_tsc_approval_date>2025-05-29</custrecord_tsc_approval_date>
+      <custrecord_tsc_approval_notes></custrecord_tsc_approval_notes>
+      <custrecord_tsc_is_delegate_action>F</custrecord_tsc_is_delegate_action>
+      <custrecord_tsc_original_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_original_approver>
+      <custrecord_tsc_transaction></custrecord_tsc_transaction>
+      <custrecord_tsc_transaction_type></custrecord_tsc_transaction_type>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_107617_8172786_sb1_653">
+      <custrecord_tsc_actual_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_actual_approver>
+      <custrecord_tsc_approval_action>[scriptid=customlist_tsc_approval_actions.val_106610_8172786_sb1_682]</custrecord_tsc_approval_action>
+      <custrecord_tsc_approval_date>2025-05-29</custrecord_tsc_approval_date>
+      <custrecord_tsc_approval_notes></custrecord_tsc_approval_notes>
+      <custrecord_tsc_is_delegate_action>F</custrecord_tsc_is_delegate_action>
+      <custrecord_tsc_original_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_original_approver>
+      <custrecord_tsc_transaction></custrecord_tsc_transaction>
+      <custrecord_tsc_transaction_type></custrecord_tsc_transaction_type>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_107618_8172786_sb1_414">
+      <custrecord_tsc_actual_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_actual_approver>
+      <custrecord_tsc_approval_action>[scriptid=customlist_tsc_approval_actions.val_106610_8172786_sb1_682]</custrecord_tsc_approval_action>
+      <custrecord_tsc_approval_date>2025-05-29</custrecord_tsc_approval_date>
+      <custrecord_tsc_approval_notes></custrecord_tsc_approval_notes>
+      <custrecord_tsc_is_delegate_action>F</custrecord_tsc_is_delegate_action>
+      <custrecord_tsc_original_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_original_approver>
+      <custrecord_tsc_transaction></custrecord_tsc_transaction>
+      <custrecord_tsc_transaction_type></custrecord_tsc_transaction_type>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_107619_8172786_sb1_773">
+      <custrecord_tsc_actual_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_actual_approver>
+      <custrecord_tsc_approval_action>[scriptid=customlist_tsc_approval_actions.val_106610_8172786_sb1_682]</custrecord_tsc_approval_action>
+      <custrecord_tsc_approval_date>2025-05-29</custrecord_tsc_approval_date>
+      <custrecord_tsc_approval_notes></custrecord_tsc_approval_notes>
+      <custrecord_tsc_is_delegate_action>F</custrecord_tsc_is_delegate_action>
+      <custrecord_tsc_original_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_original_approver>
+      <custrecord_tsc_transaction></custrecord_tsc_transaction>
+      <custrecord_tsc_transaction_type></custrecord_tsc_transaction_type>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_107620_8172786_sb1_502">
+      <custrecord_tsc_actual_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_actual_approver>
+      <custrecord_tsc_approval_action>[scriptid=customlist_tsc_approval_actions.val_106610_8172786_sb1_682]</custrecord_tsc_approval_action>
+      <custrecord_tsc_approval_date>2025-05-29</custrecord_tsc_approval_date>
+      <custrecord_tsc_approval_notes></custrecord_tsc_approval_notes>
+      <custrecord_tsc_is_delegate_action>F</custrecord_tsc_is_delegate_action>
+      <custrecord_tsc_original_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_original_approver>
+      <custrecord_tsc_transaction></custrecord_tsc_transaction>
+      <custrecord_tsc_transaction_type></custrecord_tsc_transaction_type>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_107621_8172786_sb1_988">
+      <custrecord_tsc_actual_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_actual_approver>
+      <custrecord_tsc_approval_action>[scriptid=customlist_tsc_approval_actions.val_106610_8172786_sb1_682]</custrecord_tsc_approval_action>
+      <custrecord_tsc_approval_date>2025-05-29</custrecord_tsc_approval_date>
+      <custrecord_tsc_approval_notes></custrecord_tsc_approval_notes>
+      <custrecord_tsc_is_delegate_action>F</custrecord_tsc_is_delegate_action>
+      <custrecord_tsc_original_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_original_approver>
+      <custrecord_tsc_transaction></custrecord_tsc_transaction>
+      <custrecord_tsc_transaction_type></custrecord_tsc_transaction_type>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_107622_8172786_sb1_691">
+      <custrecord_tsc_actual_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_actual_approver>
+      <custrecord_tsc_approval_action>[scriptid=customlist_tsc_approval_actions.val_106610_8172786_sb1_682]</custrecord_tsc_approval_action>
+      <custrecord_tsc_approval_date>2025-05-29</custrecord_tsc_approval_date>
+      <custrecord_tsc_approval_notes></custrecord_tsc_approval_notes>
+      <custrecord_tsc_is_delegate_action>F</custrecord_tsc_is_delegate_action>
+      <custrecord_tsc_original_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_original_approver>
+      <custrecord_tsc_transaction></custrecord_tsc_transaction>
+      <custrecord_tsc_transaction_type></custrecord_tsc_transaction_type>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_107623_8172786_sb1_478">
+      <custrecord_tsc_actual_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_actual_approver>
+      <custrecord_tsc_approval_action>[scriptid=customlist_tsc_approval_actions.val_106610_8172786_sb1_682]</custrecord_tsc_approval_action>
+      <custrecord_tsc_approval_date>2025-05-29</custrecord_tsc_approval_date>
+      <custrecord_tsc_approval_notes></custrecord_tsc_approval_notes>
+      <custrecord_tsc_is_delegate_action>F</custrecord_tsc_is_delegate_action>
+      <custrecord_tsc_original_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_original_approver>
+      <custrecord_tsc_transaction></custrecord_tsc_transaction>
+      <custrecord_tsc_transaction_type></custrecord_tsc_transaction_type>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_107624_8172786_sb1_787">
+      <custrecord_tsc_actual_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_actual_approver>
+      <custrecord_tsc_approval_action>[scriptid=customlist_tsc_approval_actions.val_106610_8172786_sb1_682]</custrecord_tsc_approval_action>
+      <custrecord_tsc_approval_date>2025-05-29</custrecord_tsc_approval_date>
+      <custrecord_tsc_approval_notes></custrecord_tsc_approval_notes>
+      <custrecord_tsc_is_delegate_action>F</custrecord_tsc_is_delegate_action>
+      <custrecord_tsc_original_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_original_approver>
+      <custrecord_tsc_transaction></custrecord_tsc_transaction>
+      <custrecord_tsc_transaction_type></custrecord_tsc_transaction_type>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_107625_8172786_sb1_715">
+      <custrecord_tsc_actual_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_actual_approver>
+      <custrecord_tsc_approval_action>[scriptid=customlist_tsc_approval_actions.val_106610_8172786_sb1_682]</custrecord_tsc_approval_action>
+      <custrecord_tsc_approval_date>2025-05-29</custrecord_tsc_approval_date>
+      <custrecord_tsc_approval_notes></custrecord_tsc_approval_notes>
+      <custrecord_tsc_is_delegate_action>F</custrecord_tsc_is_delegate_action>
+      <custrecord_tsc_original_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_original_approver>
+      <custrecord_tsc_transaction>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_transaction>
+      <custrecord_tsc_transaction_type></custrecord_tsc_transaction_type>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_107626_8172786_sb1_287">
+      <custrecord_tsc_actual_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_actual_approver>
+      <custrecord_tsc_approval_action>[scriptid=customlist_tsc_approval_actions.val_106610_8172786_sb1_682]</custrecord_tsc_approval_action>
+      <custrecord_tsc_approval_date>2025-05-29</custrecord_tsc_approval_date>
+      <custrecord_tsc_approval_notes></custrecord_tsc_approval_notes>
+      <custrecord_tsc_is_delegate_action>F</custrecord_tsc_is_delegate_action>
+      <custrecord_tsc_original_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_original_approver>
+      <custrecord_tsc_transaction>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_transaction>
+      <custrecord_tsc_transaction_type></custrecord_tsc_transaction_type>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_107627_8172786_sb1_830">
+      <custrecord_tsc_actual_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_actual_approver>
+      <custrecord_tsc_approval_action>[scriptid=customlist_tsc_approval_actions.val_106610_8172786_sb1_682]</custrecord_tsc_approval_action>
+      <custrecord_tsc_approval_date>2025-05-29</custrecord_tsc_approval_date>
+      <custrecord_tsc_approval_notes></custrecord_tsc_approval_notes>
+      <custrecord_tsc_is_delegate_action>F</custrecord_tsc_is_delegate_action>
+      <custrecord_tsc_original_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_original_approver>
+      <custrecord_tsc_transaction>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_transaction>
+      <custrecord_tsc_transaction_type></custrecord_tsc_transaction_type>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_107628_8172786_sb1_392">
+      <custrecord_tsc_actual_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_actual_approver>
+      <custrecord_tsc_approval_action>[scriptid=customlist_tsc_approval_actions.val_106610_8172786_sb1_682]</custrecord_tsc_approval_action>
+      <custrecord_tsc_approval_date>2025-05-29</custrecord_tsc_approval_date>
+      <custrecord_tsc_approval_notes></custrecord_tsc_approval_notes>
+      <custrecord_tsc_is_delegate_action>F</custrecord_tsc_is_delegate_action>
+      <custrecord_tsc_original_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_original_approver>
+      <custrecord_tsc_transaction>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_transaction>
+      <custrecord_tsc_transaction_type></custrecord_tsc_transaction_type>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_107630_8172786_sb1_410">
+      <custrecord_tsc_actual_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_actual_approver>
+      <custrecord_tsc_approval_action>[scriptid=customlist_tsc_approval_actions.val_106610_8172786_sb1_682]</custrecord_tsc_approval_action>
+      <custrecord_tsc_approval_date>2025-05-29</custrecord_tsc_approval_date>
+      <custrecord_tsc_approval_notes></custrecord_tsc_approval_notes>
+      <custrecord_tsc_is_delegate_action>F</custrecord_tsc_is_delegate_action>
+      <custrecord_tsc_original_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_original_approver>
+      <custrecord_tsc_transaction>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_transaction>
+      <custrecord_tsc_transaction_type></custrecord_tsc_transaction_type>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_107631_8172786_sb1_521">
+      <custrecord_tsc_actual_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_actual_approver>
+      <custrecord_tsc_approval_action>[scriptid=customlist_tsc_approval_actions.val_106610_8172786_sb1_682]</custrecord_tsc_approval_action>
+      <custrecord_tsc_approval_date>2025-05-29</custrecord_tsc_approval_date>
+      <custrecord_tsc_approval_notes></custrecord_tsc_approval_notes>
+      <custrecord_tsc_is_delegate_action>F</custrecord_tsc_is_delegate_action>
+      <custrecord_tsc_original_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_original_approver>
+      <custrecord_tsc_transaction>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_transaction>
+      <custrecord_tsc_transaction_type></custrecord_tsc_transaction_type>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_107632_8172786_sb1_750">
+      <custrecord_tsc_actual_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_actual_approver>
+      <custrecord_tsc_approval_action>[scriptid=customlist_tsc_approval_actions.val_106610_8172786_sb1_682]</custrecord_tsc_approval_action>
+      <custrecord_tsc_approval_date>2025-05-29</custrecord_tsc_approval_date>
+      <custrecord_tsc_approval_notes></custrecord_tsc_approval_notes>
+      <custrecord_tsc_is_delegate_action>F</custrecord_tsc_is_delegate_action>
+      <custrecord_tsc_original_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_original_approver>
+      <custrecord_tsc_transaction>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_transaction>
+      <custrecord_tsc_transaction_type></custrecord_tsc_transaction_type>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_107633_8172786_sb1_104">
+      <custrecord_tsc_actual_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_actual_approver>
+      <custrecord_tsc_approval_action>[scriptid=customlist_tsc_approval_actions.val_106610_8172786_sb1_682]</custrecord_tsc_approval_action>
+      <custrecord_tsc_approval_date>2025-05-29</custrecord_tsc_approval_date>
+      <custrecord_tsc_approval_notes></custrecord_tsc_approval_notes>
+      <custrecord_tsc_is_delegate_action>F</custrecord_tsc_is_delegate_action>
+      <custrecord_tsc_original_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_original_approver>
+      <custrecord_tsc_transaction>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_transaction>
+      <custrecord_tsc_transaction_type></custrecord_tsc_transaction_type>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_107634_8172786_sb1_422">
+      <custrecord_tsc_actual_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_actual_approver>
+      <custrecord_tsc_approval_action>[scriptid=customlist_tsc_approval_actions.val_106610_8172786_sb1_682]</custrecord_tsc_approval_action>
+      <custrecord_tsc_approval_date>2025-05-29</custrecord_tsc_approval_date>
+      <custrecord_tsc_approval_notes></custrecord_tsc_approval_notes>
+      <custrecord_tsc_is_delegate_action>F</custrecord_tsc_is_delegate_action>
+      <custrecord_tsc_original_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_original_approver>
+      <custrecord_tsc_transaction>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_transaction>
+      <custrecord_tsc_transaction_type></custrecord_tsc_transaction_type>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_107635_8172786_sb1_882">
+      <custrecord_tsc_actual_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_actual_approver>
+      <custrecord_tsc_approval_action>[scriptid=customlist_tsc_approval_actions.val_106610_8172786_sb1_682]</custrecord_tsc_approval_action>
+      <custrecord_tsc_approval_date>2025-05-29</custrecord_tsc_approval_date>
+      <custrecord_tsc_approval_notes></custrecord_tsc_approval_notes>
+      <custrecord_tsc_is_delegate_action>F</custrecord_tsc_is_delegate_action>
+      <custrecord_tsc_original_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_original_approver>
+      <custrecord_tsc_transaction>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_transaction>
+      <custrecord_tsc_transaction_type></custrecord_tsc_transaction_type>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_108374_8172786_sb1_622">
+      <custrecord_tsc_actual_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_actual_approver>
+      <custrecord_tsc_approval_action>[scriptid=customlist_tsc_approval_actions.val_106610_8172786_sb1_682]</custrecord_tsc_approval_action>
+      <custrecord_tsc_approval_date>2025-06-01</custrecord_tsc_approval_date>
+      <custrecord_tsc_approval_notes></custrecord_tsc_approval_notes>
+      <custrecord_tsc_is_delegate_action>F</custrecord_tsc_is_delegate_action>
+      <custrecord_tsc_original_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_original_approver>
+      <custrecord_tsc_transaction>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_transaction>
+      <custrecord_tsc_transaction_type></custrecord_tsc_transaction_type>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_108375_8172786_sb1_576">
+      <custrecord_tsc_actual_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_actual_approver>
+      <custrecord_tsc_approval_action>[scriptid=customlist_tsc_approval_actions.val_106610_8172786_sb1_682]</custrecord_tsc_approval_action>
+      <custrecord_tsc_approval_date>2025-06-01</custrecord_tsc_approval_date>
+      <custrecord_tsc_approval_notes></custrecord_tsc_approval_notes>
+      <custrecord_tsc_is_delegate_action>F</custrecord_tsc_is_delegate_action>
+      <custrecord_tsc_original_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_original_approver>
+      <custrecord_tsc_transaction>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_transaction>
+      <custrecord_tsc_transaction_type></custrecord_tsc_transaction_type>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_108376_8172786_sb1_357">
+      <custrecord_tsc_actual_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_actual_approver>
+      <custrecord_tsc_approval_action>[scriptid=customlist_tsc_approval_actions.val_106610_8172786_sb1_682]</custrecord_tsc_approval_action>
+      <custrecord_tsc_approval_date>2025-06-01</custrecord_tsc_approval_date>
+      <custrecord_tsc_approval_notes></custrecord_tsc_approval_notes>
+      <custrecord_tsc_is_delegate_action>F</custrecord_tsc_is_delegate_action>
+      <custrecord_tsc_original_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_original_approver>
+      <custrecord_tsc_transaction>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_transaction>
+      <custrecord_tsc_transaction_type></custrecord_tsc_transaction_type>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_108377_8172786_sb1_641">
+      <custrecord_tsc_actual_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_actual_approver>
+      <custrecord_tsc_approval_action>[scriptid=customlist_tsc_approval_actions.val_106610_8172786_sb1_682]</custrecord_tsc_approval_action>
+      <custrecord_tsc_approval_date>2025-06-01</custrecord_tsc_approval_date>
+      <custrecord_tsc_approval_notes></custrecord_tsc_approval_notes>
+      <custrecord_tsc_is_delegate_action>F</custrecord_tsc_is_delegate_action>
+      <custrecord_tsc_original_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_original_approver>
+      <custrecord_tsc_transaction>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_transaction>
+      <custrecord_tsc_transaction_type></custrecord_tsc_transaction_type>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_108378_8172786_sb1_184">
+      <custrecord_tsc_actual_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_actual_approver>
+      <custrecord_tsc_approval_action>[scriptid=customlist_tsc_approval_actions.val_106610_8172786_sb1_682]</custrecord_tsc_approval_action>
+      <custrecord_tsc_approval_date>2025-06-01</custrecord_tsc_approval_date>
+      <custrecord_tsc_approval_notes></custrecord_tsc_approval_notes>
+      <custrecord_tsc_is_delegate_action>F</custrecord_tsc_is_delegate_action>
+      <custrecord_tsc_original_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_original_approver>
+      <custrecord_tsc_transaction></custrecord_tsc_transaction>
+      <custrecord_tsc_transaction_type></custrecord_tsc_transaction_type>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_108379_8172786_sb1_652">
+      <custrecord_tsc_actual_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_actual_approver>
+      <custrecord_tsc_approval_action>[scriptid=customlist_tsc_approval_actions.val_106610_8172786_sb1_682]</custrecord_tsc_approval_action>
+      <custrecord_tsc_approval_date>2025-06-01</custrecord_tsc_approval_date>
+      <custrecord_tsc_approval_notes></custrecord_tsc_approval_notes>
+      <custrecord_tsc_is_delegate_action>F</custrecord_tsc_is_delegate_action>
+      <custrecord_tsc_original_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_original_approver>
+      <custrecord_tsc_transaction></custrecord_tsc_transaction>
+      <custrecord_tsc_transaction_type></custrecord_tsc_transaction_type>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_108380_8172786_sb1_399">
+      <custrecord_tsc_actual_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_actual_approver>
+      <custrecord_tsc_approval_action>[scriptid=customlist_tsc_approval_actions.val_106611_8172786_sb1_396]</custrecord_tsc_approval_action>
+      <custrecord_tsc_approval_date>2025-06-01</custrecord_tsc_approval_date>
+      <custrecord_tsc_approval_notes></custrecord_tsc_approval_notes>
+      <custrecord_tsc_is_delegate_action>F</custrecord_tsc_is_delegate_action>
+      <custrecord_tsc_original_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_original_approver>
+      <custrecord_tsc_transaction>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_transaction>
+      <custrecord_tsc_transaction_type></custrecord_tsc_transaction_type>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_108381_8172786_sb1_995">
+      <custrecord_tsc_actual_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_actual_approver>
+      <custrecord_tsc_approval_action>[scriptid=customlist_tsc_approval_actions.val_106610_8172786_sb1_682]</custrecord_tsc_approval_action>
+      <custrecord_tsc_approval_date>2025-06-01</custrecord_tsc_approval_date>
+      <custrecord_tsc_approval_notes></custrecord_tsc_approval_notes>
+      <custrecord_tsc_is_delegate_action>F</custrecord_tsc_is_delegate_action>
+      <custrecord_tsc_original_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_original_approver>
+      <custrecord_tsc_transaction>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_transaction>
+      <custrecord_tsc_transaction_type></custrecord_tsc_transaction_type>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_108382_8172786_sb1_812">
+      <custrecord_tsc_actual_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_actual_approver>
+      <custrecord_tsc_approval_action>[scriptid=customlist_tsc_approval_actions.val_106610_8172786_sb1_682]</custrecord_tsc_approval_action>
+      <custrecord_tsc_approval_date>2025-06-01</custrecord_tsc_approval_date>
+      <custrecord_tsc_approval_notes></custrecord_tsc_approval_notes>
+      <custrecord_tsc_is_delegate_action>F</custrecord_tsc_is_delegate_action>
+      <custrecord_tsc_original_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_original_approver>
+      <custrecord_tsc_transaction>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_transaction>
+      <custrecord_tsc_transaction_type></custrecord_tsc_transaction_type>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_108383_8172786_sb1_180">
+      <custrecord_tsc_actual_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_actual_approver>
+      <custrecord_tsc_approval_action>[scriptid=customlist_tsc_approval_actions.val_106610_8172786_sb1_682]</custrecord_tsc_approval_action>
+      <custrecord_tsc_approval_date>2025-06-01</custrecord_tsc_approval_date>
+      <custrecord_tsc_approval_notes></custrecord_tsc_approval_notes>
+      <custrecord_tsc_is_delegate_action>F</custrecord_tsc_is_delegate_action>
+      <custrecord_tsc_original_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_original_approver>
+      <custrecord_tsc_transaction>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_transaction>
+      <custrecord_tsc_transaction_type></custrecord_tsc_transaction_type>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_108384_8172786_sb1_389">
+      <custrecord_tsc_actual_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_actual_approver>
+      <custrecord_tsc_approval_action>[scriptid=customlist_tsc_approval_actions.val_106610_8172786_sb1_682]</custrecord_tsc_approval_action>
+      <custrecord_tsc_approval_date>2025-06-01</custrecord_tsc_approval_date>
+      <custrecord_tsc_approval_notes></custrecord_tsc_approval_notes>
+      <custrecord_tsc_is_delegate_action>F</custrecord_tsc_is_delegate_action>
+      <custrecord_tsc_original_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_original_approver>
+      <custrecord_tsc_transaction>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_transaction>
+      <custrecord_tsc_transaction_type></custrecord_tsc_transaction_type>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_108385_8172786_sb1_506">
+      <custrecord_tsc_actual_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_actual_approver>
+      <custrecord_tsc_approval_action>[scriptid=customlist_tsc_approval_actions.val_106610_8172786_sb1_682]</custrecord_tsc_approval_action>
+      <custrecord_tsc_approval_date>2025-06-01</custrecord_tsc_approval_date>
+      <custrecord_tsc_approval_notes></custrecord_tsc_approval_notes>
+      <custrecord_tsc_is_delegate_action>F</custrecord_tsc_is_delegate_action>
+      <custrecord_tsc_original_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_original_approver>
+      <custrecord_tsc_transaction>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_transaction>
+      <custrecord_tsc_transaction_type></custrecord_tsc_transaction_type>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_108386_8172786_sb1_874">
+      <custrecord_tsc_actual_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_actual_approver>
+      <custrecord_tsc_approval_action>[scriptid=customlist_tsc_approval_actions.val_106610_8172786_sb1_682]</custrecord_tsc_approval_action>
+      <custrecord_tsc_approval_date>2025-06-01</custrecord_tsc_approval_date>
+      <custrecord_tsc_approval_notes></custrecord_tsc_approval_notes>
+      <custrecord_tsc_is_delegate_action>F</custrecord_tsc_is_delegate_action>
+      <custrecord_tsc_original_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_original_approver>
+      <custrecord_tsc_transaction>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_transaction>
+      <custrecord_tsc_transaction_type></custrecord_tsc_transaction_type>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_108387_8172786_sb1_919">
+      <custrecord_tsc_actual_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_actual_approver>
+      <custrecord_tsc_approval_action>[scriptid=customlist_tsc_approval_actions.val_106611_8172786_sb1_396]</custrecord_tsc_approval_action>
+      <custrecord_tsc_approval_date>2025-06-01</custrecord_tsc_approval_date>
+      <custrecord_tsc_approval_notes></custrecord_tsc_approval_notes>
+      <custrecord_tsc_is_delegate_action>F</custrecord_tsc_is_delegate_action>
+      <custrecord_tsc_original_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_original_approver>
+      <custrecord_tsc_transaction>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_transaction>
+      <custrecord_tsc_transaction_type></custrecord_tsc_transaction_type>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_108388_8172786_sb1_184">
+      <custrecord_tsc_actual_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_actual_approver>
+      <custrecord_tsc_approval_action>[scriptid=customlist_tsc_approval_actions.val_106611_8172786_sb1_396]</custrecord_tsc_approval_action>
+      <custrecord_tsc_approval_date>2025-06-01</custrecord_tsc_approval_date>
+      <custrecord_tsc_approval_notes></custrecord_tsc_approval_notes>
+      <custrecord_tsc_is_delegate_action>F</custrecord_tsc_is_delegate_action>
+      <custrecord_tsc_original_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_original_approver>
+      <custrecord_tsc_transaction>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_transaction>
+      <custrecord_tsc_transaction_type></custrecord_tsc_transaction_type>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_108389_8172786_sb1_575">
+      <custrecord_tsc_actual_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_actual_approver>
+      <custrecord_tsc_approval_action>[scriptid=customlist_tsc_approval_actions.val_106611_8172786_sb1_396]</custrecord_tsc_approval_action>
+      <custrecord_tsc_approval_date>2025-06-01</custrecord_tsc_approval_date>
+      <custrecord_tsc_approval_notes></custrecord_tsc_approval_notes>
+      <custrecord_tsc_is_delegate_action>F</custrecord_tsc_is_delegate_action>
+      <custrecord_tsc_original_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_original_approver>
+      <custrecord_tsc_transaction>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_transaction>
+      <custrecord_tsc_transaction_type></custrecord_tsc_transaction_type>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_108419_8172786_sb1_367">
+      <custrecord_tsc_actual_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_actual_approver>
+      <custrecord_tsc_approval_action>[scriptid=customlist_tsc_approval_actions.val_106610_8172786_sb1_682]</custrecord_tsc_approval_action>
+      <custrecord_tsc_approval_date>2025-06-02</custrecord_tsc_approval_date>
+      <custrecord_tsc_approval_notes></custrecord_tsc_approval_notes>
+      <custrecord_tsc_is_delegate_action>F</custrecord_tsc_is_delegate_action>
+      <custrecord_tsc_original_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_original_approver>
+      <custrecord_tsc_transaction>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_transaction>
+      <custrecord_tsc_transaction_type></custrecord_tsc_transaction_type>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_108422_8172786_sb1_276">
+      <custrecord_tsc_actual_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_actual_approver>
+      <custrecord_tsc_approval_action>[scriptid=customlist_tsc_approval_actions.val_106610_8172786_sb1_682]</custrecord_tsc_approval_action>
+      <custrecord_tsc_approval_date>2025-06-02</custrecord_tsc_approval_date>
+      <custrecord_tsc_approval_notes></custrecord_tsc_approval_notes>
+      <custrecord_tsc_is_delegate_action>F</custrecord_tsc_is_delegate_action>
+      <custrecord_tsc_original_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_original_approver>
+      <custrecord_tsc_transaction>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_transaction>
+      <custrecord_tsc_transaction_type></custrecord_tsc_transaction_type>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_108423_8172786_sb1_568">
+      <custrecord_tsc_actual_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_actual_approver>
+      <custrecord_tsc_approval_action>[scriptid=customlist_tsc_approval_actions.val_106610_8172786_sb1_682]</custrecord_tsc_approval_action>
+      <custrecord_tsc_approval_date>2025-06-02</custrecord_tsc_approval_date>
+      <custrecord_tsc_approval_notes></custrecord_tsc_approval_notes>
+      <custrecord_tsc_is_delegate_action>F</custrecord_tsc_is_delegate_action>
+      <custrecord_tsc_original_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_original_approver>
+      <custrecord_tsc_transaction>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_transaction>
+      <custrecord_tsc_transaction_type></custrecord_tsc_transaction_type>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_108425_8172786_sb1_108">
+      <custrecord_tsc_actual_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_actual_approver>
+      <custrecord_tsc_approval_action>[scriptid=customlist_tsc_approval_actions.val_106610_8172786_sb1_682]</custrecord_tsc_approval_action>
+      <custrecord_tsc_approval_date>2025-06-02</custrecord_tsc_approval_date>
+      <custrecord_tsc_approval_notes></custrecord_tsc_approval_notes>
+      <custrecord_tsc_is_delegate_action>F</custrecord_tsc_is_delegate_action>
+      <custrecord_tsc_original_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_original_approver>
+      <custrecord_tsc_transaction>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_transaction>
+      <custrecord_tsc_transaction_type></custrecord_tsc_transaction_type>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_108426_8172786_sb1_506">
+      <custrecord_tsc_actual_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_actual_approver>
+      <custrecord_tsc_approval_action>[scriptid=customlist_tsc_approval_actions.val_106610_8172786_sb1_682]</custrecord_tsc_approval_action>
+      <custrecord_tsc_approval_date>2025-06-02</custrecord_tsc_approval_date>
+      <custrecord_tsc_approval_notes></custrecord_tsc_approval_notes>
+      <custrecord_tsc_is_delegate_action>F</custrecord_tsc_is_delegate_action>
+      <custrecord_tsc_original_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_original_approver>
+      <custrecord_tsc_transaction>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_transaction>
+      <custrecord_tsc_transaction_type></custrecord_tsc_transaction_type>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_108428_8172786_sb1_400">
+      <custrecord_tsc_actual_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_actual_approver>
+      <custrecord_tsc_approval_action>[scriptid=customlist_tsc_approval_actions.val_106610_8172786_sb1_682]</custrecord_tsc_approval_action>
+      <custrecord_tsc_approval_date>2025-06-02</custrecord_tsc_approval_date>
+      <custrecord_tsc_approval_notes></custrecord_tsc_approval_notes>
+      <custrecord_tsc_is_delegate_action>F</custrecord_tsc_is_delegate_action>
+      <custrecord_tsc_original_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_original_approver>
+      <custrecord_tsc_transaction>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_transaction>
+      <custrecord_tsc_transaction_type></custrecord_tsc_transaction_type>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_108430_8172786_sb1_356">
+      <custrecord_tsc_actual_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_actual_approver>
+      <custrecord_tsc_approval_action>[scriptid=customlist_tsc_approval_actions.val_106610_8172786_sb1_682]</custrecord_tsc_approval_action>
+      <custrecord_tsc_approval_date>2025-06-02</custrecord_tsc_approval_date>
+      <custrecord_tsc_approval_notes></custrecord_tsc_approval_notes>
+      <custrecord_tsc_is_delegate_action>F</custrecord_tsc_is_delegate_action>
+      <custrecord_tsc_original_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_original_approver>
+      <custrecord_tsc_transaction>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_transaction>
+      <custrecord_tsc_transaction_type></custrecord_tsc_transaction_type>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_108431_8172786_sb1_612">
+      <custrecord_tsc_actual_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_actual_approver>
+      <custrecord_tsc_approval_action>[scriptid=customlist_tsc_approval_actions.val_106610_8172786_sb1_682]</custrecord_tsc_approval_action>
+      <custrecord_tsc_approval_date>2025-06-02</custrecord_tsc_approval_date>
+      <custrecord_tsc_approval_notes></custrecord_tsc_approval_notes>
+      <custrecord_tsc_is_delegate_action>F</custrecord_tsc_is_delegate_action>
+      <custrecord_tsc_original_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_original_approver>
+      <custrecord_tsc_transaction>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_transaction>
+      <custrecord_tsc_transaction_type></custrecord_tsc_transaction_type>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_108433_8172786_sb1_624">
+      <custrecord_tsc_actual_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_actual_approver>
+      <custrecord_tsc_approval_action>[scriptid=customlist_tsc_approval_actions.val_106610_8172786_sb1_682]</custrecord_tsc_approval_action>
+      <custrecord_tsc_approval_date>2025-06-02</custrecord_tsc_approval_date>
+      <custrecord_tsc_approval_notes></custrecord_tsc_approval_notes>
+      <custrecord_tsc_is_delegate_action>F</custrecord_tsc_is_delegate_action>
+      <custrecord_tsc_original_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_original_approver>
+      <custrecord_tsc_transaction>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_transaction>
+      <custrecord_tsc_transaction_type></custrecord_tsc_transaction_type>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_108434_8172786_sb1_350">
+      <custrecord_tsc_actual_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_actual_approver>
+      <custrecord_tsc_approval_action>[scriptid=customlist_tsc_approval_actions.val_106610_8172786_sb1_682]</custrecord_tsc_approval_action>
+      <custrecord_tsc_approval_date>2025-06-02</custrecord_tsc_approval_date>
+      <custrecord_tsc_approval_notes></custrecord_tsc_approval_notes>
+      <custrecord_tsc_is_delegate_action>F</custrecord_tsc_is_delegate_action>
+      <custrecord_tsc_original_approver></custrecord_tsc_original_approver>
+      <custrecord_tsc_transaction>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_transaction>
+      <custrecord_tsc_transaction_type></custrecord_tsc_transaction_type>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_108435_8172786_sb1_785">
+      <custrecord_tsc_actual_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_actual_approver>
+      <custrecord_tsc_approval_action>[scriptid=customlist_tsc_approval_actions.val_106610_8172786_sb1_682]</custrecord_tsc_approval_action>
+      <custrecord_tsc_approval_date>2025-06-02</custrecord_tsc_approval_date>
+      <custrecord_tsc_approval_notes></custrecord_tsc_approval_notes>
+      <custrecord_tsc_is_delegate_action>F</custrecord_tsc_is_delegate_action>
+      <custrecord_tsc_original_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_original_approver>
+      <custrecord_tsc_transaction>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_transaction>
+      <custrecord_tsc_transaction_type></custrecord_tsc_transaction_type>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_108437_8172786_sb1_450">
+      <custrecord_tsc_actual_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_actual_approver>
+      <custrecord_tsc_approval_action>[scriptid=customlist_tsc_approval_actions.val_106611_8172786_sb1_396]</custrecord_tsc_approval_action>
+      <custrecord_tsc_approval_date>2025-06-02</custrecord_tsc_approval_date>
+      <custrecord_tsc_approval_notes></custrecord_tsc_approval_notes>
+      <custrecord_tsc_is_delegate_action>F</custrecord_tsc_is_delegate_action>
+      <custrecord_tsc_original_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_original_approver>
+      <custrecord_tsc_transaction>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_transaction>
+      <custrecord_tsc_transaction_type></custrecord_tsc_transaction_type>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_108464_8172786_sb1_927">
+      <custrecord_tsc_actual_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_actual_approver>
+      <custrecord_tsc_approval_action>[scriptid=customlist_tsc_approval_actions.val_106610_8172786_sb1_682]</custrecord_tsc_approval_action>
+      <custrecord_tsc_approval_date>2025-06-02</custrecord_tsc_approval_date>
+      <custrecord_tsc_approval_notes></custrecord_tsc_approval_notes>
+      <custrecord_tsc_is_delegate_action>F</custrecord_tsc_is_delegate_action>
+      <custrecord_tsc_original_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_original_approver>
+      <custrecord_tsc_transaction>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_transaction>
+      <custrecord_tsc_transaction_type></custrecord_tsc_transaction_type>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_108465_8172786_sb1_631">
+      <custrecord_tsc_actual_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_actual_approver>
+      <custrecord_tsc_approval_action>[scriptid=customlist_tsc_approval_actions.val_106610_8172786_sb1_682]</custrecord_tsc_approval_action>
+      <custrecord_tsc_approval_date>2025-06-02</custrecord_tsc_approval_date>
+      <custrecord_tsc_approval_notes></custrecord_tsc_approval_notes>
+      <custrecord_tsc_is_delegate_action>F</custrecord_tsc_is_delegate_action>
+      <custrecord_tsc_original_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_original_approver>
+      <custrecord_tsc_transaction>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_transaction>
+      <custrecord_tsc_transaction_type></custrecord_tsc_transaction_type>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_108621_8172786_sb1_706">
+      <custrecord_tsc_actual_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_actual_approver>
+      <custrecord_tsc_approval_action>[scriptid=customlist_tsc_approval_actions.val_106610_8172786_sb1_682]</custrecord_tsc_approval_action>
+      <custrecord_tsc_approval_date>2025-06-02</custrecord_tsc_approval_date>
+      <custrecord_tsc_approval_notes></custrecord_tsc_approval_notes>
+      <custrecord_tsc_is_delegate_action>F</custrecord_tsc_is_delegate_action>
+      <custrecord_tsc_original_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_original_approver>
+      <custrecord_tsc_transaction>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_transaction>
+      <custrecord_tsc_transaction_type></custrecord_tsc_transaction_type>
+      <isinactive>F</isinactive>
+    </instance>
+  </instances>
 </customrecordtype>
