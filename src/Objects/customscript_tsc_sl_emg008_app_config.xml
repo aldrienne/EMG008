@@ -11,13 +11,13 @@
     <scriptdeployment scriptid="customdeploy_tsc_sl_emg008_app_config">
       <allemployees>F</allemployees>
       <allpartners>F</allpartners>
-      <allroles>T</allroles>
-      <audslctrole>[scriptid=customrole1630]|CUSTOMER_CENTER|[scriptid=customrole1631]|[scriptid=customrole1627]</audslctrole>
+      <allroles>F</allroles>
+      <audslctrole>ADMINISTRATOR</audslctrole>
       <eventtype></eventtype>
       <isdeployed>T</isdeployed>
-      <isonline>T</isonline>
+      <isonline>F</isonline>
       <loglevel>DEBUG</loglevel>
-      <runasrole>ADMINISTRATOR</runasrole>
+      <runasrole></runasrole>
       <status>RELEASED</status>
       <title>TSC|SL|EMG008 Approver Configuration</title>
     </scriptdeployment>

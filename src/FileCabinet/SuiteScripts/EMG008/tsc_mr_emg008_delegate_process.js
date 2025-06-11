@@ -242,7 +242,11 @@ define(['N/search', './tsc_cm_constants', 'N/record', 'N/runtime'],
             const filters = [
                 [TSCCONST.RECORDS.DELEGATE_APPROVERS.FIELDS.START_DATE, 'onorbefore', 'today'],
                 'AND',
-                [TSCCONST.RECORDS.DELEGATE_APPROVERS.FIELDS.END_DATE, 'onorafter', 'today'],
+                [
+                    [TSCCONST.RECORDS.DELEGATE_APPROVERS.FIELDS.END_DATE, 'onorafter', 'today'],
+                    'OR',
+                    [TSCCONST.RECORDS.DELEGATE_APPROVERS.FIELDS.END_DATE, 'isempty', '']  
+                ],
                 'AND',
                 ['isinactive', 'is', 'F'],
             ];
