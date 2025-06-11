@@ -195,7 +195,7 @@ define(['N/runtime', 'N/ui/serverWidget', 'N/record', 'N/search', '../tsc_cm_con
             form.addButton({
                 id: 'custpage_clear',
                 label: 'Clear Delegation',
-                functionName: 'clearDelegateFields()'
+                functionName: 'clearDelegation()'
             });
 
             form.addButton({
@@ -292,23 +292,12 @@ define(['N/runtime', 'N/ui/serverWidget', 'N/record', 'N/search', '../tsc_cm_con
                     });
 
                 } else if (delegateId && !delegateApprover) {
-                    // Inactivate delegation if delegate is cleared (set end date to yesterday)
-                    const delegateRecord = record.load({
+                    // Delete delegation if delegate is cleared
+                    record.delete({
                         type: TSCCONST.RECORDS.DELEGATE_APPROVERS.ID,
                         id: delegateId
                     });
-                    
-                    // Set end date to yesterday to make it inactive
-                    const yesterday = new Date();
-                    yesterday.setDate(yesterday.getDate() - 1);
-                    
-                    delegateRecord.setValue({
-                        fieldId: TSCCONST.RECORDS.DELEGATE_APPROVERS.FIELDS.END_DATE,
-                        value: yesterday
-                    });
-                    
-                    delegateRecord.save();
-                    log.debug(title, `Inactivated delegation record ${delegateId} by setting end date to ${yesterday.toDateString()}`);
+                    log.debug(title, `Deleted delegation record ${delegateId}`);
 
                     scriptContext.response.sendRedirect({
                         type: 'SUITELET',
