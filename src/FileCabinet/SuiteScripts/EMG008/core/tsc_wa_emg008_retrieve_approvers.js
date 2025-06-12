@@ -44,7 +44,9 @@ define(['N/search', '../tsc_cm_constants', 'N/runtime'],
             const title = 'retrieveApproverConfig():';
             log.debug(title + 'parameters', { approvalType, approvalRole, department });
             const customrecordTscApproverConfigSearchFilters = [
-                ['custrecordtsc_config_type', 'anyof', approvalType]
+                ['custrecordtsc_config_type', 'anyof', approvalType],
+                'AND',
+                ['isinactive', 'is', 'F']
             ];
 
             if (approvalRole) {

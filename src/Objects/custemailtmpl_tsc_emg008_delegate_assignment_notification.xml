@@ -1,0 +1,12 @@
+<emailtemplate scriptid="custemailtmpl_tsc_emg008_delegate_assignment_notification">
+  <addcompanyaddress>T</addcompanyaddress>
+  <addunsubscribelink>T</addunsubscribelink>
+  <description></description>
+  <isinactive>F</isinactive>
+  <isprivate>F</isprivate>
+  <mediaitem></mediaitem>
+  <name>Delegate Assignment Notification</name>
+  <recordtype>CUSTOM</recordtype>
+  <subject>You&apos;ve Been Selected as an Approval Delegate</subject>
+  <usesmedia>F</usesmedia>
+</emailtemplate>
