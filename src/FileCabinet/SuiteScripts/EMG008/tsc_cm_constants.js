@@ -128,7 +128,8 @@ define([], () => {
         LAST_APPROVER: 'custbody_tsc_last_approver',
         REJECTION_REASON: 'custbody_tsc_rejection_reason',
         ASSIGNED_DELEGATE_APPROVER: 'custbody_tsc_assigned_delegate_approv',
-        IS_DELEGATE_ACTIVE: 'custbody_tsc_is_delegate_active'
+        IS_DELEGATE_ACTIVE: 'custbody_tsc_is_delegate_active',
+        APPROVAL_LEVEL: "custbody_tsc_approval_level"
     };
 
     const LISTS = {

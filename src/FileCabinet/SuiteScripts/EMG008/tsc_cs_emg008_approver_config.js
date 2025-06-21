@@ -504,7 +504,22 @@ function(dialog, TSCCONST) {
      * @since 2015.2
      */
     function validateDelete(scriptContext) {
-
+        const sublistId = scriptContext.sublistId;
+        
+        // Check if this is one of our managed sublists
+        if (sublistId === FORM_CONST.TAB.COMPANY_ROLES.SUBLISTS.COMPANY_ROLES_LIST.ID ||
+            sublistId === FORM_CONST.TAB.DEPARTMENTS.SUBLISTS.DEPARTMENTS_LIST.ID ||
+            sublistId === FORM_CONST.TAB.DELEGATES.SUBLISTS.DELEGATES_LIST.ID) {
+            
+            dialog.alert({
+                title: 'Warning',
+                message: 'You are not allowed to delete this line, you may only modify this line.'
+            });
+            
+            return false;
+        }
+        
+        return true;
     }
 
     /**
@@ -523,7 +538,8 @@ function(dialog, TSCCONST) {
     return {
         pageInit: pageInit,
         fieldChanged: fieldChanged,
-        validateLine: validateLine
+        validateLine: validateLine,
+        validateDelete: validateDelete
         //saveRecord: saveRecord
     };
     
