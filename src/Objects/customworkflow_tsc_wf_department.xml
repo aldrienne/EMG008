@@ -1671,14 +1671,8 @@
           <scheduletimeofday></scheduletimeofday>
           <scheduletimeunit></scheduletimeunit>
           <initcondition>
-            <formula><![CDATA[isEmpty("Next Approver") = 'F']]></formula>
-            <type>VISUAL_BUILDER</type>
-            <parameters>
-              <parameter>
-                <name>Next Approver</name>
-                <value>STDBODYNEXTAPPROVER</value>
-              </parameter>
-            </parameters>
+            <formula><![CDATA[{nextapprover.id} is not null OR {nextapprover.id} is not -1]]></formula>
+            <type>FORMULA</type>
           </initcondition>
           <fieldsettings>
             <fieldsetting>
@@ -1764,14 +1758,8 @@
           <template></template>
           <usetemplate>F</usetemplate>
           <initcondition>
-            <formula><![CDATA[isEmpty("Next Approver") = 'F']]></formula>
-            <type>VISUAL_BUILDER</type>
-            <parameters>
-              <parameter>
-                <name>Next Approver</name>
-                <value>STDBODYNEXTAPPROVER</value>
-              </parameter>
-            </parameters>
+            <formula><![CDATA[{nextapprover.id} is not null OR {nextapprover.id} is not -1]]></formula>
+            <type>FORMULA</type>
           </initcondition>
         </sendemailaction>
         <setfieldvalueaction scriptid="workflowaction356">

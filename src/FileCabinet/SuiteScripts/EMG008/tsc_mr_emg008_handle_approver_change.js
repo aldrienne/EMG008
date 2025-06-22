@@ -89,9 +89,9 @@ define(['N/search', 'N/log', 'N/record', './tsc_cm_constants.js'],
 
         const getInputData = (inputContext) => {
             try {
+                log.audit("==START==", 'getInputData()');
                 let title = 'getInputData(): ';
                 return retrieveRecentApproverChange();
-
             } catch (e) {
                 log.error('getInputData Error', e.message);
             }
@@ -117,6 +117,7 @@ define(['N/search', 'N/log', 'N/record', './tsc_cm_constants.js'],
         const map = (mapContext) => {
             try {
                 let title = 'map(): ';
+                log.audit("==START==", title + 'Processing key: ' + mapContext.key);
                 log.debug('key:' + mapContext.key, mapContext.value);
                 let mapValue = JSON.parse(mapContext.value);
 

@@ -309,22 +309,7 @@ function(dialog, TSCCONST) {
                 }
             }
             
-            // Check for same person with multiple roles
-            for (let i = 0; i < lineCount; i++) {
-                // Skip current line
-                if (i === currentLine) continue;
-                
-                const existingPrimaryApprover = currentRecord.getSublistValue({
-                    sublistId: sublistId,
-                    fieldId: FORM_CONST.TAB.COMPANY_ROLES.SUBLISTS.COMPANY_ROLES_LIST.FIELDS.COMPANY_ROLE_PRIMARY_APPROVER_DISPLAY,
-                    line: i
-                });
-                
-                if (primaryApprover === existingPrimaryApprover) {
-                    dialog.alert({ title: 'Validation Error', message: 'A person cannot have multiple company roles.' });
-                    return false;
-                }
-            }
+
         }
         
         // Validate Delegates sublist

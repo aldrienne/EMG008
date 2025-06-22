@@ -1,0 +1,9 @@
+Property,Value
+Script ID,customworkflow_tsc_wf_company_role
+Name,TSC|WF|Company Role Approval
+Description,Applies to Purchase Order.
+Record Types,PURCHASEORDER
+Is Inactive,F
+Keep History,ALWAYS
+Run as Admin,T
+Log Enabled,T

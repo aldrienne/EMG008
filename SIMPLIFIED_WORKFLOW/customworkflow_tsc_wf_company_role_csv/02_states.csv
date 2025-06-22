@@ -1,0 +1,8 @@
+State ID,State Name,Description,Position X,Position Y,Exit Workflow,Entry Actions,Load Actions,Custom Fields
+workflowstate142,Initiate,,643,63,F,23,51,0
+workflowstate143,Determine Approver,,643,193,F,178,0,0
+workflowstate144,Pending COO,,643,313,F,153,22,1
+workflowstate145,Pending CEO,,643,523,F,260,22,1
+workflowstate146,Pending CFO,,643,423,F,263,22,1
+workflowstate147,Approved,,193,263,F,209,0,0
+workflowstate148,Rejected,,933,313,T,217,0,0
