@@ -156,8 +156,11 @@ define(['N/ui/serverWidget', 'N/log', 'N/search', 'N/record', 'N/redirect', './t
                                 },
                                 {
                                     ID: FORM_CONST.THRESHOLDS.FIELDS.CEO_APPROVAL_LIMIT,
-                                    TYPE: serverWidget.FieldType.CURRENCY,
-                                    LABEL: 'CEO Approval Limit'
+                                    TYPE: serverWidget.FieldType.TEXT,
+                                    LABEL: 'CEO Approval Limit',
+                                    DISPLAY_TYPE: serverWidget.FieldDisplayType.INLINE,
+                                    DEFAULT_VALUE: 'Unlimited (No Limit)',
+                                    HELP_TEXT: 'CEO has unlimited approval authority as the highest company approver.'
                                 }
                             ]
                         },
@@ -182,8 +185,11 @@ define(['N/ui/serverWidget', 'N/log', 'N/search', 'N/record', 'N/redirect', './t
                                 },
                                 {
                                     ID: FORM_CONST.THRESHOLDS.FIELDS.DEPARTMENT_TIER3_APPROVAL_LIMIT,
-                                    TYPE: serverWidget.FieldType.CURRENCY,
-                                    LABEL: 'Department Tier 3 Approval Limit'
+                                    TYPE: serverWidget.FieldType.TEXT,
+                                    LABEL: 'Department Tier 3 Approval Limit',
+                                    DISPLAY_TYPE: serverWidget.FieldDisplayType.INLINE,
+                                    DEFAULT_VALUE: 'Unlimited (No Limit)',
+                                    HELP_TEXT: 'Tier 3 is the highest department level with unlimited approval authority.'
                                 }
                             ]
                         }
@@ -315,11 +321,11 @@ define(['N/ui/serverWidget', 'N/log', 'N/search', 'N/record', 'N/redirect', './t
                     { dataField: RECORDS.APPROVAL_THRESHOLDS.FIELDS.COMP_AUTO_APPROVAL_LIMIT, fieldId: FORM_CONST.THRESHOLDS.FIELDS.COMPANY_AUTO_APPROVAL_LIMIT },
                     { dataField: RECORDS.APPROVAL_THRESHOLDS.FIELDS.COO_APPROVAL_LIMIT, fieldId: FORM_CONST.THRESHOLDS.FIELDS.COO_APPROVAL_LIMIT },
                     { dataField: RECORDS.APPROVAL_THRESHOLDS.FIELDS.CFO_APPROVAL_LIMIT, fieldId: FORM_CONST.THRESHOLDS.FIELDS.CFO_APPROVAL_LIMIT },
-                    { dataField: RECORDS.APPROVAL_THRESHOLDS.FIELDS.CEO_APPROVAL_LIMIT, fieldId: FORM_CONST.THRESHOLDS.FIELDS.CEO_APPROVAL_LIMIT },
+                    // CEO and Tier 3 fields are display-only, excluded from data mapping
                     { dataField: RECORDS.APPROVAL_THRESHOLDS.FIELDS.DEPT_AUTO_APPROVAL_LIMIT, fieldId: FORM_CONST.THRESHOLDS.FIELDS.DEPARTMENT_AUTO_APPROVAL_LIMIT },
                     { dataField: RECORDS.APPROVAL_THRESHOLDS.FIELDS.TIER_1_APPROVAL_LIMIT, fieldId: FORM_CONST.THRESHOLDS.FIELDS.DEPARTMENT_TIER1_APPROVAL_LIMIT },
-                    { dataField: RECORDS.APPROVAL_THRESHOLDS.FIELDS.TIER_2_APPROVAL_LIMIT, fieldId: FORM_CONST.THRESHOLDS.FIELDS.DEPARTMENT_TIER2_APPROVAL_LIMIT },
-                    { dataField: RECORDS.APPROVAL_THRESHOLDS.FIELDS.TIER_3_APPROVAL_LIMIT, fieldId: FORM_CONST.THRESHOLDS.FIELDS.DEPARTMENT_TIER3_APPROVAL_LIMIT }                    
+                    { dataField: RECORDS.APPROVAL_THRESHOLDS.FIELDS.TIER_2_APPROVAL_LIMIT, fieldId: FORM_CONST.THRESHOLDS.FIELDS.DEPARTMENT_TIER2_APPROVAL_LIMIT }
+                    // Tier 3 field excluded as it's display-only
                 ]
             },
         };
@@ -1353,18 +1359,23 @@ define(['N/ui/serverWidget', 'N/log', 'N/search', 'N/record', 'N/redirect', './t
                     const existingRecordId = existingRecords[0].internalid;
                     log.debug(title, `Updating existing threshold record ID: ${existingRecordId}`);
                     
-                    // Collect all field values to update
+                    // Collect all field values to update (excluding display-only fields)
                     const valuesToUpdate = {};
                     for (let fieldMapping of mapping.fieldMappings) {
                         log.debug(title + ' fieldMapping', fieldMapping.fieldId);
                         const fieldValue = request.parameters[fieldMapping.fieldId];
                         log.debug(title, `Field ${fieldMapping.fieldId} value: ${fieldValue}`);
                         
+                        // Skip display-only fields (CEO and Tier 3 are handled separately)
                         if (fieldValue !== null && fieldValue !== undefined && fieldValue !== '') {
                             valuesToUpdate[fieldMapping.dataField] = fieldValue;
                             log.debug(title, `Setting ${fieldMapping.dataField} = ${fieldValue}`);
                         }
                     }
+                    
+                    // Set high default values for CEO and Tier 3 fields (unlimited approval)
+                    valuesToUpdate[RECORDS.APPROVAL_THRESHOLDS.FIELDS.CEO_APPROVAL_LIMIT] = 999999999;
+                    valuesToUpdate[RECORDS.APPROVAL_THRESHOLDS.FIELDS.TIER_3_APPROVAL_LIMIT] = 999999999;
                     
                     // Submit the updates
                     if (Object.keys(valuesToUpdate).length > 0) {
@@ -1389,7 +1400,7 @@ define(['N/ui/serverWidget', 'N/log', 'N/search', 'N/record', 'N/redirect', './t
                         isDynamic: true
                     });
                     
-                    // Set field values from form
+                    // Set field values from form (excluding display-only fields)
                     for (let fieldMapping of mapping.fieldMappings) {
                         const fieldValue = request.parameters[fieldMapping.fieldId];
                         log.debug(title, `Field ${fieldMapping.fieldId} value: ${fieldValue}`);
@@ -1402,6 +1413,17 @@ define(['N/ui/serverWidget', 'N/log', 'N/search', 'N/record', 'N/redirect', './t
                             log.debug(title, `Setting ${fieldMapping.dataField} = ${fieldValue}`);
                         }
                     }
+                    
+                    // Set high default values for CEO and Tier 3 fields (unlimited approval)
+                    newRecord.setValue({
+                        fieldId: RECORDS.APPROVAL_THRESHOLDS.FIELDS.CEO_APPROVAL_LIMIT,
+                        value: 999999999
+                    });
+                    
+                    newRecord.setValue({
+                        fieldId: RECORDS.APPROVAL_THRESHOLDS.FIELDS.TIER_3_APPROVAL_LIMIT,
+                        value: 999999999
+                    });
                     
                     // Save the record
                     const recordId = newRecord.save();

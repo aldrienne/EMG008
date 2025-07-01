@@ -1,8 +1,0 @@
-Field ID,Label,Field Type,Display Type,Select Record Type,Store Value,Scope
-custworkflow_tsc_emg008_approval_threshold,Approval Threshold,SELECT,NORMAL,[scriptid=customrecord_tsc_approval_thresholds],T,Workflow
-custworkflow_tsc_emg008_coo,COO,SELECT,NORMAL,[scriptid=customrecord_tsc_approver_config],T,Workflow
-custworkflow_tsc_emg008_cfo,CFO,SELECT,NORMAL,[scriptid=customrecord_tsc_approver_config],T,Workflow
-custworkflow_tsc_emg008_ceo,CEO,SELECT,NORMAL,[scriptid=customrecord_tsc_approver_config],T,Workflow
-custwfstate_tsc_emg008_coo_delegate,COO Delegate,SELECT,NORMAL,[scriptid=customrecord_tsc_delegate_approvers],T,State: Pending COO
-custwfstate_tsc_emg008_ceo_delegate,CEO Delegate,SELECT,NORMAL,[scriptid=customrecord_tsc_delegate_approvers],T,State: Pending CEO
-custwfstate_tsc_emg008_cfo_delegate,CFO Delegate,SELECT,NORMAL,[scriptid=customrecord_tsc_delegate_approvers],T,State: Pending CFO

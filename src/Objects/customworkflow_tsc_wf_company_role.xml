@@ -1730,7 +1730,7 @@
           <waitforworkflow></waitforworkflow>
           <waitforworkflowstate></waitforworkflowstate>
           <initcondition>
-            <formula><![CDATA["Total" < "Workflow:Approval Threshold:CFO Approval Limit"]]></formula>
+            <formula><![CDATA["Total" <= "Workflow:Approval Threshold:CFO Approval Limit"]]></formula>
             <type>VISUAL_BUILDER</type>
             <parameters>
               <parameter>

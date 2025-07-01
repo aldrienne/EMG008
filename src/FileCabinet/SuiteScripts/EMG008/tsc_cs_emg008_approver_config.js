@@ -3,9 +3,9 @@
  * @NScriptType ClientScript
  * @NModuleScope SameAccount
  */
-define(['N/ui/dialog', './tsc_cm_constants.js'],
+define(['N/ui/dialog', 'N/ui/message', './tsc_cm_constants.js'],
 
-function(dialog, TSCCONST) {
+function(dialog, message, TSCCONST) {
     const { FORM_CONST, RECORDS, TRANSACTION_BODY_FIELDS, LISTS } = TSCCONST;
     
     /**
@@ -18,7 +18,28 @@ function(dialog, TSCCONST) {
      * @since 2015.2
      */
     function pageInit(scriptContext) {
+        // Check for success parameter in URL and display success message
+        const urlParams = new URLSearchParams(window.location.search);
+        const successParam = urlParams.get('success');
         
+        if (successParam === 'true') {
+            // Create and show success message banner
+            const successMessage = message.create({
+                title: 'Success',
+                details: 'Configuration saved successfully!',
+                type: message.Type.CONFIRMATION
+            });
+            
+            successMessage.show({
+                duration: 5000 // Auto-hide after 5 seconds
+            });
+            
+            // Clean up URL parameters after showing message
+            if (window.history && window.history.replaceState) {
+                const cleanUrl = window.location.pathname + window.location.search.replace(/[?&]success=true/, '').replace(/^&/, '?');
+                window.history.replaceState({}, document.title, cleanUrl);
+            }
+        }
     }
 
     /**
