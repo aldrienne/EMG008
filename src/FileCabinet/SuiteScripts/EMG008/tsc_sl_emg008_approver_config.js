@@ -12,14 +12,14 @@ define(['N/ui/serverWidget', 'N/log', 'N/search', 'N/record', 'N/redirect', './t
             TABS: {
                 COMPANY_ROLES: {
                     ID: FORM_CONST.TAB.COMPANY_ROLES.ID,
-                    LABEL: 'Company Roles',
+                    LABEL: 'Purchase Order Approvers',
                     FIELDGROUPS: {
                     },
                     SUBLISTS: {
                         COMPANY_ROLES_LIST: {
                             ID: FORM_CONST.TAB.COMPANY_ROLES.SUBLISTS.COMPANY_ROLES_LIST.ID,
                             TYPE: serverWidget.SublistType.EDITOR,
-                            LABEL: 'Existing Role Configurations',
+                            LABEL: 'Purchase Order Approval Tiers',
                             FIELDS: [
                                 {
                                     ID: FORM_CONST.TAB.COMPANY_ROLES.SUBLISTS.COMPANY_ROLES_LIST.FIELDS.COMPANY_APPROVER_CONFIG_ID,
@@ -31,7 +31,7 @@ define(['N/ui/serverWidget', 'N/log', 'N/search', 'N/record', 'N/redirect', './t
                                     ID: FORM_CONST.TAB.COMPANY_ROLES.SUBLISTS.COMPANY_ROLES_LIST.FIELDS.COMPANY_ROLE_TYPE_DISPLAY,
                                     TYPE: serverWidget.FieldType.SELECT,
                                     SOURCE: LISTS.ROLE_TYPES,
-                                    LABEL: 'Role Type'
+                                    LABEL: 'Approval Tier'
                                 },
                                 {
                                     ID: FORM_CONST.TAB.COMPANY_ROLES.SUBLISTS.COMPANY_ROLES_LIST.FIELDS.COMPANY_ROLE_PRIMARY_APPROVER_DISPLAY,
@@ -45,14 +45,14 @@ define(['N/ui/serverWidget', 'N/log', 'N/search', 'N/record', 'N/redirect', './t
                 },
                 DEPARTMENTS: {
                     ID: FORM_CONST.TAB.DEPARTMENTS.ID,
-                    LABEL: 'Departments',
+                    LABEL: 'Vendor Bill Approvers',
                     FIELDGROUPS: {
                     },
                     SUBLISTS: {
                         DEPARTMENTS_LIST: {
                             ID: FORM_CONST.TAB.DEPARTMENTS.SUBLISTS.DEPARTMENTS_LIST.ID,
                             TYPE: serverWidget.SublistType.EDITOR,
-                            LABEL: 'Existing Department Configurations',
+                            LABEL: 'Department-Based Vendor Bill Approvers',
                             FIELDS: [
                                 {
                                     ID: FORM_CONST.TAB.DEPARTMENTS.SUBLISTS.DEPARTMENTS_LIST.FIELDS.DEPARTMENT_APPROVER_CONFIG_ID,
@@ -137,41 +137,41 @@ define(['N/ui/serverWidget', 'N/log', 'N/search', 'N/record', 'N/redirect', './t
                     FIELDGROUPS: {
                         COMPANY_THRESHOLDS: {
                             ID: 'custpage_company_thresholds_group',
-                            LABEL: 'Company Approval Limits',
+                            LABEL: 'Purchase Order Approval Limits',
                             FIELDS: [
                                 {
                                     ID: FORM_CONST.THRESHOLDS.FIELDS.COMPANY_AUTO_APPROVAL_LIMIT,
                                     TYPE: serverWidget.FieldType.CURRENCY,
-                                    LABEL: 'Company Auto Approval Limit'
+                                    LABEL: 'PO Auto Approval Limit'
                                 },
                                 {
                                     ID: FORM_CONST.THRESHOLDS.FIELDS.COO_APPROVAL_LIMIT,
                                     TYPE: serverWidget.FieldType.CURRENCY,
-                                    LABEL: 'COO Approval Limit'
+                                    LABEL: 'Tier 1 Approval Limit'
                                 },
                                 {
                                     ID: FORM_CONST.THRESHOLDS.FIELDS.CFO_APPROVAL_LIMIT,
                                     TYPE: serverWidget.FieldType.CURRENCY,
-                                    LABEL: 'CFO Approval Limit'
+                                    LABEL: 'Tier 2 Approval Limit'
                                 },
                                 {
                                     ID: FORM_CONST.THRESHOLDS.FIELDS.CEO_APPROVAL_LIMIT,
                                     TYPE: serverWidget.FieldType.TEXT,
-                                    LABEL: 'CEO Approval Limit',
+                                    LABEL: 'Tier 3 Approval Limit',
                                     DISPLAY_TYPE: serverWidget.FieldDisplayType.INLINE,
                                     DEFAULT_VALUE: 'Unlimited (No Limit)',
-                                    HELP_TEXT: 'CEO has unlimited approval authority as the highest company approver.'
+                                    HELP_TEXT: 'Tier 3 has unlimited approval authority as the highest PO approver.'
                                 }
                             ]
                         },
                         DEPARTMENT_THRESHOLDS: {
                             ID: 'custpage_department_thresholds_group',
-                            LABEL: 'Department Approval Limits',
+                            LABEL: 'Vendor Bill Approval Limits',
                             FIELDS: [
                                 {
                                     ID: FORM_CONST.THRESHOLDS.FIELDS.DEPARTMENT_AUTO_APPROVAL_LIMIT,
                                     TYPE: serverWidget.FieldType.CURRENCY,
-                                    LABEL: 'Department Auto Approval Limit'
+                                    LABEL: 'Vendor Bill Auto Approval Limit'
                                 },
                                 {
                                     ID: FORM_CONST.THRESHOLDS.FIELDS.DEPARTMENT_TIER1_APPROVAL_LIMIT,
@@ -389,6 +389,26 @@ define(['N/ui/serverWidget', 'N/log', 'N/search', 'N/record', 'N/redirect', './t
                     label: tabConfig.LABEL
                 });
             }
+
+            // Add help text for Purchase Order Approvers tab
+            form.addField({
+                id: 'custpage_po_help',
+                type: serverWidget.FieldType.INLINEHTML,
+                label: 'Help',
+                container: FORM_OBJECT.TABS.COMPANY_ROLES.ID
+            }).defaultValue = '<div style="padding: 10px; background-color: #f0f8ff; border: 1px solid #ccc; margin-bottom: 10px;">' +
+                '<strong>Purchase Order Approvers:</strong> Configure tier-based approvers for the Purchase Order workflow. ' +
+                'Approvals will be required based on the PO amount and the limits set in the Approval Thresholds tab.</div>';
+
+            // Add help text for Vendor Bill Approvers tab
+            form.addField({
+                id: 'custpage_vb_help',
+                type: serverWidget.FieldType.INLINEHTML,
+                label: 'Help',
+                container: FORM_OBJECT.TABS.DEPARTMENTS.ID
+            }).defaultValue = '<div style="padding: 10px; background-color: #f0f8ff; border: 1px solid #ccc; margin-bottom: 10px;">' +
+                '<strong>Vendor Bill Approvers:</strong> Configure department-based approvers for the Vendor Bill workflow. ' +
+                'Each department can have up to three tiers of approvers based on bill amounts.</div>';
 
             // Create field groups and fields for each tab
             for (let tabKey in FORM_OBJECT.TABS) {
@@ -765,13 +785,13 @@ define(['N/ui/serverWidget', 'N/log', 'N/search', 'N/record', 'N/redirect', './t
         }
 
         /**
-         * Process company role records for CRUD operations
+         * Process purchase order approver records for CRUD operations
          * @param {Object} request - The request object from scriptContext
          * @returns {Object} Result object with operation details
          */
         function processCompanyRoleRecords(request) {
             const title = "processCompanyRoleRecords";
-            log.debug(title, 'Processing company role records');
+            log.debug(title, 'Processing purchase order approver records');
 
             // Results tracking
             const results = {
@@ -788,7 +808,7 @@ define(['N/ui/serverWidget', 'N/log', 'N/search', 'N/record', 'N/redirect', './t
                     group: FORM_OBJECT.TABS.COMPANY_ROLES.SUBLISTS.COMPANY_ROLES_LIST.ID
                 });
 
-                log.debug(title, `Found ${lineCount} lines in company roles sublist`);
+                log.debug(title, `Found ${lineCount} lines in purchase order approvers sublist`);
                 // Track role types to prevent duplicates
                 const roleTypes = new Set();
                 const submittedIds = new Set();
@@ -818,13 +838,13 @@ define(['N/ui/serverWidget', 'N/log', 'N/search', 'N/record', 'N/redirect', './t
 
                         // Validate required fields
                         if (!roleType || !primaryApprover) {
-                            results.errors.push(`Line ${i + 1}: Role Type and Primary Approver are required fields`);
+                            results.errors.push(`Line ${i + 1}: Approval Tier and Primary Approver are required fields`);
                             continue;
                         }
 
                         // Check for duplicate role types
                         if (roleTypes.has(roleType)) {
-                            results.errors.push(`Line ${i + 1}: Duplicate Role Type detected. Each role type must be unique.`);
+                            results.errors.push(`Line ${i + 1}: Duplicate Approval Tier detected. Each approval tier must be unique.`);
                             continue;
                         }
 

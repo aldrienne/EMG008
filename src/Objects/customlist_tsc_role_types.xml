@@ -6,15 +6,15 @@
   <customvalues>
     <customvalue scriptid="val_106605_8172786_sb1_394">
       <isinactive>F</isinactive>
-      <value>COO</value>
+      <value>Tier 1</value>
     </customvalue>
     <customvalue scriptid="val_106606_8172786_sb1_593">
       <isinactive>F</isinactive>
-      <value>CFO</value>
+      <value>Tier 2</value>
     </customvalue>
     <customvalue scriptid="val_106607_8172786_sb1_898">
       <isinactive>F</isinactive>
-      <value>CEO</value>
+      <value>Tier 3</value>
     </customvalue>
   </customvalues>
 </customlist>
