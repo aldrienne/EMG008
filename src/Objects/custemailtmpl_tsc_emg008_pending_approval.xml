@@ -1,0 +1,12 @@
+<emailtemplate scriptid="custemailtmpl_tsc_emg008_pending_approval">
+  <addcompanyaddress>T</addcompanyaddress>
+  <addunsubscribelink>T</addunsubscribelink>
+  <description></description>
+  <isinactive>F</isinactive>
+  <isprivate>F</isprivate>
+  <mediaitem></mediaitem>
+  <name>Pending Approval</name>
+  <recordtype>TRANSACTION</recordtype>
+  <subject>ACTION REQUIRED: Approve ${transaction.type} ${transaction.tranid}</subject>
+  <usesmedia>F</usesmedia>
+</emailtemplate>
