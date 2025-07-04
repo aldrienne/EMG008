@@ -204,30 +204,30 @@
   </customrecordcustomfields>
   <instances>
     <instance scriptid="val_106649_8172786_sb1_962">
-      <custrecord_delegate_start_date>2025-05-01</custrecord_delegate_start_date>
+      <custrecord_delegate_start_date>2025-06-11</custrecord_delegate_start_date>
       <custrecord_tsc_delegate_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_delegate_approver>
-      <custrecord_tsc_delegate_end_date>2025-05-03</custrecord_tsc_delegate_end_date>
+      <custrecord_tsc_delegate_end_date>2025-06-13</custrecord_tsc_delegate_end_date>
       <custrecord_tsc_delegate_primary_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_delegate_primary_approver>
       <isinactive>F</isinactive>
     </instance>
     <instance scriptid="val_106682_8172786_sb1_912">
       <custrecord_delegate_start_date>2025-05-20</custrecord_delegate_start_date>
       <custrecord_tsc_delegate_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_delegate_approver>
-      <custrecord_tsc_delegate_end_date>2025-05-23</custrecord_tsc_delegate_end_date>
+      <custrecord_tsc_delegate_end_date></custrecord_tsc_delegate_end_date>
       <custrecord_tsc_delegate_primary_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_delegate_primary_approver>
-      <isinactive>F</isinactive>
+      <isinactive>T</isinactive>
     </instance>
     <instance scriptid="val_106683_8172786_sb1_213">
       <custrecord_delegate_start_date></custrecord_delegate_start_date>
       <custrecord_tsc_delegate_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_delegate_approver>
       <custrecord_tsc_delegate_end_date></custrecord_tsc_delegate_end_date>
       <custrecord_tsc_delegate_primary_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_delegate_primary_approver>
-      <isinactive>F</isinactive>
+      <isinactive>T</isinactive>
     </instance>
     <instance scriptid="val_106684_8172786_sb1_413">
-      <custrecord_delegate_start_date>2025-05-19</custrecord_delegate_start_date>
+      <custrecord_delegate_start_date>2025-06-11</custrecord_delegate_start_date>
       <custrecord_tsc_delegate_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_delegate_approver>
-      <custrecord_tsc_delegate_end_date>2025-05-24</custrecord_tsc_delegate_end_date>
+      <custrecord_tsc_delegate_end_date>2025-06-13</custrecord_tsc_delegate_end_date>
       <custrecord_tsc_delegate_primary_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_delegate_primary_approver>
       <isinactive>F</isinactive>
     </instance>
@@ -239,7 +239,105 @@
       <isinactive>F</isinactive>
     </instance>
     <instance scriptid="val_108452_8172786_sb1_393">
-      <custrecord_delegate_start_date>2025-06-02</custrecord_delegate_start_date>
+      <custrecord_delegate_start_date>2025-06-13</custrecord_delegate_start_date>
+      <custrecord_tsc_delegate_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_delegate_approver>
+      <custrecord_tsc_delegate_end_date>2025-06-16</custrecord_tsc_delegate_end_date>
+      <custrecord_tsc_delegate_primary_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_delegate_primary_approver>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_109504_8172786_sb1_857">
+      <custrecord_delegate_start_date>2025-06-11</custrecord_delegate_start_date>
+      <custrecord_tsc_delegate_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_delegate_approver>
+      <custrecord_tsc_delegate_end_date>2025-06-11</custrecord_tsc_delegate_end_date>
+      <custrecord_tsc_delegate_primary_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_delegate_primary_approver>
+      <isinactive>T</isinactive>
+    </instance>
+    <instance scriptid="val_109505_8172786_sb1_555">
+      <custrecord_delegate_start_date>2025-06-11</custrecord_delegate_start_date>
+      <custrecord_tsc_delegate_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_delegate_approver>
+      <custrecord_tsc_delegate_end_date>2025-06-16</custrecord_tsc_delegate_end_date>
+      <custrecord_tsc_delegate_primary_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_delegate_primary_approver>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_109676_8172786_sb1_257">
+      <custrecord_delegate_start_date>2025-06-12</custrecord_delegate_start_date>
+      <custrecord_tsc_delegate_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_delegate_approver>
+      <custrecord_tsc_delegate_end_date></custrecord_tsc_delegate_end_date>
+      <custrecord_tsc_delegate_primary_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_delegate_primary_approver>
+      <isinactive>T</isinactive>
+    </instance>
+    <instance scriptid="val_109677_8172786_sb1_175">
+      <custrecord_delegate_start_date>2025-06-11</custrecord_delegate_start_date>
+      <custrecord_tsc_delegate_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_delegate_approver>
+      <custrecord_tsc_delegate_end_date>2025-06-13</custrecord_tsc_delegate_end_date>
+      <custrecord_tsc_delegate_primary_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_delegate_primary_approver>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_109724_8172786_sb1_625">
+      <custrecord_delegate_start_date>2025-06-11</custrecord_delegate_start_date>
+      <custrecord_tsc_delegate_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_delegate_approver>
+      <custrecord_tsc_delegate_end_date>2025-07-04</custrecord_tsc_delegate_end_date>
+      <custrecord_tsc_delegate_primary_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_delegate_primary_approver>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_110062_8172786_sb1_170">
+      <custrecord_delegate_start_date>2025-06-11</custrecord_delegate_start_date>
+      <custrecord_tsc_delegate_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_delegate_approver>
+      <custrecord_tsc_delegate_end_date>2025-06-13</custrecord_tsc_delegate_end_date>
+      <custrecord_tsc_delegate_primary_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_delegate_primary_approver>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_110064_8172786_sb1_662">
+      <custrecord_delegate_start_date>2025-06-11</custrecord_delegate_start_date>
+      <custrecord_tsc_delegate_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_delegate_approver>
+      <custrecord_tsc_delegate_end_date>2025-06-13</custrecord_tsc_delegate_end_date>
+      <custrecord_tsc_delegate_primary_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_delegate_primary_approver>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_110066_8172786_sb1_786">
+      <custrecord_delegate_start_date>2025-06-16</custrecord_delegate_start_date>
+      <custrecord_tsc_delegate_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_delegate_approver>
+      <custrecord_tsc_delegate_end_date>2025-06-20</custrecord_tsc_delegate_end_date>
+      <custrecord_tsc_delegate_primary_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_delegate_primary_approver>
+      <isinactive>T</isinactive>
+    </instance>
+    <instance scriptid="val_110077_8172786_sb1_103">
+      <custrecord_delegate_start_date>2025-06-13</custrecord_delegate_start_date>
+      <custrecord_tsc_delegate_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_delegate_approver>
+      <custrecord_tsc_delegate_end_date>2025-06-21</custrecord_tsc_delegate_end_date>
+      <custrecord_tsc_delegate_primary_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_delegate_primary_approver>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_110362_8172786_sb1_623">
+      <custrecord_delegate_start_date>2025-06-20</custrecord_delegate_start_date>
+      <custrecord_tsc_delegate_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_delegate_approver>
+      <custrecord_tsc_delegate_end_date>2025-07-02</custrecord_tsc_delegate_end_date>
+      <custrecord_tsc_delegate_primary_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_delegate_primary_approver>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_110593_8172786_sb1_853">
+      <custrecord_delegate_start_date>2025-06-20</custrecord_delegate_start_date>
+      <custrecord_tsc_delegate_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_delegate_approver>
+      <custrecord_tsc_delegate_end_date></custrecord_tsc_delegate_end_date>
+      <custrecord_tsc_delegate_primary_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_delegate_primary_approver>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_111086_8172786_sb1_287">
+      <custrecord_delegate_start_date>2025-06-29</custrecord_delegate_start_date>
+      <custrecord_tsc_delegate_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_delegate_approver>
+      <custrecord_tsc_delegate_end_date>2025-07-31</custrecord_tsc_delegate_end_date>
+      <custrecord_tsc_delegate_primary_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_delegate_primary_approver>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_111383_8172786_sb1_695">
+      <custrecord_delegate_start_date>2025-07-01</custrecord_delegate_start_date>
+      <custrecord_tsc_delegate_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_delegate_approver>
+      <custrecord_tsc_delegate_end_date>2025-07-05</custrecord_tsc_delegate_end_date>
+      <custrecord_tsc_delegate_primary_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_delegate_primary_approver>
+      <isinactive>F</isinactive>
+    </instance>
+    <instance scriptid="val_111386_8172786_sb1_187">
+      <custrecord_delegate_start_date>2025-07-02</custrecord_delegate_start_date>
       <custrecord_tsc_delegate_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_delegate_approver>
       <custrecord_tsc_delegate_end_date></custrecord_tsc_delegate_end_date>
       <custrecord_tsc_delegate_primary_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_delegate_primary_approver>

@@ -1,10 +1,22 @@
 #!/bin/bash
 
-# Script to import all NetSuite objects from account to local project
+# Script to import/update all NetSuite objects from account to local project
 # Generated for EMG008 project
+# Usage: ./import_all_objects.sh [import|update]
+# Default mode is import if no parameter provided
 
-echo "Starting NetSuite object import..."
+# Set mode from command line parameter (default to import)
+MODE="${1:-import}"
+
+# Validate mode
+if [ "$MODE" != "import" ] && [ "$MODE" != "update" ]; then
+    echo "Error: Invalid mode '$MODE'. Use 'import' or 'update'"
+    exit 1
+fi
+
+echo "Starting NetSuite object ${MODE}..."
 echo "================================"
+echo "Mode: $(echo $MODE | tr '[:lower:]' '[:upper:]')"
 
 # Set destination folder
 DEST_FOLDER="src/Objects"
@@ -14,27 +26,39 @@ SUCCESS_COUNT=0
 FAIL_COUNT=0
 TOTAL_COUNT=0
 
-# Function to import an object and track result
+# Function to import/update an object and track result
 import_object() {
     local type=$1
     local scriptid=$2
     TOTAL_COUNT=$((TOTAL_COUNT + 1))
     
     echo ""
-    echo "[$TOTAL_COUNT/28] Importing $scriptid (type: $type)..."
+    echo "[$TOTAL_COUNT/28] $(echo ${MODE:0:1} | tr '[:lower:]' '[:upper:]')${MODE:1}ing $scriptid (type: $type)..."
     
-    if suitecloud object:import --type "$type" --scriptid "$scriptid" --destinationfolder "$DEST_FOLDER" 2>/dev/null; then
-        echo "✓ Successfully imported $scriptid"
-        SUCCESS_COUNT=$((SUCCESS_COUNT + 1))
+    if [ "$MODE" = "update" ]; then
+        # Update mode - use object:update command
+        if suitecloud object:update --scriptid "$scriptid" 2>/dev/null; then
+            echo "✓ Successfully updated $scriptid"
+            SUCCESS_COUNT=$((SUCCESS_COUNT + 1))
+        else
+            echo "✗ Failed to update $scriptid"
+            FAIL_COUNT=$((FAIL_COUNT + 1))
+        fi
     else
-        echo "✗ Failed to import $scriptid"
-        FAIL_COUNT=$((FAIL_COUNT + 1))
+        # Import mode - use object:import command
+        if suitecloud object:import --type "$type" --scriptid "$scriptid" --destinationfolder "$DEST_FOLDER" 2>/dev/null; then
+            echo "✓ Successfully imported $scriptid"
+            SUCCESS_COUNT=$((SUCCESS_COUNT + 1))
+        else
+            echo "✗ Failed to import $scriptid"
+            FAIL_COUNT=$((FAIL_COUNT + 1))
+        fi
     fi
 }
 
-# Import Custom Body Fields (transactionbodycustomfield)
+# Import/Update Custom Body Fields (transactionbodycustomfield)
 echo ""
-echo "Importing Custom Body Fields..."
+echo "$(echo ${MODE:0:1} | tr '[:lower:]' '[:upper:]')${MODE:1}ing Custom Body Fields..."
 echo "------------------------------"
 import_object "transactionbodycustomfield" "custbody_tsc_approval_history"
 import_object "transactionbodycustomfield" "custbody_tsc_approval_level"
@@ -46,32 +70,32 @@ import_object "transactionbodycustomfield" "custbody_tsc_is_revision"
 import_object "transactionbodycustomfield" "custbody_tsc_last_approver"
 import_object "transactionbodycustomfield" "custbody_tsc_rejection_reason"
 
-# Import Email Templates
+# Import/Update Email Templates
 echo ""
-echo "Importing Email Templates..."
+echo "$(echo ${MODE:0:1} | tr '[:lower:]' '[:upper:]')${MODE:1}ing Email Templates..."
 echo "---------------------------"
 import_object "emailtemplate" "custemailtmpl_tsc_emg008_delegate_assignment_notification"
 
-# Import Custom Lists
+# Import/Update Custom Lists
 echo ""
-echo "Importing Custom Lists..."
+echo "$(echo ${MODE:0:1} | tr '[:lower:]' '[:upper:]')${MODE:1}ing Custom Lists..."
 echo "------------------------"
 import_object "customlist" "customlist_tsc_approval_actions"
 import_object "customlist" "customlist_tsc_config_types"
 import_object "customlist" "customlist_tsc_role_types"
 
-# Import Custom Records
+# Import/Update Custom Records
 echo ""
-echo "Importing Custom Records..."
+echo "$(echo ${MODE:0:1} | tr '[:lower:]' '[:upper:]')${MODE:1}ing Custom Records..."
 echo "--------------------------"
 import_object "customrecord" "customrecord_tsc_approval_history"
 import_object "customrecord" "customrecord_tsc_approval_thresholds"
 import_object "customrecord" "customrecord_tsc_approver_config"
 import_object "customrecord" "customrecord_tsc_delegate_approvers"
 
-# Import Script Deployments
+# Import/Update Script Deployments
 echo ""
-echo "Importing Script Deployments..."
+echo "$(echo ${MODE:0:1} | tr '[:lower:]' '[:upper:]')${MODE:1}ing Script Deployments..."
 echo "------------------------------"
 import_object "scriptdeployment" "customscript_tsc_mr_email_alerts"
 import_object "scriptdeployment" "customscript_tsc_mr_handle_approver_chan"
@@ -82,15 +106,15 @@ import_object "scriptdeployment" "customscript_tsc_ue_email_alerts"
 import_object "scriptdeployment" "customscript_tsc_wa_check_delegate_activ"
 import_object "scriptdeployment" "customscript_tsc_wa_retrieve_approvers"
 
-# Import Saved Searches
+# Import/Update Saved Searches
 echo ""
-echo "Importing Saved Searches..."
+echo "$(echo ${MODE:0:1} | tr '[:lower:]' '[:upper:]')${MODE:1}ing Saved Searches..."
 echo "--------------------------"
 import_object "savedsearch" "customsearch_tsc_emg008_pending_po_appro"
 
-# Import Workflows
+# Import/Update Workflows
 echo ""
-echo "Importing Workflows..."
+echo "$(echo ${MODE:0:1} | tr '[:lower:]' '[:upper:]')${MODE:1}ing Workflows..."
 echo "---------------------"
 import_object "workflow" "customworkflow_tsc_wf_company_role"
 import_object "workflow" "customworkflow_tsc_wf_department"
@@ -98,19 +122,19 @@ import_object "workflow" "customworkflow_tsc_wf_department"
 # Summary
 echo ""
 echo "================================"
-echo "Import Summary:"
+echo "$(echo ${MODE:0:1} | tr '[:lower:]' '[:upper:]')${MODE:1} Summary:"
 echo "--------------------------------"
 echo "Total objects: $TOTAL_COUNT"
-echo "Successful imports: $SUCCESS_COUNT"
-echo "Failed imports: $FAIL_COUNT"
+echo "Successful ${MODE}s: $SUCCESS_COUNT"
+echo "Failed ${MODE}s: $FAIL_COUNT"
 echo "================================"
 
 if [ $FAIL_COUNT -gt 0 ]; then
     echo ""
-    echo "⚠️  Some imports failed. Please check the error messages above."
+    echo "⚠️  Some ${MODE}s failed. Please check the error messages above."
     exit 1
 else
     echo ""
-    echo "✅ All objects imported successfully!"
+    echo "✅ All objects ${MODE}ed successfully!"
     exit 0
 fi

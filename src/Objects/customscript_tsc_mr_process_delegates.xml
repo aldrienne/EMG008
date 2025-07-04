@@ -48,11 +48,12 @@
       <title>TSC|MR|Restore Approvers</title>
       <yieldaftermins>60</yieldaftermins>
       <recurrence>
-        <single>
-          <repeat></repeat>
-          <startdate>2025-06-05</startdate>
-          <starttime>01:00:00Z</starttime>
-        </single>
+        <daily>
+          <everyxdays>1</everyxdays>
+          <repeat>PT15M</repeat>
+          <startdate>2025-06-04</startdate>
+          <starttime>07:00:00Z</starttime>
+        </daily>
       </recurrence>
     </scriptdeployment>
     <scriptdeployment scriptid="customdeploy1">
@@ -67,11 +68,12 @@
       <title>TSC|MR|Assign Active Delegates</title>
       <yieldaftermins>60</yieldaftermins>
       <recurrence>
-        <single>
-          <repeat></repeat>
-          <startdate>2025-06-05</startdate>
-          <starttime>01:00:00Z</starttime>
-        </single>
+        <daily>
+          <everyxdays>1</everyxdays>
+          <repeat>PT30M</repeat>
+          <startdate>2025-06-04</startdate>
+          <starttime>07:00:00Z</starttime>
+        </daily>
       </recurrence>
     </scriptdeployment>
   </scriptdeployments>

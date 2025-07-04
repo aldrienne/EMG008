@@ -1593,7 +1593,7 @@
           <waitforworkflow></waitforworkflow>
           <waitforworkflowstate></waitforworkflowstate>
           <initcondition>
-            <formula><![CDATA["Total" > "Workflow:Approval Threshold:Tier 2 Approval Limit"]]></formula>
+            <formula><![CDATA["Total" >= "Workflow:Approval Threshold:Tier 2 Approval Limit"]]></formula>
             <type>VISUAL_BUILDER</type>
             <parameters>
               <parameter>

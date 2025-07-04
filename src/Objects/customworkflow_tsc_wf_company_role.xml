@@ -167,6 +167,18 @@
             <valuetext></valuetext>
             <valuetype>STATIC</valuetype>
           </setfieldvalueaction>
+          <setfieldvalueaction scriptid="workflowaction429">
+            <field>[scriptid=custbody_tsc_is_revision]</field>
+            <isinactive>F</isinactive>
+            <valuechecked>F</valuechecked>
+            <valuedate></valuedate>
+            <valuefield></valuefield>
+            <valueformula></valueformula>
+            <valuejoinfield></valuejoinfield>
+            <valueselect></valueselect>
+            <valuetext></valuetext>
+            <valuetype>STATIC</valuetype>
+          </setfieldvalueaction>
         </workflowactiongroup>
         <setdisplaytypeaction scriptid="workflowaction340">
           <clienttriggerfields></clienttriggerfields>
@@ -723,7 +735,7 @@
           <valueformula></valueformula>
           <valuejoinfield></valuejoinfield>
           <valueselect></valueselect>
-          <valuetext>COO</valuetext>
+          <valuetext>TIER 1</valuetext>
           <valuetype>STATIC</valuetype>
           <initcondition>
             <formula></formula>
@@ -968,7 +980,7 @@
           <scheduletimeofday></scheduletimeofday>
           <scheduletimeunit></scheduletimeunit>
           <initcondition>
-            <formula><![CDATA["User" NOT IN ("Workflow:CFO:Primary Approver")]]></formula>
+            <formula><![CDATA["User" NOT IN ("Workflow:CFO:Primary Approver") OR "User" IN ("Assigned Delegate Approver")]]></formula>
             <type>VISUAL_BUILDER</type>
             <parameters>
               <parameter>
@@ -978,6 +990,10 @@
               <parameter>
                 <name>Workflow:CFO:Primary Approver</name>
                 <value>[scriptid=customworkflow_tsc_wf_company_role.custworkflow_tsc_emg008_cfo]:[scriptid=customrecord_tsc_approver_config.custrecord_tsc_primary_approver]</value>
+              </parameter>
+              <parameter>
+                <name>Assigned Delegate Approver</name>
+                <value>[scriptid=custbody_tsc_assigned_delegate_approv]</value>
               </parameter>
             </parameters>
           </initcondition>
@@ -1101,7 +1117,7 @@
           <valueformula></valueformula>
           <valuejoinfield></valuejoinfield>
           <valueselect></valueselect>
-          <valuetext>CEO</valuetext>
+          <valuetext>TIER 3</valuetext>
           <valuetype>STATIC</valuetype>
           <initcondition>
             <formula></formula>
@@ -1492,7 +1508,7 @@
           <valueformula></valueformula>
           <valuejoinfield></valuejoinfield>
           <valueselect></valueselect>
-          <valuetext>CFO</valuetext>
+          <valuetext>TIER 2</valuetext>
           <valuetype>STATIC</valuetype>
           <initcondition>
             <formula></formula>
@@ -1782,8 +1798,30 @@
           <scheduletimeofday></scheduletimeofday>
           <scheduletimeunit></scheduletimeunit>
           <initcondition>
-            <formula><![CDATA[{nextapprover.id > 0]]></formula>
-            <type>FORMULA</type>
+            <formula><![CDATA["User" IN ("Workflow:COO:Primary Approver") OR "User" IN ("Workflow:CFO:Primary Approver") OR "User" IN ("Workflow:CEO:Primary Approver") OR "User" IN ("Assigned Delegate Approver")]]></formula>
+            <type>VISUAL_BUILDER</type>
+            <parameters>
+              <parameter>
+                <name>User</name>
+                <value>STDUSERUSER</value>
+              </parameter>
+              <parameter>
+                <name>Workflow:COO:Primary Approver</name>
+                <value>[scriptid=customworkflow_tsc_wf_company_role.custworkflow_tsc_emg008_coo]:[scriptid=customrecord_tsc_approver_config.custrecord_tsc_primary_approver]</value>
+              </parameter>
+              <parameter>
+                <name>Workflow:CFO:Primary Approver</name>
+                <value>[scriptid=customworkflow_tsc_wf_company_role.custworkflow_tsc_emg008_cfo]:[scriptid=customrecord_tsc_approver_config.custrecord_tsc_primary_approver]</value>
+              </parameter>
+              <parameter>
+                <name>Workflow:CEO:Primary Approver</name>
+                <value>[scriptid=customworkflow_tsc_wf_company_role.custworkflow_tsc_emg008_ceo]:[scriptid=customrecord_tsc_approver_config.custrecord_tsc_primary_approver]</value>
+              </parameter>
+              <parameter>
+                <name>Assigned Delegate Approver</name>
+                <value>[scriptid=custbody_tsc_assigned_delegate_approv]</value>
+              </parameter>
+            </parameters>
           </initcondition>
           <fieldsettings>
             <fieldsetting>

@@ -4,7 +4,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is **EMG008**, a NetSuite SuiteCloud Account Customization Project (ACP) implementing a comprehensive multi-tiered approval workflow system for purchase orders and financial transactions. The system supports company-level roles (COO, CFO, CEO) and department-level tiers (Tier 1, 2, 3) with delegation management and email notifications.
+This is **EMG008**, a NetSuite SuiteCloud Account Customization Project (ACP) implementing a comprehensive multi-tiered approval workflow system for purchase orders and vendor bills. The system uses different approval structures for each transaction type:
+- **Purchase Orders**: Company-wide role-based approvals (COO/CFO/CEO) based on amount
+- **Vendor Bills**: Department-specific tier-based approvals (Tier 1/2/3) based on department and amount
 
 ## Development Commands
 
@@ -64,11 +66,14 @@ All transaction fields follow `custbody_tsc_` naming pattern and track approval 
 
 ### Workflow Architecture
 
-The system implements **dual workflow architecture**:
-- **Company Role Workflow** (`customworkflow_tsc_wf_company_role`) - For COO/CFO/CEO approvals
-- **Department Workflow** (`customworkflow_tsc_wf_department`) - For departmental tier-based approvals
+The system implements **transaction type-based workflow architecture**:
+- **Purchase Order Workflow** (`customworkflow_tsc_wf_company_role`) - "TSC|WF|Company Role Approval" - Handles **Purchase Order** approvals with company-wide role-based hierarchy (COO/CFO/CEO) based purely on amount
+- **Vendor Bill Workflow** (`customworkflow_tsc_wf_department`) - "TSC|WF|Company Department Approval" - Handles **Vendor Bill** approvals with department-specific tier-based hierarchy (each department has its own Tier 1, 2, 3 approvers)
 
-Both workflows dynamically route based on transaction amounts and configured thresholds.
+**Key Routing Differences:**
+- **Purchase Orders**: Amount-based routing to company-wide role approvers (COO/CFO/CEO)
+- **Vendor Bills**: Department + amount-based routing to department-specific tier approvers (Tier 1/2/3)
+- Different approval structures: PO workflow uses role-based (COO/CFO/CEO), VB workflow uses tier-based (1/2/3) with department parameter
 
 ## Development Patterns
 

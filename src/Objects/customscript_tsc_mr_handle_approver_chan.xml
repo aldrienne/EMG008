@@ -14,15 +14,16 @@
       <loglevel>DEBUG</loglevel>
       <queueallstagesatonce>T</queueallstagesatonce>
       <runasrole>ADMINISTRATOR</runasrole>
-      <status>NOTSCHEDULED</status>
+      <status>SCHEDULED</status>
       <title>TSC|MR|Handle Approver Changed</title>
       <yieldaftermins>60</yieldaftermins>
       <recurrence>
-        <single>
-          <repeat></repeat>
-          <startdate>2025-06-12</startdate>
-          <starttime>01:00:00Z</starttime>
-        </single>
+        <daily>
+          <everyxdays>1</everyxdays>
+          <repeat>PT15M</repeat>
+          <startdate>2025-06-11</startdate>
+          <starttime>07:00:00Z</starttime>
+        </daily>
       </recurrence>
     </scriptdeployment>
   </scriptdeployments>

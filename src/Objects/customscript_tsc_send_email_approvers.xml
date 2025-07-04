@@ -44,15 +44,15 @@
       <loglevel>DEBUG</loglevel>
       <queueallstagesatonce>T</queueallstagesatonce>
       <runasrole>ADMINISTRATOR</runasrole>
-      <status>SCHEDULED</status>
+      <status>NOTSCHEDULED</status>
       <title>TSC|MR|Send Email to Approvers</title>
       <yieldaftermins>60</yieldaftermins>
       <recurrence>
         <daily>
           <everyxdays>1</everyxdays>
-          <repeat>PT6H</repeat>
+          <repeat></repeat>
           <startdate>2025-06-27</startdate>
-          <starttime>15:00:00Z</starttime>
+          <starttime>07:00:00Z</starttime>
         </daily>
       </recurrence>
     </scriptdeployment>

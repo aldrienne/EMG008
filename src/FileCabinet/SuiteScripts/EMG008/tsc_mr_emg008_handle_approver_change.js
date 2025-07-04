@@ -33,9 +33,9 @@ define(['N/search', 'N/log', 'N/record', './tsc_cm_constants.js'],
                 {
                     field: 'primaryApprover', getRoleLevel: (roleType) => {
                         switch (parseInt(roleType)) {
-                            case ROLE_TYPE_MAPPING.COO: return 'COO';
-                            case ROLE_TYPE_MAPPING.CFO: return 'CFO';
-                            case ROLE_TYPE_MAPPING.CEO: return 'CEO';
+                            case ROLE_TYPE_MAPPING.COO: return 'TIER 1';
+                            case ROLE_TYPE_MAPPING.CFO: return 'TIER 2';
+                            case ROLE_TYPE_MAPPING.CEO: return 'TIER 3';
                             default: return 'UNKNOWN';
                         }
                     }
