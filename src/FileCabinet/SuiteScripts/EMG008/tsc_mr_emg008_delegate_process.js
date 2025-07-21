@@ -307,11 +307,7 @@ define(['N/search', './tsc_cm_constants', 'N/record', 'N/runtime'],
                 'AND',
                 ['nextapprover', 'anyof', primaryApproverId],
                 'AND',
-                ['mainline', 'is', 'T'],
-                'AND',
-                [TSCCONST.TRANSACTION_BODY_FIELDS.ASSIGNED_DELEGATE_APPROVER, 'anyof', '@NONE@'],
-                'AND',
-                [TSCCONST.TRANSACTION_BODY_FIELDS.IS_DELEGATE_ACTIVE, 'is', 'F']
+                ['mainline', 'is', 'T']
             ];
 
             log.debug(title + ' filters', filters);
