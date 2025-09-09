@@ -4,10 +4,10 @@
   <initeventtypes></initeventtypes>
   <initlocalizationcontext></initlocalizationcontext>
   <initoncreate>T</initoncreate>
-  <initonvieworupdate>T</initonvieworupdate>
+  <initonvieworupdate>F</initonvieworupdate>
   <initsavedsearchcondition></initsavedsearchcondition>
   <inittriggertype></inittriggertype>
-  <isinactive>F</isinactive>
+  <isinactive>T</isinactive>
   <islogenabled>T</islogenabled>
   <keephistory>ALWAYS</keephistory>
   <name>TSC|WF|Company Department Approval</name>
@@ -19,7 +19,7 @@
     <type>VISUAL_BUILDER</type>
   </initcondition>
   <workflowcustomfields>
-    <workflowcustomfield scriptid="custworkflow_tsc_emg008_approval_threshold_2">
+    <workflowcustomfield scriptid="custworkflow_tsc_emg008_appr_thresh_2">
       <applyformatting>F</applyformatting>
       <defaultchecked>F</defaultchecked>
       <defaultselection></defaultselection>
@@ -202,7 +202,7 @@
           <conditionsavedsearch></conditionsavedsearch>
           <contexttypes>ACTION|BANKCONNECTIVITY|BANKSTATEMENTPARSER|BUNDLEINSTALLATION|CLIENT|CSVIMPORT|CUSTOMGLLINES|CUSTOMMASSUPDATE|RECORDACTION|DATASETBUILDER|DEBUGGER|EMAILCAPTURE|FICONNECTIVITY|FIPARSER|MAPREDUCE|OCRPLUGIN|OFFLINECLIENT|OTHER|PAYMENTPOSTBACK|PAYMENTGATEWAY|PLATFORMEXTENSION|PORTLET|PROMOTIONS|CONSOLRATEADJUSTOR|RESTWEBSERVICES|RESTLET|ADVANCEDREVREC|SCHEDULED|SDFINSTALLATION|SHIPPINGPARTNERS|WEBSERVICES|SUITELET|TAXCALCULATION|USEREVENT|USERINTERFACE|WORKBOOKBUILDER|WORKFLOW</contexttypes>
           <eventtypes></eventtypes>
-          <field>[scriptid=customworkflow_tsc_wf_department.custworkflow_tsc_emg008_approval_threshold_2]</field>
+          <field>[scriptid=customworkflow_tsc_wf_department.custworkflow_tsc_emg008_appr_thresh_2]</field>
           <isinactive>F</isinactive>
           <scheduledelay></scheduledelay>
           <schedulemode>DELAY</schedulemode>
@@ -369,7 +369,7 @@
               </parameter>
               <parameter>
                 <name>Workflow:Approval Threshold:Department Auto Approval Limit</name>
-                <value>[scriptid=customworkflow_tsc_wf_department.custworkflow_tsc_emg008_approval_threshold_2]:[scriptid=customrecord_tsc_approval_thresholds.custrecord_tsc_dept_auto_approval_limit]</value>
+                <value>[scriptid=customworkflow_tsc_wf_department.custworkflow_tsc_emg008_appr_thresh_2]:[scriptid=customrecord_tsc_approval_thresholds.custrecord_tsc_dept_auto_approval_limit]</value>
               </parameter>
               <parameter>
                 <name>User</name>
@@ -419,7 +419,7 @@
               </parameter>
               <parameter>
                 <name>Workflow:Approval Threshold:Tier 1 Approval Limit</name>
-                <value>[scriptid=customworkflow_tsc_wf_department.custworkflow_tsc_emg008_approval_threshold_2]:[scriptid=customrecord_tsc_approval_thresholds.custrecord_tsc_tier_1_approval_limit]</value>
+                <value>[scriptid=customworkflow_tsc_wf_department.custworkflow_tsc_emg008_appr_thresh_2]:[scriptid=customrecord_tsc_approval_thresholds.custrecord_tsc_tier_1_approval_limit]</value>
               </parameter>
             </parameters>
           </initcondition>
@@ -445,7 +445,7 @@
               </parameter>
               <parameter>
                 <name>Workflow:Approval Threshold:Company Auto Approval Limit</name>
-                <value>[scriptid=customworkflow_tsc_wf_department.custworkflow_tsc_emg008_approval_threshold_2]:[scriptid=customrecord_tsc_approval_thresholds.custrecord_tsc_comp_auto_approval_limit]</value>
+                <value>[scriptid=customworkflow_tsc_wf_department.custworkflow_tsc_emg008_appr_thresh_2]:[scriptid=customrecord_tsc_approval_thresholds.custrecord_tsc_comp_auto_approval_limit]</value>
               </parameter>
             </parameters>
           </initcondition>
@@ -479,7 +479,7 @@
               </parameter>
               <parameter>
                 <name>Workflow:Approval Threshold:Tier 2 Approval Limit</name>
-                <value>[scriptid=customworkflow_tsc_wf_department.custworkflow_tsc_emg008_approval_threshold_2]:[scriptid=customrecord_tsc_approval_thresholds.custrecord_tsc_tier_2_approver_limit]</value>
+                <value>[scriptid=customworkflow_tsc_wf_department.custworkflow_tsc_emg008_appr_thresh_2]:[scriptid=customrecord_tsc_approval_thresholds.custrecord_tsc_tier_2_approver_limit]</value>
               </parameter>
             </parameters>
           </initcondition>
@@ -513,7 +513,7 @@
               </parameter>
               <parameter>
                 <name>Workflow:Approval Threshold:Tier 1 Approval Limit</name>
-                <value>[scriptid=customworkflow_tsc_wf_department.custworkflow_tsc_emg008_approval_threshold_2]:[scriptid=customrecord_tsc_approval_thresholds.custrecord_tsc_tier_1_approval_limit]</value>
+                <value>[scriptid=customworkflow_tsc_wf_department.custworkflow_tsc_emg008_appr_thresh_2]:[scriptid=customrecord_tsc_approval_thresholds.custrecord_tsc_tier_1_approval_limit]</value>
               </parameter>
               <parameter>
                 <name>Workflow:Department Config:Secondary Approver</name>
@@ -521,7 +521,7 @@
               </parameter>
               <parameter>
                 <name>Workflow:Approval Threshold:Tier 2 Approval Limit</name>
-                <value>[scriptid=customworkflow_tsc_wf_department.custworkflow_tsc_emg008_approval_threshold_2]:[scriptid=customrecord_tsc_approval_thresholds.custrecord_tsc_tier_2_approver_limit]</value>
+                <value>[scriptid=customworkflow_tsc_wf_department.custworkflow_tsc_emg008_appr_thresh_2]:[scriptid=customrecord_tsc_approval_thresholds.custrecord_tsc_tier_2_approver_limit]</value>
               </parameter>
               <parameter>
                 <name>Workflow:Department Config:Tertiary Approver</name>
@@ -708,6 +708,96 @@
             <valuetype>FIELD</valuetype>
           </setfieldvalueaction>
         </workflowactiongroup>
+        <sendemailaction scriptid="workflowaction436">
+          <attachmentfield></attachmentfield>
+          <attachmentfile></attachmentfile>
+          <attachmentjoinfield></attachmentjoinfield>
+          <attachmenttype>SPECIFIC</attachmenttype>
+          <body></body>
+          <conditionsavedsearch></conditionsavedsearch>
+          <contexttypes>ACTION|BANKCONNECTIVITY|BANKSTATEMENTPARSER|BUNDLEINSTALLATION|CLIENT|CSVIMPORT|CUSTOMGLLINES|CUSTOMMASSUPDATE|RECORDACTION|DATASETBUILDER|DEBUGGER|EMAILCAPTURE|FICONNECTIVITY|FIPARSER|MAPREDUCE|OCRPLUGIN|OFFLINECLIENT|OTHER|PAYMENTPOSTBACK|PAYMENTGATEWAY|PLATFORMEXTENSION|PORTLET|PROMOTIONS|CONSOLRATEADJUSTOR|RESTWEBSERVICES|RESTLET|ADVANCEDREVREC|SCHEDULED|SDFINSTALLATION|SHIPPINGPARTNERS|WEBSERVICES|SUITELET|TAXCALCULATION|USEREVENT|USERINTERFACE|WORKBOOKBUILDER|WORKFLOW</contexttypes>
+          <eventtypes></eventtypes>
+          <includeformat>PDF</includeformat>
+          <includerecordlink>F</includerecordlink>
+          <includetransaction>T</includetransaction>
+          <isinactive>F</isinactive>
+          <recipientbccemail></recipientbccemail>
+          <recipientccemail></recipientccemail>
+          <recipientemail></recipientemail>
+          <recipientfield>STDBODYNEXTAPPROVER</recipientfield>
+          <recipientjoinfield></recipientjoinfield>
+          <recipienttype>FIELD</recipienttype>
+          <scheduledelay></scheduledelay>
+          <schedulemode>DELAY</schedulemode>
+          <schedulerecurrence></schedulerecurrence>
+          <scheduletimeofday></scheduletimeofday>
+          <scheduletimeunit></scheduletimeunit>
+          <senderfield>[scriptid=custbody_tsc_created_by]</senderfield>
+          <senderjoinfield></senderjoinfield>
+          <sendertype>FIELD</sendertype>
+          <subject></subject>
+          <template>[scriptid=custemailtmpl_tsc_emg008_pending_approval]</template>
+          <usetemplate>T</usetemplate>
+          <initcondition>
+            <formula><![CDATA[isChecked("Is Delegate Active") = 'F' AND isEmpty("Assigned Delegate Approver") = 'T']]></formula>
+            <type>VISUAL_BUILDER</type>
+            <parameters>
+              <parameter>
+                <name>Is Delegate Active</name>
+                <value>[scriptid=custbody_tsc_is_delegate_active]</value>
+              </parameter>
+              <parameter>
+                <name>Assigned Delegate Approver</name>
+                <value>[scriptid=custbody_tsc_assigned_delegate_approv]</value>
+              </parameter>
+            </parameters>
+          </initcondition>
+        </sendemailaction>
+        <sendemailaction scriptid="workflowaction439">
+          <attachmentfield></attachmentfield>
+          <attachmentfile></attachmentfile>
+          <attachmentjoinfield></attachmentjoinfield>
+          <attachmenttype>SPECIFIC</attachmenttype>
+          <body></body>
+          <conditionsavedsearch></conditionsavedsearch>
+          <contexttypes>ACTION|BANKCONNECTIVITY|BANKSTATEMENTPARSER|BUNDLEINSTALLATION|CLIENT|CSVIMPORT|CUSTOMGLLINES|CUSTOMMASSUPDATE|RECORDACTION|DATASETBUILDER|DEBUGGER|EMAILCAPTURE|FICONNECTIVITY|FIPARSER|MAPREDUCE|OCRPLUGIN|OFFLINECLIENT|OTHER|PAYMENTPOSTBACK|PAYMENTGATEWAY|PLATFORMEXTENSION|PORTLET|PROMOTIONS|CONSOLRATEADJUSTOR|RESTWEBSERVICES|RESTLET|ADVANCEDREVREC|SCHEDULED|SDFINSTALLATION|SHIPPINGPARTNERS|WEBSERVICES|SUITELET|TAXCALCULATION|USEREVENT|USERINTERFACE|WORKBOOKBUILDER|WORKFLOW</contexttypes>
+          <eventtypes></eventtypes>
+          <includeformat>PDF</includeformat>
+          <includerecordlink>F</includerecordlink>
+          <includetransaction>T</includetransaction>
+          <isinactive>F</isinactive>
+          <recipientbccemail></recipientbccemail>
+          <recipientccemail></recipientccemail>
+          <recipientemail></recipientemail>
+          <recipientfield>STDBODYNEXTAPPROVER</recipientfield>
+          <recipientjoinfield></recipientjoinfield>
+          <recipienttype>FIELD</recipienttype>
+          <scheduledelay></scheduledelay>
+          <schedulemode>DELAY</schedulemode>
+          <schedulerecurrence></schedulerecurrence>
+          <scheduletimeofday></scheduletimeofday>
+          <scheduletimeunit></scheduletimeunit>
+          <senderfield>[scriptid=custbody_tsc_created_by]</senderfield>
+          <senderjoinfield></senderjoinfield>
+          <sendertype>FIELD</sendertype>
+          <subject></subject>
+          <template>[scriptid=custemailtmpl_tsc_emg008_pending_approval]</template>
+          <usetemplate>T</usetemplate>
+          <initcondition>
+            <formula><![CDATA[isChecked("Is Delegate Active") = 'T' AND isEmpty("Assigned Delegate Approver") = 'F']]></formula>
+            <type>VISUAL_BUILDER</type>
+            <parameters>
+              <parameter>
+                <name>Is Delegate Active</name>
+                <value>[scriptid=custbody_tsc_is_delegate_active]</value>
+              </parameter>
+              <parameter>
+                <name>Assigned Delegate Approver</name>
+                <value>[scriptid=custbody_tsc_assigned_delegate_approv]</value>
+              </parameter>
+            </parameters>
+          </initcondition>
+        </sendemailaction>
       </workflowactions>
       <workflowactions triggertype="BEFORELOAD">
         <addbuttonaction scriptid="workflowaction345">
@@ -814,7 +904,7 @@
               </parameter>
               <parameter>
                 <name>Workflow:Approval Threshold:Tier 1 Approval Limit</name>
-                <value>[scriptid=customworkflow_tsc_wf_department.custworkflow_tsc_emg008_approval_threshold_2]:[scriptid=customrecord_tsc_approval_thresholds.custrecord_tsc_tier_1_approval_limit]</value>
+                <value>[scriptid=customworkflow_tsc_wf_department.custworkflow_tsc_emg008_appr_thresh_2]:[scriptid=customrecord_tsc_approval_thresholds.custrecord_tsc_tier_1_approval_limit]</value>
               </parameter>
             </parameters>
           </initcondition>
@@ -856,7 +946,7 @@
               </parameter>
               <parameter>
                 <name>Workflow:Approval Threshold:Tier 1 Approval Limit</name>
-                <value>[scriptid=customworkflow_tsc_wf_department.custworkflow_tsc_emg008_approval_threshold_2]:[scriptid=customrecord_tsc_approval_thresholds.custrecord_tsc_tier_1_approval_limit]</value>
+                <value>[scriptid=customworkflow_tsc_wf_department.custworkflow_tsc_emg008_appr_thresh_2]:[scriptid=customrecord_tsc_approval_thresholds.custrecord_tsc_tier_1_approval_limit]</value>
               </parameter>
             </parameters>
           </initcondition>
@@ -883,7 +973,7 @@
           <scheduletimeofday></scheduletimeofday>
           <scheduletimeunit></scheduletimeunit>
           <initcondition>
-            <formula><![CDATA["User" NOT IN ("Workflow:Department Config:Tertiary Approver")]]></formula>
+            <formula><![CDATA["User" IN ("Next Approver") OR "User" IN ("Assigned Delegate Approver")]]></formula>
             <type>VISUAL_BUILDER</type>
             <parameters>
               <parameter>
@@ -891,8 +981,12 @@
                 <value>STDUSERUSER</value>
               </parameter>
               <parameter>
-                <name>Workflow:Department Config:Tertiary Approver</name>
-                <value>[scriptid=customworkflow_tsc_wf_department.custworkflow_tsc_emg008_dept_config]:[scriptid=customrecord_tsc_approver_config.custrecord_tsc_tertiary_approver]</value>
+                <name>Next Approver</name>
+                <value>STDBODYNEXTAPPROVER</value>
+              </parameter>
+              <parameter>
+                <name>Assigned Delegate Approver</name>
+                <value>[scriptid=custbody_tsc_assigned_delegate_approv]</value>
               </parameter>
             </parameters>
           </initcondition>
@@ -1118,6 +1212,96 @@
             <valuetype>FIELD</valuetype>
           </setfieldvalueaction>
         </workflowactiongroup>
+        <sendemailaction scriptid="workflowaction438">
+          <attachmentfield></attachmentfield>
+          <attachmentfile></attachmentfile>
+          <attachmentjoinfield></attachmentjoinfield>
+          <attachmenttype>SPECIFIC</attachmenttype>
+          <body></body>
+          <conditionsavedsearch></conditionsavedsearch>
+          <contexttypes>ACTION|BANKCONNECTIVITY|BANKSTATEMENTPARSER|BUNDLEINSTALLATION|CLIENT|CSVIMPORT|CUSTOMGLLINES|CUSTOMMASSUPDATE|RECORDACTION|DATASETBUILDER|DEBUGGER|EMAILCAPTURE|FICONNECTIVITY|FIPARSER|MAPREDUCE|OCRPLUGIN|OFFLINECLIENT|OTHER|PAYMENTPOSTBACK|PAYMENTGATEWAY|PLATFORMEXTENSION|PORTLET|PROMOTIONS|CONSOLRATEADJUSTOR|RESTWEBSERVICES|RESTLET|ADVANCEDREVREC|SCHEDULED|SDFINSTALLATION|SHIPPINGPARTNERS|WEBSERVICES|SUITELET|TAXCALCULATION|USEREVENT|USERINTERFACE|WORKBOOKBUILDER|WORKFLOW</contexttypes>
+          <eventtypes></eventtypes>
+          <includeformat>PDF</includeformat>
+          <includerecordlink>F</includerecordlink>
+          <includetransaction>T</includetransaction>
+          <isinactive>F</isinactive>
+          <recipientbccemail></recipientbccemail>
+          <recipientccemail></recipientccemail>
+          <recipientemail></recipientemail>
+          <recipientfield>STDBODYNEXTAPPROVER</recipientfield>
+          <recipientjoinfield></recipientjoinfield>
+          <recipienttype>FIELD</recipienttype>
+          <scheduledelay></scheduledelay>
+          <schedulemode>DELAY</schedulemode>
+          <schedulerecurrence></schedulerecurrence>
+          <scheduletimeofday></scheduletimeofday>
+          <scheduletimeunit></scheduletimeunit>
+          <senderfield>[scriptid=custbody_tsc_created_by]</senderfield>
+          <senderjoinfield></senderjoinfield>
+          <sendertype>FIELD</sendertype>
+          <subject></subject>
+          <template>[scriptid=custemailtmpl_tsc_emg008_pending_approval]</template>
+          <usetemplate>T</usetemplate>
+          <initcondition>
+            <formula><![CDATA[isChecked("Is Delegate Active") = 'F' AND isEmpty("Assigned Delegate Approver") = 'T']]></formula>
+            <type>VISUAL_BUILDER</type>
+            <parameters>
+              <parameter>
+                <name>Is Delegate Active</name>
+                <value>[scriptid=custbody_tsc_is_delegate_active]</value>
+              </parameter>
+              <parameter>
+                <name>Assigned Delegate Approver</name>
+                <value>[scriptid=custbody_tsc_assigned_delegate_approv]</value>
+              </parameter>
+            </parameters>
+          </initcondition>
+        </sendemailaction>
+        <sendemailaction scriptid="workflowaction441">
+          <attachmentfield></attachmentfield>
+          <attachmentfile></attachmentfile>
+          <attachmentjoinfield></attachmentjoinfield>
+          <attachmenttype>SPECIFIC</attachmenttype>
+          <body></body>
+          <conditionsavedsearch></conditionsavedsearch>
+          <contexttypes>ACTION|BANKCONNECTIVITY|BANKSTATEMENTPARSER|BUNDLEINSTALLATION|CLIENT|CSVIMPORT|CUSTOMGLLINES|CUSTOMMASSUPDATE|RECORDACTION|DATASETBUILDER|DEBUGGER|EMAILCAPTURE|FICONNECTIVITY|FIPARSER|MAPREDUCE|OCRPLUGIN|OFFLINECLIENT|OTHER|PAYMENTPOSTBACK|PAYMENTGATEWAY|PLATFORMEXTENSION|PORTLET|PROMOTIONS|CONSOLRATEADJUSTOR|RESTWEBSERVICES|RESTLET|ADVANCEDREVREC|SCHEDULED|SDFINSTALLATION|SHIPPINGPARTNERS|WEBSERVICES|SUITELET|TAXCALCULATION|USEREVENT|USERINTERFACE|WORKBOOKBUILDER|WORKFLOW</contexttypes>
+          <eventtypes></eventtypes>
+          <includeformat>PDF</includeformat>
+          <includerecordlink>F</includerecordlink>
+          <includetransaction>T</includetransaction>
+          <isinactive>F</isinactive>
+          <recipientbccemail></recipientbccemail>
+          <recipientccemail></recipientccemail>
+          <recipientemail></recipientemail>
+          <recipientfield>STDBODYNEXTAPPROVER</recipientfield>
+          <recipientjoinfield></recipientjoinfield>
+          <recipienttype>FIELD</recipienttype>
+          <scheduledelay></scheduledelay>
+          <schedulemode>DELAY</schedulemode>
+          <schedulerecurrence></schedulerecurrence>
+          <scheduletimeofday></scheduletimeofday>
+          <scheduletimeunit></scheduletimeunit>
+          <senderfield>[scriptid=custbody_tsc_created_by]</senderfield>
+          <senderjoinfield></senderjoinfield>
+          <sendertype>FIELD</sendertype>
+          <subject></subject>
+          <template>[scriptid=custemailtmpl_tsc_emg008_pending_approval]</template>
+          <usetemplate>T</usetemplate>
+          <initcondition>
+            <formula><![CDATA[isChecked("Is Delegate Active") = 'T' AND isEmpty("Assigned Delegate Approver") = 'F']]></formula>
+            <type>VISUAL_BUILDER</type>
+            <parameters>
+              <parameter>
+                <name>Is Delegate Active</name>
+                <value>[scriptid=custbody_tsc_is_delegate_active]</value>
+              </parameter>
+              <parameter>
+                <name>Assigned Delegate Approver</name>
+                <value>[scriptid=custbody_tsc_assigned_delegate_approv]</value>
+              </parameter>
+            </parameters>
+          </initcondition>
+        </sendemailaction>
       </workflowactions>
       <workflowactions triggertype="BEFORELOAD">
         <addbuttonaction scriptid="workflowaction349">
@@ -1496,6 +1680,96 @@
             <valuetype>FIELD</valuetype>
           </setfieldvalueaction>
         </workflowactiongroup>
+        <sendemailaction scriptid="workflowaction437">
+          <attachmentfield></attachmentfield>
+          <attachmentfile></attachmentfile>
+          <attachmentjoinfield></attachmentjoinfield>
+          <attachmenttype>SPECIFIC</attachmenttype>
+          <body></body>
+          <conditionsavedsearch></conditionsavedsearch>
+          <contexttypes>ACTION|BANKCONNECTIVITY|BANKSTATEMENTPARSER|BUNDLEINSTALLATION|CLIENT|CSVIMPORT|CUSTOMGLLINES|CUSTOMMASSUPDATE|RECORDACTION|DATASETBUILDER|DEBUGGER|EMAILCAPTURE|FICONNECTIVITY|FIPARSER|MAPREDUCE|OCRPLUGIN|OFFLINECLIENT|OTHER|PAYMENTPOSTBACK|PAYMENTGATEWAY|PLATFORMEXTENSION|PORTLET|PROMOTIONS|CONSOLRATEADJUSTOR|RESTWEBSERVICES|RESTLET|ADVANCEDREVREC|SCHEDULED|SDFINSTALLATION|SHIPPINGPARTNERS|WEBSERVICES|SUITELET|TAXCALCULATION|USEREVENT|USERINTERFACE|WORKBOOKBUILDER|WORKFLOW</contexttypes>
+          <eventtypes></eventtypes>
+          <includeformat>PDF</includeformat>
+          <includerecordlink>F</includerecordlink>
+          <includetransaction>T</includetransaction>
+          <isinactive>F</isinactive>
+          <recipientbccemail></recipientbccemail>
+          <recipientccemail></recipientccemail>
+          <recipientemail></recipientemail>
+          <recipientfield>STDBODYNEXTAPPROVER</recipientfield>
+          <recipientjoinfield></recipientjoinfield>
+          <recipienttype>FIELD</recipienttype>
+          <scheduledelay></scheduledelay>
+          <schedulemode>DELAY</schedulemode>
+          <schedulerecurrence></schedulerecurrence>
+          <scheduletimeofday></scheduletimeofday>
+          <scheduletimeunit></scheduletimeunit>
+          <senderfield>[scriptid=custbody_tsc_created_by]</senderfield>
+          <senderjoinfield></senderjoinfield>
+          <sendertype>FIELD</sendertype>
+          <subject></subject>
+          <template>[scriptid=custemailtmpl_tsc_emg008_pending_approval]</template>
+          <usetemplate>T</usetemplate>
+          <initcondition>
+            <formula><![CDATA[isChecked("Is Delegate Active") = 'F' AND isEmpty("Assigned Delegate Approver") = 'T']]></formula>
+            <type>VISUAL_BUILDER</type>
+            <parameters>
+              <parameter>
+                <name>Is Delegate Active</name>
+                <value>[scriptid=custbody_tsc_is_delegate_active]</value>
+              </parameter>
+              <parameter>
+                <name>Assigned Delegate Approver</name>
+                <value>[scriptid=custbody_tsc_assigned_delegate_approv]</value>
+              </parameter>
+            </parameters>
+          </initcondition>
+        </sendemailaction>
+        <sendemailaction scriptid="workflowaction440">
+          <attachmentfield></attachmentfield>
+          <attachmentfile></attachmentfile>
+          <attachmentjoinfield></attachmentjoinfield>
+          <attachmenttype>SPECIFIC</attachmenttype>
+          <body></body>
+          <conditionsavedsearch></conditionsavedsearch>
+          <contexttypes>ACTION|BANKCONNECTIVITY|BANKSTATEMENTPARSER|BUNDLEINSTALLATION|CLIENT|CSVIMPORT|CUSTOMGLLINES|CUSTOMMASSUPDATE|RECORDACTION|DATASETBUILDER|DEBUGGER|EMAILCAPTURE|FICONNECTIVITY|FIPARSER|MAPREDUCE|OCRPLUGIN|OFFLINECLIENT|OTHER|PAYMENTPOSTBACK|PAYMENTGATEWAY|PLATFORMEXTENSION|PORTLET|PROMOTIONS|CONSOLRATEADJUSTOR|RESTWEBSERVICES|RESTLET|ADVANCEDREVREC|SCHEDULED|SDFINSTALLATION|SHIPPINGPARTNERS|WEBSERVICES|SUITELET|TAXCALCULATION|USEREVENT|USERINTERFACE|WORKBOOKBUILDER|WORKFLOW</contexttypes>
+          <eventtypes></eventtypes>
+          <includeformat>PDF</includeformat>
+          <includerecordlink>F</includerecordlink>
+          <includetransaction>T</includetransaction>
+          <isinactive>F</isinactive>
+          <recipientbccemail></recipientbccemail>
+          <recipientccemail></recipientccemail>
+          <recipientemail></recipientemail>
+          <recipientfield>STDBODYNEXTAPPROVER</recipientfield>
+          <recipientjoinfield></recipientjoinfield>
+          <recipienttype>FIELD</recipienttype>
+          <scheduledelay></scheduledelay>
+          <schedulemode>DELAY</schedulemode>
+          <schedulerecurrence></schedulerecurrence>
+          <scheduletimeofday></scheduletimeofday>
+          <scheduletimeunit></scheduletimeunit>
+          <senderfield>[scriptid=custbody_tsc_created_by]</senderfield>
+          <senderjoinfield></senderjoinfield>
+          <sendertype>FIELD</sendertype>
+          <subject></subject>
+          <template>[scriptid=custemailtmpl_tsc_emg008_pending_approval]</template>
+          <usetemplate>T</usetemplate>
+          <initcondition>
+            <formula><![CDATA[isChecked("Is Delegate Active") = 'T' AND isEmpty("Assigned Delegate Approver") = 'F']]></formula>
+            <type>VISUAL_BUILDER</type>
+            <parameters>
+              <parameter>
+                <name>Is Delegate Active</name>
+                <value>[scriptid=custbody_tsc_is_delegate_active]</value>
+              </parameter>
+              <parameter>
+                <name>Assigned Delegate Approver</name>
+                <value>[scriptid=custbody_tsc_assigned_delegate_approv]</value>
+              </parameter>
+            </parameters>
+          </initcondition>
+        </sendemailaction>
       </workflowactions>
       <workflowactions triggertype="BEFORELOAD">
         <addbuttonaction scriptid="workflowaction347">
@@ -1602,7 +1876,7 @@
               </parameter>
               <parameter>
                 <name>Workflow:Approval Threshold:Tier 2 Approval Limit</name>
-                <value>[scriptid=customworkflow_tsc_wf_department.custworkflow_tsc_emg008_approval_threshold_2]:[scriptid=customrecord_tsc_approval_thresholds.custrecord_tsc_tier_2_approver_limit]</value>
+                <value>[scriptid=customworkflow_tsc_wf_department.custworkflow_tsc_emg008_appr_thresh_2]:[scriptid=customrecord_tsc_approval_thresholds.custrecord_tsc_tier_2_approver_limit]</value>
               </parameter>
             </parameters>
           </initcondition>
@@ -1628,7 +1902,7 @@
               </parameter>
               <parameter>
                 <name>Workflow:Approval Threshold:Tier 2 Approval Limit</name>
-                <value>[scriptid=customworkflow_tsc_wf_department.custworkflow_tsc_emg008_approval_threshold_2]:[scriptid=customrecord_tsc_approval_thresholds.custrecord_tsc_tier_2_approver_limit]</value>
+                <value>[scriptid=customworkflow_tsc_wf_department.custworkflow_tsc_emg008_appr_thresh_2]:[scriptid=customrecord_tsc_approval_thresholds.custrecord_tsc_tier_2_approver_limit]</value>
               </parameter>
             </parameters>
           </initcondition>
@@ -1671,8 +1945,22 @@
           <scheduletimeofday></scheduletimeofday>
           <scheduletimeunit></scheduletimeunit>
           <initcondition>
-            <formula><![CDATA[{nextapprover.id} is not null OR {nextapprover.id} is not -1]]></formula>
-            <type>FORMULA</type>
+            <formula><![CDATA["User" IN ("Assigned Delegate Approver") OR "User" IN ("Next Approver")]]></formula>
+            <type>VISUAL_BUILDER</type>
+            <parameters>
+              <parameter>
+                <name>User</name>
+                <value>STDUSERUSER</value>
+              </parameter>
+              <parameter>
+                <name>Assigned Delegate Approver</name>
+                <value>[scriptid=custbody_tsc_assigned_delegate_approv]</value>
+              </parameter>
+              <parameter>
+                <name>Next Approver</name>
+                <value>STDBODYNEXTAPPROVER</value>
+              </parameter>
+            </parameters>
           </initcondition>
           <fieldsettings>
             <fieldsetting>

@@ -1,0 +1,8 @@
+# Ignore OS metadata files
+.DS_Store
+**/.DS_Store
+Thumbs.db
+**/Thumbs.db
+
+# Explicitly ignore any accidental FileCabinet metadata
+src/FileCabinet/.DS_Store

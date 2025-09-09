@@ -1,0 +1,5 @@
+<subtab scriptid="custtab_tsc_ap_approval_history">
+  <parent></parent>
+  <tabtype>TRANSACTION</tabtype>
+  <title>Approval History</title>
+</subtab>

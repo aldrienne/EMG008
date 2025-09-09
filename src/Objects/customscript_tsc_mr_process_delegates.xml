@@ -44,7 +44,7 @@
       <loglevel>DEBUG</loglevel>
       <queueallstagesatonce>T</queueallstagesatonce>
       <runasrole>ADMINISTRATOR</runasrole>
-      <status>NOTSCHEDULED</status>
+      <status>SCHEDULED</status>
       <title>TSC|MR|Restore Approvers</title>
       <yieldaftermins>60</yieldaftermins>
       <recurrence>
@@ -64,13 +64,13 @@
       <loglevel>DEBUG</loglevel>
       <queueallstagesatonce>T</queueallstagesatonce>
       <runasrole>ADMINISTRATOR</runasrole>
-      <status>NOTSCHEDULED</status>
+      <status>SCHEDULED</status>
       <title>TSC|MR|Assign Active Delegates</title>
       <yieldaftermins>60</yieldaftermins>
       <recurrence>
         <daily>
           <everyxdays>1</everyxdays>
-          <repeat>PT30M</repeat>
+          <repeat>PT15M</repeat>
           <startdate>2025-06-04</startdate>
           <starttime>07:00:00Z</starttime>
         </daily>

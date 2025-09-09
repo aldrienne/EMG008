@@ -202,6 +202,7 @@
       <subtab></subtab>
     </customrecordcustomfield>
   </customrecordcustomfields>
+  <!--
   <instances>
     <instance scriptid="val_106649_8172786_sb1_962">
       <custrecord_delegate_start_date>2025-06-11</custrecord_delegate_start_date>
@@ -344,4 +345,5 @@
       <isinactive>F</isinactive>
     </instance>
   </instances>
+  -->
 </customrecordtype>

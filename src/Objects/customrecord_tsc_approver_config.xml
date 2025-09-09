@@ -362,6 +362,7 @@
       <subtab></subtab>
     </customrecordcustomfield>
   </customrecordcustomfields>
+  <!--
   <instances>
     <instance scriptid="val_106647_8172786_sb1_486">
       <custrecord_tsc_department></custrecord_tsc_department>
@@ -848,4 +849,5 @@
       <isinactive>F</isinactive>
     </instance>
   </instances>
+  -->
 </customrecordtype>

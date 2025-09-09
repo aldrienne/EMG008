@@ -19,14 +19,47 @@
       <feature required="false">CUSTOMSEGMENTS</feature>
       <feature required="false">ACCOUNTING</feature>
       <feature required="true">SERVERSIDESCRIPTING</feature>
-      <feature required="false">CRM</feature>
       <feature required="false">CREATESUITEBUNDLES</feature>
+      <feature required="true">CRM</feature>
     </features>
     <objects>
-      <object>customrole1631</object>
-      <object>customrole1630</object>
+      <object>custbody_11187_pref_entity_bank</object>
+      <object>custbody_database_id</object>
+      <object>custbody_11724_pay_bank_fees</object>
+      <object>custbody_celigo_wlmrt_ship_exported</object>
+      <object>custbody_celigo_wlmrt_accounts</object>
+      <object>custbody_15889_cust_refund_entity_bank</object>
+      <object>custbody_15529_emp_entity_bank</object>
       <object>customrole1627</object>
-      <object>customrecord_tsc_approval_thresholds.val_106701_8172786_sb1_994</object>
+      <object>custbody_celigo_atp_related_wo</object>
+      <object>customrole1631</object>
+      <object>custbody_15699_exclude_from_ep_process</object>
+      <object>customrole1630</object>
+      <object>custbody_celigo_wlmrt_wfs_shipment_id</object>
+      <object>custbody_15529_vendor_entity_bank</object>
+      <object>customrecord_2663_entity_bank_details</object>
+      <object>custbody_celigo_shiva_exported_test</object>
+      <object>custbody_celigo_pvt_case_record</object>
+      <object>custbody_celigo_mg_gcexport_complete</object>
+      <object>customrecord_celigo_wlmrt_account_info</object>
+      <object>custbody_11724_bank_fee</object>
+      <object>custbody_10184_customer_entity_bank</object>
+      <object>customrole1628</object>
+      <object>customrole1626</object>
+      <object>customrole1624</object>
+      <object>customrole1629</object>
+      <object>customrole1625</object>
+      <object>customrole_experientialme_employee</object>
+      <object>customrole1619</object>
+      <object>custemailtmpl_tsc_emg008_delegate_assignment_notification</object>
     </objects>
+    <applications>
+      <application id="com.suitesuccess.erpcore">
+        <objects>
+          <object>customrecord_atlas_inv_adj_reasn</object>
+          <object>custbody_atlas_inv_adj_reason</object>
+        </objects>
+      </application>
+    </applications>
   </dependencies>
 </manifest>

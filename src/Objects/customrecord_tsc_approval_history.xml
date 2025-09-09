@@ -362,6 +362,7 @@
       <subtab></subtab>
     </customrecordcustomfield>
   </customrecordcustomfields>
+  <!--
   <instances>
     <instance scriptid="val_107600_8172786_sb1_699">
       <custrecord_tsc_actual_approver>[ACCOUNT_SPECIFIC_VALUE]</custrecord_tsc_actual_approver>
@@ -1497,4 +1498,5 @@
       <isinactive>F</isinactive>
     </instance>
   </instances>
+  -->
 </customrecordtype>
