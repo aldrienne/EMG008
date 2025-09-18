@@ -11,6 +11,9 @@ define(['N/search', 'N/log', 'N/record', './tsc_cm_constants.js'],
             DEPARTMENT: 2
         }
 
+        // Marketing Department ID - used for override logic
+        const MARKETING_DEPT_ID = '7'; // Update this based on actual Marketing Dept ID
+
         const FIELD_MAPPING = {
             PRIMARY_APPROVER: 'CUSTRECORD_TSC_PRIMARY_APPROVER',
             SECONDARY_APPROVER: 'CUSTRECORD_TSC_SECONDARY_APPROVER',
@@ -171,6 +174,14 @@ define(['N/search', 'N/log', 'N/record', './tsc_cm_constants.js'],
 
                 // Process based on configuration type
                 if (approverConfigObj.configType == CONFIG_TYPE_MAPPING.DEPARTMENT) {
+                    // Special handling for Marketing department config changes
+                    if (approverConfigObj.department === MARKETING_DEPT_ID) {
+                        log.audit(title + 'Processing Marketing department config', {
+                            message: 'This will affect both Marketing dept bills and marketing override bills',
+                            department: approverConfigObj.department
+                        });
+                    }
+
                     // Process department-based approvers using tier configuration
                     TIER_CONFIG.DEPARTMENT.forEach(tierConfig => {
                         const approver = approverConfigObj[tierConfig.field];
@@ -343,7 +354,30 @@ define(['N/search', 'N/log', 'N/record', './tsc_cm_constants.js'],
                         log.error(title + 'Department required but not provided', params);
                         return [];
                     }
-                    searchFilters.push('AND', ['department', 'anyof', department]);
+
+                    // Enhanced filter logic for marketing override support
+                    if (department === MARKETING_DEPT_ID) {
+                        // For Marketing department, include both:
+                        // 1. Bills with Marketing department directly
+                        // 2. Bills with marketing override checkbox checked
+                        searchFilters.push('AND');
+                        searchFilters.push([
+                            ['department', 'anyof', department],
+                            'OR',
+                            ['custbody_tsc_is_marketing_bill', 'is', 'T']
+                        ]);
+                        log.debug(title + 'Marketing dept search', 'Including marketing override bills');
+                    } else {
+                        // For non-Marketing departments:
+                        // Only include bills for this dept WITHOUT marketing override
+                        searchFilters.push('AND', ['department', 'anyof', department]);
+                        searchFilters.push('AND', [
+                            ['custbody_tsc_is_marketing_bill', 'is', 'F'],
+                            'OR',
+                            ['custbody_tsc_is_marketing_bill', 'is', '@NONE@']
+                        ]);
+                        log.debug(title + 'Non-Marketing dept search', 'Excluding marketing override bills');
+                    }
                 }
 
                 log.debug(title + 'Search filters', { 
@@ -360,7 +394,9 @@ define(['N/search', 'N/log', 'N/record', './tsc_cm_constants.js'],
                         search.createColumn({ name: 'internalid' }),
                         search.createColumn({ name: 'tranid' }),
                         search.createColumn({ name: 'entity' }),
-                        search.createColumn({ name: 'total' })
+                        search.createColumn({ name: 'total' }),
+                        search.createColumn({ name: 'custbody_tsc_is_marketing_bill' }),
+                        search.createColumn({ name: 'department' })
                     ]
                 });
 
@@ -380,7 +416,9 @@ define(['N/search', 'N/log', 'N/record', './tsc_cm_constants.js'],
                             id: result.id,
                             tranid: result.getValue('tranid'),
                             entity: result.getText('entity'),
-                            total: result.getValue('total')
+                            total: result.getValue('total'),
+                            isMarketingBill: result.getValue('custbody_tsc_is_marketing_bill'),
+                            department: result.getText('department')
                         });
                     });
                 }

@@ -1,14 +1,17 @@
 <customlist scriptid="customlist_tsc_config_types">
   <description></description>
   <isinactive>F</isinactive>
+  <ismatrixoption>F</ismatrixoption>
   <isordered>T</isordered>
   <name>Approval Config Types</name>
   <customvalues>
     <customvalue scriptid="val_106601_8172786_sb1_316">
+      <abbreviation>C</abbreviation>
       <isinactive>F</isinactive>
       <value>Company Role</value>
     </customvalue>
     <customvalue scriptid="val_106602_8172786_sb1_885">
+      <abbreviation>D</abbreviation>
       <isinactive>F</isinactive>
       <value>Department</value>
     </customvalue>

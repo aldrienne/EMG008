@@ -1131,7 +1131,7 @@
             <fieldsetting>
               <targetfield>[scriptid=customrecord_tsc_approval_history.custrecord_tsc_approval_date]</targetfield>
               <valuechecked></valuechecked>
-              <valuedate>TODAY</valuedate>
+              <valuedate></valuedate>
               <valuefield></valuefield>
               <valueformula></valueformula>
               <valuejoinfield></valuejoinfield>
@@ -1612,7 +1612,7 @@
             <fieldsetting>
               <targetfield>[scriptid=customrecord_tsc_approval_history.custrecord_tsc_approval_date]</targetfield>
               <valuechecked></valuechecked>
-              <valuedate>TODAY</valuedate>
+              <valuedate></valuedate>
               <valuefield></valuefield>
               <valueformula></valueformula>
               <valuejoinfield></valuejoinfield>
@@ -2137,7 +2137,7 @@
             <fieldsetting>
               <targetfield>[scriptid=customrecord_tsc_approval_history.custrecord_tsc_approval_date]</targetfield>
               <valuechecked></valuechecked>
-              <valuedate>TODAY</valuedate>
+              <valuedate></valuedate>
               <valuefield></valuefield>
               <valueformula></valueformula>
               <valuejoinfield></valuejoinfield>
@@ -2409,7 +2409,7 @@
             <fieldsetting>
               <targetfield>[scriptid=customrecord_tsc_approval_history.custrecord_tsc_approval_date]</targetfield>
               <valuechecked></valuechecked>
-              <valuedate>TODAY</valuedate>
+              <valuedate></valuedate>
               <valuefield></valuefield>
               <valueformula></valueformula>
               <valuejoinfield></valuejoinfield>

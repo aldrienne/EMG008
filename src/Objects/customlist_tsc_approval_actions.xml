@@ -1,14 +1,17 @@
 <customlist scriptid="customlist_tsc_approval_actions">
   <description></description>
   <isinactive>F</isinactive>
+  <ismatrixoption>F</ismatrixoption>
   <isordered>T</isordered>
   <name>Approval Actions</name>
   <customvalues>
     <customvalue scriptid="val_106610_8172786_sb1_682">
+      <abbreviation>A</abbreviation>
       <isinactive>F</isinactive>
       <value>Approved</value>
     </customvalue>
     <customvalue scriptid="val_106611_8172786_sb1_396">
+      <abbreviation>R</abbreviation>
       <isinactive>F</isinactive>
       <value>Rejected</value>
     </customvalue>

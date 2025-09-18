@@ -409,6 +409,7 @@
       <custrecord_tsc_comp_auto_approval_limit>2500.00</custrecord_tsc_comp_auto_approval_limit>
       <custrecord_tsc_coo_approval_limit>10000.00</custrecord_tsc_coo_approval_limit>
       <custrecord_tsc_dept_auto_approval_limit>0.00</custrecord_tsc_dept_auto_approval_limit>
+      <custrecord_tsc_threshold_type></custrecord_tsc_threshold_type>
       <custrecord_tsc_tier_1_approval_limit>2500.00</custrecord_tsc_tier_1_approval_limit>
       <custrecord_tsc_tier_2_approver_limit>25000.00</custrecord_tsc_tier_2_approver_limit>
       <custrecord_tsc_tier_3_approver_limit>999999999.00</custrecord_tsc_tier_3_approver_limit>

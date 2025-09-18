@@ -36,26 +36,6 @@
     </scriptcustomfield>
   </scriptcustomfields>
   <scriptdeployments>
-    <scriptdeployment scriptid="customdeploy2">
-      <buffersize>1</buffersize>
-      <concurrencylimit>1</concurrencylimit>
-      <custscript_tsc_delegate_process_mode>RESTORE_APPROVERS</custscript_tsc_delegate_process_mode>
-      <isdeployed>T</isdeployed>
-      <loglevel>DEBUG</loglevel>
-      <queueallstagesatonce>T</queueallstagesatonce>
-      <runasrole>ADMINISTRATOR</runasrole>
-      <status>SCHEDULED</status>
-      <title>TSC|MR|Restore Approvers</title>
-      <yieldaftermins>60</yieldaftermins>
-      <recurrence>
-        <daily>
-          <everyxdays>1</everyxdays>
-          <repeat>PT15M</repeat>
-          <startdate>2025-06-04</startdate>
-          <starttime>07:00:00Z</starttime>
-        </daily>
-      </recurrence>
-    </scriptdeployment>
     <scriptdeployment scriptid="customdeploy1">
       <buffersize>1</buffersize>
       <concurrencylimit>1</concurrencylimit>
@@ -66,6 +46,26 @@
       <runasrole>ADMINISTRATOR</runasrole>
       <status>SCHEDULED</status>
       <title>TSC|MR|Assign Active Delegates</title>
+      <yieldaftermins>60</yieldaftermins>
+      <recurrence>
+        <daily>
+          <everyxdays>1</everyxdays>
+          <repeat>PT15M</repeat>
+          <startdate>2025-06-04</startdate>
+          <starttime>07:00:00Z</starttime>
+        </daily>
+      </recurrence>
+    </scriptdeployment>
+    <scriptdeployment scriptid="customdeploy2">
+      <buffersize>1</buffersize>
+      <concurrencylimit>1</concurrencylimit>
+      <custscript_tsc_delegate_process_mode>RESTORE_APPROVERS</custscript_tsc_delegate_process_mode>
+      <isdeployed>T</isdeployed>
+      <loglevel>DEBUG</loglevel>
+      <queueallstagesatonce>T</queueallstagesatonce>
+      <runasrole>ADMINISTRATOR</runasrole>
+      <status>SCHEDULED</status>
+      <title>TSC|MR|Restore Approvers</title>
       <yieldaftermins>60</yieldaftermins>
       <recurrence>
         <daily>

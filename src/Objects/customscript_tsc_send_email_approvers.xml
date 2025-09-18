@@ -44,7 +44,7 @@
       <loglevel>DEBUG</loglevel>
       <queueallstagesatonce>T</queueallstagesatonce>
       <runasrole>ADMINISTRATOR</runasrole>
-      <status>NOTSCHEDULED</status>
+      <status>SCHEDULED</status>
       <title>TSC|MR|Send Email to Approvers</title>
       <yieldaftermins>60</yieldaftermins>
       <recurrence>

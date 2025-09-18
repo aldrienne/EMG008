@@ -7,7 +7,7 @@
   <initonvieworupdate>F</initonvieworupdate>
   <initsavedsearchcondition></initsavedsearchcondition>
   <inittriggertype></inittriggertype>
-  <isinactive>T</isinactive>
+  <isinactive>F</isinactive>
   <islogenabled>T</islogenabled>
   <keephistory>ALWAYS</keephistory>
   <name>TSC|WF|Company Department Approval</name>
@@ -171,6 +171,39 @@
           </initcondition>
         </setdisplaytypeaction>
       </workflowactions>
+      <workflowactions triggertype="BEFOREUSERSUBMIT">
+        <confirmaction scriptid="workflowaction443">
+          <clienttriggerfields></clienttriggerfields>
+          <conditionsavedsearch></conditionsavedsearch>
+          <contexttypes>ACTION|BANKCONNECTIVITY|BANKSTATEMENTPARSER|BUNDLEINSTALLATION|CLIENT|CSVIMPORT|CUSTOMGLLINES|CUSTOMMASSUPDATE|RECORDACTION|CUSTOMTOOL|DATASETBUILDER|DEBUGGER|EMAILCAPTURE|FICONNECTIVITY|FIPARSER|MAPREDUCE|OCRPLUGIN|OFFLINECLIENT|OTHER|PAYMENTPOSTBACK|PAYMENTGATEWAY|PLATFORMEXTENSION|PORTLET|PROMOTIONS|CONSOLRATEADJUSTOR|RESTWEBSERVICES|RESTLET|ADVANCEDREVREC|SCHEDULED|SDFINSTALLATION|SHIPPINGPARTNERS|WEBSERVICES|SUITELET|TAXCALCULATION|USEREVENT|USERINTERFACE|WORKBOOKBUILDER|WORKFLOW</contexttypes>
+          <isinactive>F</isinactive>
+          <messagetext>The &apos;Is Marketing?&apos; field is checked.&#xd;
+&#xd;
+This vendor bill will be routed to Marketing Department approvers instead of the selected department&apos;s&#xd;
+approvers.&#xd;
+&#xd;
+Do you want to continue?</messagetext>
+          <initcondition>
+            <formula><![CDATA[isChecked("Is Marketing?") = 'T' AND "Department (Main)" NOT IN ("{#Department#}1")]]></formula>
+            <type>VISUAL_BUILDER</type>
+            <parameters>
+              <parameter>
+                <name>Is Marketing?</name>
+                <value>[scriptid=custbody_tsc_is_marketing_bill]</value>
+              </parameter>
+              <parameter>
+                <name>Department (Main)</name>
+                <value>STDBODYDEPARTMENT</value>
+              </parameter>
+              <parameter>
+                <name>{#Department#}1</name>
+                <selectrecordtype>-102</selectrecordtype>
+                <value>[ACCOUNT_SPECIFIC_VALUE]</value>
+              </parameter>
+            </parameters>
+          </initcondition>
+        </confirmaction>
+      </workflowactions>
       <workflowtransitions>
         <workflowtransition scriptid="workflowtransition273">
           <buttonaction></buttonaction>
@@ -235,8 +268,14 @@
           <scheduletimeunit></scheduletimeunit>
           <scripttype>[scriptid=customscript_tsc_wa_retrieve_approvers]</scripttype>
           <initcondition>
-            <formula></formula>
+            <formula><![CDATA[isChecked("Is Marketing?") = 'F']]></formula>
             <type>VISUAL_BUILDER</type>
+            <parameters>
+              <parameter>
+                <name>Is Marketing?</name>
+                <value>[scriptid=custbody_tsc_is_marketing_bill]</value>
+              </parameter>
+            </parameters>
           </initcondition>
           <parametersettings>
             <parametersetting>
@@ -346,6 +385,61 @@
             <type>VISUAL_BUILDER</type>
           </initcondition>
         </setfieldvalueaction>
+        <customaction scriptid="workflowaction442">
+          <conditionsavedsearch></conditionsavedsearch>
+          <contexttypes>ACTION|BANKCONNECTIVITY|BANKSTATEMENTPARSER|BUNDLEINSTALLATION|CLIENT|CSVIMPORT|CUSTOMGLLINES|CUSTOMMASSUPDATE|RECORDACTION|DATASETBUILDER|DEBUGGER|EMAILCAPTURE|FICONNECTIVITY|FIPARSER|MAPREDUCE|OCRPLUGIN|OFFLINECLIENT|OTHER|PAYMENTPOSTBACK|PAYMENTGATEWAY|PLATFORMEXTENSION|PORTLET|PROMOTIONS|CONSOLRATEADJUSTOR|RESTWEBSERVICES|RESTLET|ADVANCEDREVREC|SCHEDULED|SDFINSTALLATION|SHIPPINGPARTNERS|WEBSERVICES|SUITELET|TAXCALCULATION|USEREVENT|USERINTERFACE|WORKBOOKBUILDER|WORKFLOW</contexttypes>
+          <eventtypes></eventtypes>
+          <isinactive>F</isinactive>
+          <resultfield>[scriptid=customworkflow_tsc_wf_department.custworkflow_tsc_emg008_dept_config]</resultfield>
+          <scheduledelay></scheduledelay>
+          <schedulemode>DELAY</schedulemode>
+          <schedulerecurrence></schedulerecurrence>
+          <scheduletimeofday></scheduletimeofday>
+          <scheduletimeunit></scheduletimeunit>
+          <scripttype>[scriptid=customscript_tsc_wa_retrieve_approvers]</scripttype>
+          <initcondition>
+            <formula><![CDATA[isChecked("Is Marketing?") = 'T']]></formula>
+            <type>VISUAL_BUILDER</type>
+            <parameters>
+              <parameter>
+                <name>Is Marketing?</name>
+                <value>[scriptid=custbody_tsc_is_marketing_bill]</value>
+              </parameter>
+            </parameters>
+          </initcondition>
+          <parametersettings>
+            <parametersetting>
+              <targetparameter>[scriptid=customscript_tsc_wa_retrieve_approvers.custscript_tsc_wa_emg008_approval_type]</targetparameter>
+              <valuechecked></valuechecked>
+              <valuedate></valuedate>
+              <valuefield></valuefield>
+              <valueformula></valueformula>
+              <valuejoinfield></valuejoinfield>
+              <valueselect>[scriptid=customlist_tsc_config_types.val_106602_8172786_sb1_885]</valueselect>
+              <valuetext></valuetext>
+            </parametersetting>
+            <parametersetting>
+              <targetparameter>[scriptid=customscript_tsc_wa_retrieve_approvers.custscript_tsc_wa_emg008_approval_role]</targetparameter>
+              <valuechecked></valuechecked>
+              <valuedate></valuedate>
+              <valuefield></valuefield>
+              <valueformula></valueformula>
+              <valuejoinfield></valuejoinfield>
+              <valueselect></valueselect>
+              <valuetext></valuetext>
+            </parametersetting>
+            <parametersetting>
+              <targetparameter>[scriptid=customscript_tsc_wa_retrieve_approvers.custscript_tsc_wa_emg008_department]</targetparameter>
+              <valuechecked></valuechecked>
+              <valuedate></valuedate>
+              <valuefield></valuefield>
+              <valueformula></valueformula>
+              <valuejoinfield></valuejoinfield>
+              <valueselect>[ACCOUNT_SPECIFIC_VALUE]</valueselect>
+              <valuetext></valuetext>
+            </parametersetting>
+          </parametersettings>
+        </customaction>
       </workflowactions>
       <workflowtransitions>
         <workflowtransition scriptid="workflowtransition274">
@@ -356,7 +450,7 @@
           <scheduledelay></scheduledelay>
           <scheduletimeunit></scheduletimeunit>
           <tostate>[scriptid=customworkflow_tsc_wf_department.workflowstate144]</tostate>
-          <triggertype></triggertype>
+          <triggertype>AFTERSUBMIT</triggertype>
           <waitforworkflow></waitforworkflow>
           <waitforworkflowstate></waitforworkflowstate>
           <initcondition>
@@ -809,7 +903,7 @@
           <label>Approve</label>
           <saverecordfirst>T</saverecordfirst>
           <initcondition>
-            <formula><![CDATA[( "User" IN ("Workflow:Department Config:Primary Approver") ) OR ( isChecked("Is Delegate Active") = 'T' AND "User" IN ("Assigned Delegate Approver") )]]></formula>
+            <formula><![CDATA[( "User" IN ("Workflow:Department Config:Primary Approver") ) OR ( isChecked("Is Delegate Active") = 'T' AND "User" IN ("Assigned Delegate Approver") ) OR "User" IN ("Next Approver")]]></formula>
             <type>VISUAL_BUILDER</type>
             <parameters>
               <parameter>
@@ -827,6 +921,10 @@
               <parameter>
                 <name>Assigned Delegate Approver</name>
                 <value>[scriptid=custbody_tsc_assigned_delegate_approv]</value>
+              </parameter>
+              <parameter>
+                <name>Next Approver</name>
+                <value>STDBODYNEXTAPPROVER</value>
               </parameter>
             </parameters>
           </initcondition>
@@ -840,7 +938,7 @@
           <label>Reject</label>
           <saverecordfirst>T</saverecordfirst>
           <initcondition>
-            <formula><![CDATA["User" IN ("Workflow:Department Config:Primary Approver") OR ( isChecked("Is Delegate Active") = 'T' AND "User" IN ("Assigned Delegate Approver") )]]></formula>
+            <formula><![CDATA["User" IN ("Workflow:Department Config:Primary Approver") OR ( isChecked("Is Delegate Active") = 'T' AND "User" IN ("Assigned Delegate Approver") ) OR "User" IN ("Next Approver")]]></formula>
             <type>VISUAL_BUILDER</type>
             <parameters>
               <parameter>
@@ -858,6 +956,10 @@
               <parameter>
                 <name>Assigned Delegate Approver</name>
                 <value>[scriptid=custbody_tsc_assigned_delegate_approv]</value>
+              </parameter>
+              <parameter>
+                <name>Next Approver</name>
+                <value>STDBODYNEXTAPPROVER</value>
               </parameter>
             </parameters>
           </initcondition>
@@ -951,6 +1053,22 @@
             </parameters>
           </initcondition>
         </workflowtransition>
+        <workflowtransition scriptid="workflowtransition293">
+          <buttonaction></buttonaction>
+          <conditionsavedsearch></conditionsavedsearch>
+          <contexttypes>ACTION|BANKCONNECTIVITY|BANKSTATEMENTPARSER|BUNDLEINSTALLATION|CLIENT|CSVIMPORT|CUSTOMGLLINES|CUSTOMMASSUPDATE|RECORDACTION|CUSTOMTOOL|DATASETBUILDER|DEBUGGER|EMAILCAPTURE|FICONNECTIVITY|FIPARSER|MAPREDUCE|OCRPLUGIN|OFFLINECLIENT|OTHER|PAYMENTPOSTBACK|PAYMENTGATEWAY|PLATFORMEXTENSION|PORTLET|PROMOTIONS|CONSOLRATEADJUSTOR|RESTWEBSERVICES|RESTLET|ADVANCEDREVREC|SCHEDULED|SDFINSTALLATION|SHIPPINGPARTNERS|WEBSERVICES|SUITELET|TAXCALCULATION|USEREVENT|USERINTERFACE|WORKBOOKBUILDER|WORKFLOW</contexttypes>
+          <eventtypes></eventtypes>
+          <scheduledelay></scheduledelay>
+          <scheduletimeunit></scheduletimeunit>
+          <tostate>[scriptid=customworkflow_tsc_wf_department.workflowstate143]</tostate>
+          <triggertype>BEFORESUBMIT</triggertype>
+          <waitforworkflow></waitforworkflow>
+          <waitforworkflowstate></waitforworkflowstate>
+          <initcondition>
+            <formula><![CDATA[(({old.department.id}!={department.id} or ({old.department.id} is null and {department.id} is not null) or ({old.department.id} is not null and {department.id} is null))) or (({old.custbody_tsc_is_marketing_bill.id}!={custbody_tsc_is_marketing_bill.id} or ({old.custbody_tsc_is_marketing_bill.id} is null and {custbody_tsc_is_marketing_bill.id} is not null) or ({old.custbody_tsc_is_marketing_bill.id} is not null and {custbody_tsc_is_marketing_bill.id} is null)) and ({department.id}!=7 or ({department.id} is null)))]]></formula>
+            <type>FORMULA</type>
+          </initcondition>
+        </workflowtransition>
       </workflowtransitions>
     </workflowstate>
     <workflowstate scriptid="workflowstate145">
@@ -1034,7 +1152,7 @@
             <fieldsetting>
               <targetfield>[scriptid=customrecord_tsc_approval_history.custrecord_tsc_approval_date]</targetfield>
               <valuechecked></valuechecked>
-              <valuedate>TODAY</valuedate>
+              <valuedate></valuedate>
               <valuefield></valuefield>
               <valueformula></valueformula>
               <valuejoinfield></valuejoinfield>
@@ -1313,7 +1431,7 @@
           <label>Approve</label>
           <saverecordfirst>T</saverecordfirst>
           <initcondition>
-            <formula><![CDATA["User" IN ("Workflow:Department Config:Tertiary Approver") OR ( isChecked("Is Delegate Active") = 'T' AND "User" IN ("Assigned Delegate Approver") )]]></formula>
+            <formula><![CDATA["User" IN ("Workflow:Department Config:Tertiary Approver") OR ( isChecked("Is Delegate Active") = 'T' AND "User" IN ("Assigned Delegate Approver") ) OR "User" IN ("Next Approver")]]></formula>
             <type>VISUAL_BUILDER</type>
             <parameters>
               <parameter>
@@ -1331,6 +1449,10 @@
               <parameter>
                 <name>Assigned Delegate Approver</name>
                 <value>[scriptid=custbody_tsc_assigned_delegate_approv]</value>
+              </parameter>
+              <parameter>
+                <name>Next Approver</name>
+                <value>STDBODYNEXTAPPROVER</value>
               </parameter>
             </parameters>
           </initcondition>
@@ -1344,7 +1466,7 @@
           <label>Reject</label>
           <saverecordfirst>T</saverecordfirst>
           <initcondition>
-            <formula><![CDATA["User" IN ("Workflow:Department Config:Tertiary Approver") OR ( isChecked("Is Delegate Active") = 'T' AND "User" IN ("Assigned Delegate Approver") )]]></formula>
+            <formula><![CDATA["User" IN ("Workflow:Department Config:Tertiary Approver") OR ( isChecked("Is Delegate Active") = 'T' AND "User" IN ("Assigned Delegate Approver") ) OR "User" IN ("Next Approver")]]></formula>
             <type>VISUAL_BUILDER</type>
             <parameters>
               <parameter>
@@ -1362,6 +1484,10 @@
               <parameter>
                 <name>Assigned Delegate Approver</name>
                 <value>[scriptid=custbody_tsc_assigned_delegate_approv]</value>
+              </parameter>
+              <parameter>
+                <name>Next Approver</name>
+                <value>STDBODYNEXTAPPROVER</value>
               </parameter>
             </parameters>
           </initcondition>
@@ -1417,6 +1543,22 @@
           <initcondition>
             <formula></formula>
             <type>VISUAL_BUILDER</type>
+          </initcondition>
+        </workflowtransition>
+        <workflowtransition scriptid="workflowtransition295">
+          <buttonaction></buttonaction>
+          <conditionsavedsearch></conditionsavedsearch>
+          <contexttypes>ACTION|BANKCONNECTIVITY|BANKSTATEMENTPARSER|BUNDLEINSTALLATION|CLIENT|CSVIMPORT|CUSTOMGLLINES|CUSTOMMASSUPDATE|RECORDACTION|CUSTOMTOOL|DATASETBUILDER|DEBUGGER|EMAILCAPTURE|FICONNECTIVITY|FIPARSER|MAPREDUCE|OCRPLUGIN|OFFLINECLIENT|OTHER|PAYMENTPOSTBACK|PAYMENTGATEWAY|PLATFORMEXTENSION|PORTLET|PROMOTIONS|CONSOLRATEADJUSTOR|RESTWEBSERVICES|RESTLET|ADVANCEDREVREC|SCHEDULED|SDFINSTALLATION|SHIPPINGPARTNERS|WEBSERVICES|SUITELET|TAXCALCULATION|USEREVENT|USERINTERFACE|WORKBOOKBUILDER|WORKFLOW</contexttypes>
+          <eventtypes></eventtypes>
+          <scheduledelay></scheduledelay>
+          <scheduletimeunit></scheduletimeunit>
+          <tostate>[scriptid=customworkflow_tsc_wf_department.workflowstate143]</tostate>
+          <triggertype>BEFORESUBMIT</triggertype>
+          <waitforworkflow></waitforworkflow>
+          <waitforworkflowstate></waitforworkflowstate>
+          <initcondition>
+            <formula><![CDATA[(({old.department.id}!={department.id} or ({old.department.id} is null and {department.id} is not null) or ({old.department.id} is not null and {department.id} is null))) or (({old.custbody_tsc_is_marketing_bill.id}!={custbody_tsc_is_marketing_bill.id} or ({old.custbody_tsc_is_marketing_bill.id} is null and {custbody_tsc_is_marketing_bill.id} is not null) or ({old.custbody_tsc_is_marketing_bill.id} is not null and {custbody_tsc_is_marketing_bill.id} is null)) and ({department.id}!=7 or ({department.id} is null)))]]></formula>
+            <type>FORMULA</type>
           </initcondition>
         </workflowtransition>
       </workflowtransitions>
@@ -1502,7 +1644,7 @@
             <fieldsetting>
               <targetfield>[scriptid=customrecord_tsc_approval_history.custrecord_tsc_approval_date]</targetfield>
               <valuechecked></valuechecked>
-              <valuedate>TODAY</valuedate>
+              <valuedate></valuedate>
               <valuefield></valuefield>
               <valueformula></valueformula>
               <valuejoinfield></valuejoinfield>
@@ -1781,7 +1923,7 @@
           <label>Approve</label>
           <saverecordfirst>T</saverecordfirst>
           <initcondition>
-            <formula><![CDATA["User" IN ("Workflow:Department Config:Secondary Approver") OR ( isChecked("Is Delegate Active") = 'T' AND "User" IN ("Assigned Delegate Approver") )]]></formula>
+            <formula><![CDATA["User" IN ("Workflow:Department Config:Secondary Approver") OR ( isChecked("Is Delegate Active") = 'T' AND "User" IN ("Assigned Delegate Approver") ) OR "User" IN ("Next Approver")]]></formula>
             <type>VISUAL_BUILDER</type>
             <parameters>
               <parameter>
@@ -1799,6 +1941,10 @@
               <parameter>
                 <name>Assigned Delegate Approver</name>
                 <value>[scriptid=custbody_tsc_assigned_delegate_approv]</value>
+              </parameter>
+              <parameter>
+                <name>Next Approver</name>
+                <value>STDBODYNEXTAPPROVER</value>
               </parameter>
             </parameters>
           </initcondition>
@@ -1812,7 +1958,7 @@
           <label>Reject</label>
           <saverecordfirst>T</saverecordfirst>
           <initcondition>
-            <formula><![CDATA[( "User" IN ("Workflow:Department Config:Secondary Approver") ) OR ( isChecked("Is Delegate Active") = 'T' AND "User" IN ("Assigned Delegate Approver") )]]></formula>
+            <formula><![CDATA[( "User" IN ("Workflow:Department Config:Secondary Approver") ) OR ( isChecked("Is Delegate Active") = 'T' AND "User" IN ("Assigned Delegate Approver") ) OR "User" IN ("Next Approver")]]></formula>
             <type>VISUAL_BUILDER</type>
             <parameters>
               <parameter>
@@ -1830,6 +1976,10 @@
               <parameter>
                 <name>Assigned Delegate Approver</name>
                 <value>[scriptid=custbody_tsc_assigned_delegate_approv]</value>
+              </parameter>
+              <parameter>
+                <name>Next Approver</name>
+                <value>STDBODYNEXTAPPROVER</value>
               </parameter>
             </parameters>
           </initcondition>
@@ -1923,6 +2073,22 @@
             <type>VISUAL_BUILDER</type>
           </initcondition>
         </workflowtransition>
+        <workflowtransition scriptid="workflowtransition294">
+          <buttonaction></buttonaction>
+          <conditionsavedsearch></conditionsavedsearch>
+          <contexttypes>ACTION|BANKCONNECTIVITY|BANKSTATEMENTPARSER|BUNDLEINSTALLATION|CLIENT|CSVIMPORT|CUSTOMGLLINES|CUSTOMMASSUPDATE|RECORDACTION|CUSTOMTOOL|DATASETBUILDER|DEBUGGER|EMAILCAPTURE|FICONNECTIVITY|FIPARSER|MAPREDUCE|OCRPLUGIN|OFFLINECLIENT|OTHER|PAYMENTPOSTBACK|PAYMENTGATEWAY|PLATFORMEXTENSION|PORTLET|PROMOTIONS|CONSOLRATEADJUSTOR|RESTWEBSERVICES|RESTLET|ADVANCEDREVREC|SCHEDULED|SDFINSTALLATION|SHIPPINGPARTNERS|WEBSERVICES|SUITELET|TAXCALCULATION|USEREVENT|USERINTERFACE|WORKBOOKBUILDER|WORKFLOW</contexttypes>
+          <eventtypes></eventtypes>
+          <scheduledelay></scheduledelay>
+          <scheduletimeunit></scheduletimeunit>
+          <tostate>[scriptid=customworkflow_tsc_wf_department.workflowstate143]</tostate>
+          <triggertype>BEFORESUBMIT</triggertype>
+          <waitforworkflow></waitforworkflow>
+          <waitforworkflowstate></waitforworkflowstate>
+          <initcondition>
+            <formula><![CDATA[(({old.department.id}!={department.id} or ({old.department.id} is null and {department.id} is not null) or ({old.department.id} is not null and {department.id} is null))) or (({old.custbody_tsc_is_marketing_bill.id}!={custbody_tsc_is_marketing_bill.id} or ({old.custbody_tsc_is_marketing_bill.id} is null and {custbody_tsc_is_marketing_bill.id} is not null) or ({old.custbody_tsc_is_marketing_bill.id} is not null and {custbody_tsc_is_marketing_bill.id} is null)) and ({department.id}!=7 or ({department.id} is null)))]]></formula>
+            <type>FORMULA</type>
+          </initcondition>
+        </workflowtransition>
       </workflowtransitions>
     </workflowstate>
     <workflowstate scriptid="workflowstate147">
@@ -2006,7 +2172,7 @@
             <fieldsetting>
               <targetfield>[scriptid=customrecord_tsc_approval_history.custrecord_tsc_approval_date]</targetfield>
               <valuechecked></valuechecked>
-              <valuedate>TODAY</valuedate>
+              <valuedate></valuedate>
               <valuefield></valuefield>
               <valueformula></valueformula>
               <valuejoinfield></valuejoinfield>
@@ -2278,7 +2444,7 @@
             <fieldsetting>
               <targetfield>[scriptid=customrecord_tsc_approval_history.custrecord_tsc_approval_date]</targetfield>
               <valuechecked></valuechecked>
-              <valuedate>TODAY</valuedate>
+              <valuedate></valuedate>
               <valuefield></valuefield>
               <valueformula></valueformula>
               <valuejoinfield></valuejoinfield>

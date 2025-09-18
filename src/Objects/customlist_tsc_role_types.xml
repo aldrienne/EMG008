@@ -1,18 +1,22 @@
 <customlist scriptid="customlist_tsc_role_types">
   <description></description>
   <isinactive>F</isinactive>
+  <ismatrixoption>F</ismatrixoption>
   <isordered>T</isordered>
   <name>Approval Role Types</name>
   <customvalues>
     <customvalue scriptid="val_106605_8172786_sb1_394">
+      <abbreviation>T</abbreviation>
       <isinactive>F</isinactive>
       <value>Tier 1</value>
     </customvalue>
     <customvalue scriptid="val_106606_8172786_sb1_593">
+      <abbreviation>T</abbreviation>
       <isinactive>F</isinactive>
       <value>Tier 2</value>
     </customvalue>
     <customvalue scriptid="val_106607_8172786_sb1_898">
+      <abbreviation>T</abbreviation>
       <isinactive>F</isinactive>
       <value>Tier 3</value>
     </customvalue>

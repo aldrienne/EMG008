@@ -93,8 +93,8 @@
     <scriptdeployment scriptid="customdeploynotify_active_delegates">
       <buffersize>1</buffersize>
       <concurrencylimit>1</concurrencylimit>
-      <custscript_tsc_emg008_dlgt_assign_templ>3</custscript_tsc_emg008_dlgt_assign_templ>
-      <custscript_tsc_emg008_email_author>2971</custscript_tsc_emg008_email_author>
+      <custscript_tsc_emg008_dlgt_assign_templ>[ACCOUNT_SPECIFIC_VALUE]</custscript_tsc_emg008_dlgt_assign_templ>
+      <custscript_tsc_emg008_email_author>[ACCOUNT_SPECIFIC_VALUE]</custscript_tsc_emg008_email_author>
       <custscript_tsc_mr_emg008_email_type>DELEGATE_ASSIGNMENT_NOTIFICATION</custscript_tsc_mr_emg008_email_type>
       <isdeployed>T</isdeployed>
       <loglevel>DEBUG</loglevel>

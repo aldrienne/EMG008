@@ -12,23 +12,17 @@ This is **EMG008**, a NetSuite SuiteCloud Account Customization Project (ACP) im
 
 ### SuiteCloud Project Management
 ```bash
-# Import all NetSuite objects from account to local project
-./import_all_objects.sh
-
 # Deploy to NetSuite (requires suitecloud CLI)
 suitecloud project:deploy
+
+# Import all NetSuite objects from account to local project
+suitecloud object:import
 
 # Import specific object types
 suitecloud object:import --type customrecord --scriptid [RECORD_ID] --destinationfolder src/Objects
 
 # Validate project structure
 suitecloud project:validate
-```
-
-### Utility Scripts
-```bash
-# Convert workflow XML to CSV for easier review
-python workflow_to_csv_converter.py
 ```
 
 ## Core Architecture
@@ -100,7 +94,7 @@ The system is highly configurable through custom records rather than hard-coded 
 
 ### Main User Interfaces  
 - `src/FileCabinet/SuiteScripts/EMG008/tsc_sl_emg008_approver_config.js` - Approver management UI
-- `src/FileCabinet/SuiteScripts/EMG008/tsc_sl_self_delegate.js` - Self-service delegation
+- `src/FileCabinet/SuiteScripts/EMG008/self_delegate/` - Self-service delegation functionality
 
 ### Core Processing Logic
 - `src/FileCabinet/SuiteScripts/EMG008/core/tsc_wa_emg008_retrieve_approvers.js` - Approver determination logic
@@ -132,13 +126,13 @@ The system is highly configurable through custom records rather than hard-coded 
 ## Important Development Notes
 
 ### Testing
-**No testing framework is currently implemented.** When adding tests, follow the SuiteCloud Unit Testing standards defined in the global CLAUDE.md instructions.
+**No testing framework is currently implemented.** When adding tests, follow the SuiteCloud Unit Testing standards.
 
 ### Deployment Process
 1. Modify source files in `src/` directory
 2. Test in sandbox environment (`EMG_SB1`)
-3. Use `./import_all_objects.sh` to sync any NetSuite-side changes back to local
-4. Deploy using SuiteCloud CLI commands
+3. Use `suitecloud object:import` to sync any NetSuite-side changes back to local
+4. Deploy using `suitecloud project:deploy`
 
 ### Business Logic Complexity
 The approval workflow involves sophisticated business rules:
@@ -148,5 +142,3 @@ The approval workflow involves sophisticated business rules:
 - Complete audit trail with delegate action tracking
 
 Always consult the constants file (`tsc_cm_constants.js`) for current field mappings and record structures before making modifications.
-
-### NOTION PROJECT NAME: EMG008 - Netsuite Approval workflow requirements
